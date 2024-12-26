@@ -1,13 +1,14 @@
 
 
 .leftPanel {
-    width: 20%;
-    height: 100%;
-    float: left;
+    left: 0;
+    top: 0;
+    position: fixed;
+    width: 100px;
 }
 
 .center {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
+    left: 150px;
+    width: calc(100% - 150px);
 }
