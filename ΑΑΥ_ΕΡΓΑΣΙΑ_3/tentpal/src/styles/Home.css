@@ -1,0 +1,13 @@
+
+
+.leftPanel {
+    width: 20%;
+    height: 100%;
+    float: left;
+}
+
+.center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
