@@ -1,5 +1,4 @@
-import logo from './logo.svg';
-import './App.css';
+import './styles/App.css';
 import { useState } from 'react';
 
 function App() {
@@ -28,6 +27,7 @@ function HelloWold(){
         break;
       case 2:
         setCount2(name2 + "1")
+        break;
       default:
         break;
     }
