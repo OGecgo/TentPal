@@ -13,7 +13,7 @@ function Home({ navigate }) {
       <div class = "left">
         <img class = "panel" src={image} alt="logo" />
         <div class = "buttons">
-          <button  onClick={() => navigate("Html")}>Go to About</button>
+          <button  onClick={() => navigate("Login")}>Go to Login</button>
         </div>
       </div>
       
