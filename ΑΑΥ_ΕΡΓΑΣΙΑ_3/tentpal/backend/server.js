@@ -15,8 +15,9 @@ const db = new sqlite3.Database('./database.sqlite', (err) => {
 });
 
 // Middleware
+// Allow CORS
 app.use(cors());
-app.use(express.json());
+app.use(express.json()); // now we can read JSON from the request body
 
 // Example API
 app.get('/users', (req, res) => {
