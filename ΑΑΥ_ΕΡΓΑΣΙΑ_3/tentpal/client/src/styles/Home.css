@@ -10,14 +10,18 @@
     position: fixed;
 }
 
-
+.center-content {
+    position: relative;
+    left: 70px;
+}
 
 .center-content h1 {
     position: relative;
     font-size: calc(200% + 4vw + 4vh);
     color: #000000;
     text-align: center;
-    margin-top: 100px;
+    margin-top: calc(40px + 5vh + 2vw);
+    
 }
 
 .center-content button {
