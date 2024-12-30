@@ -10,14 +10,14 @@ import "../styles/Home.css";
 function Home({ navigate }) {
   return (
     <>
-      <div class = "left">
-        <img class = "panel" src={image} alt="logo" />
-        <div class = "buttons">
+      <div className = "left">
+        <img className = "panel" src={image} alt="logo" />
+        <div className = "buttons">
           <button  onClick={() => navigate("Login")}>Go to Login</button>
         </div>
       </div>
       
-      <div class = "center">
+      <div className = "center">
         <h1>Home Page</h1><br/>
         <p>Welcome to my website</p><br/>
       </div>
