@@ -1,0 +1,41 @@
+
+.header{
+    position: fixed;
+    width: calc(100% - 152px);
+    height: calc(40px + 5vh + 2vw);
+    background-color: #9f90de;
+    top: 0px;
+    left: 152px;
+}
+
+
+.header img{
+    position: fixed;
+    width: calc(40px + 2vh + 2vw);
+    height: calc(40px + 2vh + 2vw);;
+    border-radius: 50%;
+    background-color: #000000;
+    left: calc(98vw - (40px + 2vh + 2vw));
+    top: 2vh;
+}
+
+
+.header .singUp {
+    position: fixed;
+    width: calc(10vw + 10px);
+    font-size: calc(1vh + 1vw);
+    font-size: calc(1vh + 1vw);
+    background-color: #fdfdfd;
+    left: calc(100vw - (10vw + 10px) - (40px + 2vh + 2vw) - 3vw);
+    top: 20px;
+}
+
+.header .login {
+    position: fixed;
+    width: calc(10vw + 10px);
+    font-size: calc(1vh + 1vw);
+    font-size: calc(1vh + 1vw);
+    background-color: #fdfdfd;
+    left: calc(100vw - (10vw + 10px) * 2 - (40px + 2vh + 2vw) - 3vw);
+    top: 20px;
+}

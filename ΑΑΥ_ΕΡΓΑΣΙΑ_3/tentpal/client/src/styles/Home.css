@@ -6,8 +6,36 @@
     width: calc(100% - 170px);
 }
 
-p {
-    font-size: 100px;
+.header{
+    position: fixed;
+}
+
+
+
+.center-content h1 {
+    position: relative;
+    font-size: calc(200% + 4vw + 4vh);
+    color: #000000;
+    text-align: center;
+    margin-top: 100px;
+}
+
+.center-content button {
+    position: relative;
+    font-size: calc( 4vw + 4vh - 80%);
+    padding: 2px calc(20px + 4vw + 4vh);
+    color: #000000;
+    background-color: #ffffff;
+    border: 2px solid #000000;
+    border-radius: 10px;
+    cursor: pointer;
+    left: calc(50% - (20px + 8vw + 8vh));
+}
+
+.center-content p {
+    position: relative;
+    font-size : calc(50% + 1vw + 1vh);
+    position: relative;
     color: #000000;
     text-align: center;
     margin-top: 10vh;

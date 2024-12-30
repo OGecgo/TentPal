@@ -1,20 +1,35 @@
-import React, { useEffect } from 'react';
+import React from "react";
 
-const Login = () => {
-    useEffect(() => {
-        const apiUrl = process.env.REACT_APP_API_URL;
 
-        fetch(`${apiUrl}`)
-            .then((response) => response.json())
-            .catch((error) => console.error('Error downloading data:', error));
-    }, []);
+// css
+import "../styles/LeftBlock.css";
+
+function Login({navigate}) {
+
 
     return (
+    <>
+      <div className = "left">
+        <button onClick={() => navigate("home")} className = "bottombuttons" style={{top: "80%", fontSize: "calc(100% + 3vh)"}} >exit</button>
+      </div>
+      
+      <div className = "center">
         <div>
-            <h1>Data:</h1>
-            <p>Download...</p>
+          <div className = "circle-acount">
+            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" />
+          </div>
         </div>
+        <div className = "center-content">
+         
+
+        </div>
+
+      </div>
+      
+    </>
+
+    
     );
-};
+}
 
 export default Login;

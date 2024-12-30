@@ -1,25 +1,37 @@
 import React from "react";
 
-// image
-import image from "../assets/bPanel.webp";
 
 // css
 import "../styles/Home.css";
+import "../styles/LeftBlock.css";
+import "../styles/userIcon.css";
+
+function Home({navigate}) {
 
 
-function Home({ navigate }) {
+
   return (
     <>
+
+      <div className = "center-content">
+        <h1>TentPal</h1>
+        <button>Start</button>
+        <p></p>
+      </div>
       <div className = "left">
-        <img className = "panel" src={image} alt="logo" />
-        <div className = "buttons">
-          <button  onClick={() => navigate("Login")}>Go to Login</button>
-        </div>
+        <button className = "bottombuttons" style={{top: "80%", fontSize: "calc(100% + 3vh)"}} >exit</button>
       </div>
       
       <div className = "center">
-        <h1>Home Page</h1><br/>
-        <p>Welcome to my website</p><br/>
+        <div>
+          <div className = "header">
+            <button className = "login" onClick={() => navigate("login")} >Login</button>
+            <button className = "singUp" >Sign Up</button>
+            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" />
+          </div>
+        </div>
+
+
       </div>
       
     </>
