@@ -16,10 +16,10 @@ function Login() {
       <div className = {classes.centerContent}>
         <form className = {classes.form}>
           <label for="uname"><b>Username</b></label><br/>
-          <input className = {`${classes.textBox}`} type="text" placeholder="Enter Username" name="uname" required></input><br/>
+          <input type="text" placeholder="Enter Username" name="uname" required></input><br/>
           <br/><br/>
           <label for="psw"><b>Password</b></label><br/>
-          <input className = {`${classes.textBox}`} type="password" placeholder="Enter Password" name="psw" required></input><br/>
+          <input type="password" placeholder="Enter Password" name="psw" required></input><br/>
           <br/><br/>
           <button type="submit">Login</button>
         </form>

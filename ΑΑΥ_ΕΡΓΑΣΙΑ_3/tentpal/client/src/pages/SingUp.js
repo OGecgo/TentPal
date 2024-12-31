@@ -15,16 +15,16 @@ function SingUp() {
 
       <div className = {classes.centerContent}>
         <form className = {classes.form}>
-          <label className = {`${classes.label}`} for="uname"><b>Username</b></label><br/>
+          <label  for="uname"><b>Username</b></label><br/>
           <input type="text" placeholder="Enter Username" name="uname" required></input><br/>
           <br/>
-          <label className = {`${classes.label}`}  for="psw"><b>Password</b></label><br/>
+          <label   for="psw"><b>Password</b></label><br/>
           <input type="password" placeholder="Enter Password" name="psw" required></input><br/>
           <br/>
-          <label className = {`${classes.label}`}  for="psw"><b>Check Password</b></label><br/>
+          <label   for="psw"><b>Check Password</b></label><br/>
           <input type="checkPassword" placeholder="Enter Password" name="psw" required></input><br/>
           <br/>
-          <button type="submit">Login</button>
+          <button type="submit">SingUp</button>
         </form>
       </div>
 

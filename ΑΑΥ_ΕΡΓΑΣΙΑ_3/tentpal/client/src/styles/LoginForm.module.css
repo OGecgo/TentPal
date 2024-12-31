@@ -19,7 +19,7 @@
     font-family: Monospace;
 }
 
-.centerContent .form .textBox {
+.centerContent .form input {
     font-size: calc(5px + 2vw);
     font-family: Monospace;
     height: calc(25px + 5vh);
