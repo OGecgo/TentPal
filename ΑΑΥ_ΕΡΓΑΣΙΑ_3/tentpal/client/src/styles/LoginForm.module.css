@@ -15,22 +15,22 @@
 }
 
 .centerContent .form label {
-    font-size: calc(20px + 2vh + 3vw);
+    font-size: calc(1vh + 2vw);
     font-family: Monospace;
 }
 
 .centerContent .form input {
-    font-size: calc(5px + 2vw);
+    font-size: calc(10px + 1vw);
     font-family: Monospace;
-    height: calc(25px + 5vh);
+    height: calc(5vh);
     margin-top: 20px;
     margin-bottom: 20px;
 }
 
 .centerContent .form button {
-    font-size: calc(10px + 1vw + 1vh);
-    height: calc(25px + 4vh);
-    width: calc(150px + 4vw);
+    font-size: calc( 1vw + 1vh);
+    height: calc(10px + 4vh);
+    width: calc(75px + 4vw);
     margin-top: 20px;
     margin-bottom: 20px;
     background-color: #7b7b7b;
