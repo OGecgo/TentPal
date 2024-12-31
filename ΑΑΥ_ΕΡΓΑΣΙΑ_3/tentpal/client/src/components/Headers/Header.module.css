@@ -19,6 +19,12 @@
     top: 2vh;
 }
 
+.Link{
+    text-align: center;
+    text-decoration: none;
+    padding: 1vh 0;
+    border: #000000;
+}
 
 .header .singUp {
     position: fixed;

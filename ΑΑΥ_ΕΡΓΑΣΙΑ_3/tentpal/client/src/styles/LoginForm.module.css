@@ -9,7 +9,15 @@
 }
 
 
-.center-content form {
-
+.centerContent .form {
+    background-color: rgb(16, 216, 252);
+    width: 50vw;
 }
 
+.centerContent .form .lable {
+    position: relative;
+    font-size: 20px;
+    font-weight: bold;
+    color: white;
+    left: 100px;
+}

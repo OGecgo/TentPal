@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 // components
 import HeaderNoLogined from "../components/Headers/HeaderNoLogined";
@@ -21,7 +22,7 @@ function Home() {
         <p></p>
       </div>
       <div className = "left">
-        <button onClick={{}} className = "bottombuttons" style={{top: "80%", fontSize: "calc(100% + 3vh)"}} >exit</button>
+        <Link  className = "linkButton" style={{top: "80%", fontSize: "calc(100% + 3vh)", position: "relative"}} >Exit</Link>
       </div>
       <HeaderNoLogined />
     </>

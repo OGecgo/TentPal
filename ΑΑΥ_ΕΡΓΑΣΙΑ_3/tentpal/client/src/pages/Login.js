@@ -1,3 +1,6 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
 import Header from "../components/Headers/HeaderLogined";
 import classes from "../styles/LoginForm.module.css";
 
@@ -7,20 +10,20 @@ function Login() {
     return (
     <>
       <div className = "left">
-        <button className = "bottombuttons" style={{top: "80%", fontSize: "calc(100% + 3vh)"}} >exit</button>
+        <Link  className = "linkButton" style={{top: "80%", fontSize: "calc(100% + 3vh)", position: "relative"}} >Exit</Link>
       </div>
 
       <div className = {classes.centerContent}>
-         <form>
-            <label for="uname"><b>Username</b></label>
-            <input type="text" placeholder="Enter Username" name="uname" required></input>
+        <form className = {classes.form}>
+          <label className = {`${classes.label}`} for="uname"><b>Username</b></label><br/>
+          <input type="text" placeholder="Enter Username" name="uname" required></input><br/>
 
-            <label for="psw"><b>Password</b></label>
-            <input type="password" placeholder="Enter Password" name="psw" required></input>
+          <label className = {`${classes.label}`}  for="psw"><b>Password</b></label><br/>
+          <input type="password" placeholder="Enter Password" name="psw" required></input><br/>
 
-            <button type="submit">Login</button>
-         </form>
-        </div>
+          <button type="submit">Login</button>
+        </form>
+      </div>
 
       <Header />  
       
