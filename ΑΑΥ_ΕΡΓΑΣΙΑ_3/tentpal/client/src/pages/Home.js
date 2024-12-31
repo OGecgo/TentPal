@@ -2,8 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // components
-import HeaderNoLogined from "../components/Headers/HeaderNoLogined";
-import HeaderLogined from "../components/Headers/HeaderLogined";
+import Header from "../components/Headers/Header";
 
 // css
 import classes from "../styles/Home.module.css"; // that styling used only on this page
@@ -24,7 +23,7 @@ function Home() {
       <div className = "left">
         <Link  className = "linkButton" style={{top: "80%", fontSize: "calc(100% + 3vh)", position: "relative"}} >Exit</Link>
       </div>
-      <HeaderNoLogined />
+      <Header />
     </>
 
     

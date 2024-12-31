@@ -1,23 +1,39 @@
 
 
 .centerContent {
-    position: fixed;
-    height: 100vh;
-    width: 100vw;
+    position: absolute;
+    height: calc(100vh - (40px + 5vh + 2vw) - 20px);
+    width: calc(100vw - 170px);
     left: 170px;
-    top: 200px;
+    top: calc(40px + 5vh + 2vw + 20px);
+
 }
 
 
 .centerContent .form {
-    background-color: rgb(16, 216, 252);
-    width: 50vw;
+    margin-left: calc(40vw - 170px);
 }
 
-.centerContent .form .lable {
-    position: relative;
-    font-size: 20px;
-    font-weight: bold;
-    color: white;
-    left: 100px;
+.centerContent .form label {
+    font-size: calc(20px + 2vh + 3vw);
+    font-family: Monospace;
+}
+
+.centerContent .form .textBox {
+    font-size: calc(5px + 2vw);
+    font-family: Monospace;
+    height: calc(25px + 5vh);
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.centerContent .form button {
+    font-size: calc(10px + 1vw + 1vh);
+    height: calc(25px + 4vh);
+    width: calc(150px + 4vw);
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: #7b7b7b;
+    color: #ffffff;
+    cursor: pointer;
 }
