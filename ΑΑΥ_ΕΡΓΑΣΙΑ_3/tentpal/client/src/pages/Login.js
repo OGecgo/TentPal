@@ -1,30 +1,28 @@
-import React from "react";
+import Header from "../components/Headers/HeaderLogined";
+import classes from "../styles/LoginForm.module.css";
 
-
-// css
-import "../styles/LeftBlock.css";
-
-function Login({navigate}) {
+function Login() {
 
 
     return (
     <>
       <div className = "left">
-        <button onClick={() => navigate("home")} className = "bottombuttons" style={{top: "80%", fontSize: "calc(100% + 3vh)"}} >exit</button>
+        <button className = "bottombuttons" style={{top: "80%", fontSize: "calc(100% + 3vh)"}} >exit</button>
       </div>
-      
-      <div className = "center">
-        <div>
-          <div className = "circle-acount">
-            <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" />
-          </div>
-        </div>
-        <div className = "center-content">
-         
 
+      <div className = {classes.centerContent}>
+         <form>
+            <label for="uname"><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" required></input>
+
+            <label for="psw"><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" required></input>
+
+            <button type="submit">Login</button>
+         </form>
         </div>
 
-      </div>
+      <Header />  
       
     </>
 

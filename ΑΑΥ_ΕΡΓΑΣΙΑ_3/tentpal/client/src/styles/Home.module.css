@@ -1,21 +1,14 @@
 
 
-.center {
-    position: relative;
-    left: 170px;
-    width: calc(100% - 170px);
-}
 
-.header{
+.centerContent {
     position: fixed;
-}
-
-.center-content {
-    position: relative;
+    height: 100vh;
+    width: 100vw;
     left: 70px;
 }
 
-.center-content h1 {
+.centerContent h1 {
     position: relative;
     font-size: calc(200% + 4vw + 4vh);
     color: #000000;
@@ -24,7 +17,7 @@
     
 }
 
-.center-content button {
+.centerContent button {
     position: relative;
     font-size: calc( 4vw + 4vh - 80%);
     padding: 2px calc(20px + 4vw + 4vh);
@@ -36,7 +29,7 @@
     left: calc(50% - (20px + 8vw + 8vh));
 }
 
-.center-content p {
+.centerContent p {
     position: relative;
     font-size : calc(50% + 1vw + 1vh);
     position: relative;
