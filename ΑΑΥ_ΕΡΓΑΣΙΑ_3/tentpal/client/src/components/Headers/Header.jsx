@@ -13,7 +13,7 @@ const HeaderNoLogined = () => {
         {!isLoggedIn && (
           <>
             <Link to="/login" className={`${classes.login} ${classes.Link}`}>Login</Link>
-            <Link to="/singup" className={`${classes.singUp} ${classes.Link}`}>Sign Up</Link>
+            <Link to="/singUp" className={`${classes.singUp} ${classes.Link}`}>Sign Up</Link>
           </>
         )}
         <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" />

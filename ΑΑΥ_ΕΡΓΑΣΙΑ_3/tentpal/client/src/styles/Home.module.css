@@ -17,15 +17,18 @@
     
 }
 
-.centerContent button {
+.Link {
+    text-align: center;
+    text-decoration: none;
+    padding: 1vh 0;
+}
+
+.centerContent .Link {
     position: relative;
     font-size: calc( 4vw + 4vh - 80%);
     padding: 2px calc(20px + 4vw + 4vh);
     color: #000000;
-    background-color: #ffffff;
-    border: 2px solid #000000;
-    border-radius: 10px;
-    cursor: pointer;
+    background-color: #949494;
     left: calc(50% - (20px + 8vw + 8vh));
 }
 

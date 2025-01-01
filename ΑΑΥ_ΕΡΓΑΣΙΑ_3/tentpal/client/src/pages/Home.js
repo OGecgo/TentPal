@@ -17,7 +17,7 @@ function Home() {
 
       <div className = {classes.centerContent}>
         <h1>TentPal</h1>
-        <button>Start</button>
+        <Link to = "/choosePosition" className = {classes.Link}>Start</Link>
         <p></p>
       </div>
       <div className = "left">
