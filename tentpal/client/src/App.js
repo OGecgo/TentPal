@@ -7,7 +7,7 @@ import Login from './pages/Login';
 import NotFound from './pages/NotFound';
 import SingUp from "./pages/SingUp";
 
-import ChoosePosition from "./pages/CreatTent/ChoosePosition";
+import ChoosePosition from "./pages/CreateTent/ChoosePosition";
 
 
 function App() {
