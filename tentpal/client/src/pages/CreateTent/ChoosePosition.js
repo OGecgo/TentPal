@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from "react";
+import React, { useRef, useState, useEffect} from "react";
 import { Link } from "react-router-dom";
 
 import Header from "../../components/Headers/Header";
@@ -35,7 +35,10 @@ function ChoosePosition() {
   const blockWidth = mapSizes.width / gridSize;
   const blockHeight = mapSizes.height / gridSize;
 
-  // Генерация сетки
+  const handleClick = (row, col) => {
+    console.log(`Block clicked at row: ${row}, col: ${col}`);
+  };
+  // generation of grid blocks
   const gridBlocks = Array.from({ length: gridSize }, (_, row) =>
     Array.from({ length: gridSize }, (_, col) => (
       <div
@@ -47,11 +50,14 @@ function ChoosePosition() {
           border: "1px solid rgba(0, 0, 0, 0.2)",
           left: `${col * blockWidth}px`,
           top: `${row * blockHeight}px`,
-          pointerEvents: "none", // Чтобы сетка не мешала кликам
+          pointerEvents: "auto", // enable click events
         }}
+        onClick={() => handleClick(row, col)}
       ></div>
     ))
   );
+
+
 
   return (
     <>
