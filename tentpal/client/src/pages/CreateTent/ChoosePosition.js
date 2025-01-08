@@ -20,13 +20,15 @@ function ChoosePosition() {
     )
   );
 
-
-
+  const [takePosition,  changePosition] = useState({ row: -1, col: -1 });
   const changeColor = (row, col, color) => {
+    changePosition({row, col});
+    console.log(takePosition);
+    console.log(row, col);
     setGridBlocksColor((prevGrid) =>
       prevGrid.map((gridRow, rIndex) =>
         gridRow.map((block, cIndex) => {
-          if (rIndex === row && cIndex === col) {
+          if (rIndex === row && cIndex === col && block.color !== "rgba(225, 22, 22, 0.5)") {
             return { ...block, color: `${color}` };
           }
           return block;
@@ -37,6 +39,8 @@ function ChoosePosition() {
 
   const handleClick = (row, col) => {
     console.log(`Block clicked at row: ${row}, col: ${col}`);
+
+    changeColor(takePosition.row, takePosition.col, "rgba(0, 0, 0, 0)");
     changeColor(row, col, "rgba(22, 225, 63, 0.5)");
 
   };
