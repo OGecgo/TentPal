@@ -21,7 +21,7 @@ function Home() {
         <p></p>
       </div>
       <div className = "left">
-        <Link  className = "linkButton" style={{top: "80%", fontSize: "calc(100% + 3vh)", position: "relative"}} >Exit</Link>
+        <Link to = "/Home"  className = "linkButton" style={{top: "80%", fontSize: "calc(100% + 3vh)", position: "relative"}} >Exit</Link>
       </div>
       <Header />
     </>
