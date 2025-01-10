@@ -2,16 +2,17 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import Header from "../components/Headers/Header";
+import LeftPanel from "../components/LeftPanel/LeftPanel";
+
 import classes from "../styles/LoginForm.module.css";
+
 
 function Login() {
 
 
     return (
     <>
-      <div className = "left">
-        <Link to = "/"  className = "linkButton" style={{top: "80%", fontSize: "calc(100% + 3vh)", position: "relative"}} >Exit</Link>
-      </div>
+      <LeftPanel />
 
       <div className = {classes.centerContent}>
         <form className = {classes.form}>
@@ -25,7 +26,7 @@ function Login() {
         </form>
       </div>
 
-      <Header />  
+      <Header login = "false"/>  
       
     </>
 

@@ -3,7 +3,7 @@
     position: fixed;
     width: calc(100% - 152px);
     height: calc(40px + 5vh + 2vw);
-    background-color: #9f90de;
+    background-color: #bbbaca;
     top: 0px;
     left: 152px;
 }
@@ -11,12 +11,12 @@
 
 .header img{
     position: fixed;
-    width: calc(40px + 2vh + 2vw);
-    height: calc(40px + 2vh + 2vw);;
-    border-radius: 50%;
+    width: calc(40px + 5vh + 2vw - 20px);
+    height: calc(40px + 5vh + 2vw - 20px);
+    border-radius: 100%;
     background-color: #000000;
-    left: calc(98vw - (40px + 2vh + 2vw));
-    top: 2vh;
+    left: calc(98vw - (40px + 2vh + 2vw - 10px));
+    top: 10px;
 }
 
 .Link{
@@ -43,4 +43,23 @@
     background-color: #fdfdfd;
     left: calc(100vw - (10vw + 10px) * 2 - (40px + 2vh + 2vw) - 3vw);
     top: 20px;
+}
+
+.header .textBox{
+    background-color: #8a8b9d;
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100vw - 152px - (4vw + 40px + 2vh + 2vw));;
+    height: calc(40px + 5vh + 2vw - 20px);
+    border-radius: 20px;
+}
+
+.header .textBox p{
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #2a2a2a;
+    font-size: calc(1vh + 1vw);
 }

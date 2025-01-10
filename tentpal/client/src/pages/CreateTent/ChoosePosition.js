@@ -1,7 +1,8 @@
 import React, { useRef, useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 
 import Header from "../../components/Headers/Header";
+import LeftPanel from "../../components/LeftPanel/LeftPanel";
+
 import classes from "../../styles/CreateTent/ChoosePosition.module.css";
 
 function ChoosePosition() {
@@ -77,6 +78,7 @@ function ChoosePosition() {
       <div
         key={`${row}-${col}`}
         style={{
+          cursor: "pointer",
           backgroundColor: `${gridBlocksColor[row][col].color}`,
           position: "absolute",
           width: `${blockWidth}px`,
@@ -114,9 +116,7 @@ function ChoosePosition() {
       </div>
 
       {/* left panel and header */}
-      <div className="left">
-        <Link to = "/Home" className="linkButton" style={{ top: "80%", fontSize: "calc(100% + 3vh)", position: "relative", }}> Exit </Link>
-      </div>
+      <LeftPanel />
       <Header />
     </>
   );
