@@ -5,7 +5,18 @@ import { Link } from "react-router-dom";
 // css
 import classes from "./Header.module.css";
 
-const HeaderNoLogined = ({login}) => {
+function Header ({login}) {
+
+  const showMessege = (colorBlock) => {
+    switch (colorBlock) {
+      case "red":
+        return <p>Red block is not availble places to make your tent</p>;
+      case "green":
+        return <p>Green block is availble places to make your tent</p>;
+      default:
+        return <p></p>;
+    }
+  }
 
   return (
     <>
@@ -18,7 +29,7 @@ const HeaderNoLogined = ({login}) => {
         ) : (
           <>
             <div className = {classes.textBox}>
-              <p>Red block is not availble places to make your tent</p>
+              {showMessege("green")}
             </div>
           </>
         )}
@@ -28,4 +39,4 @@ const HeaderNoLogined = ({login}) => {
   );
 }
 
-export default HeaderNoLogined;
+export default Header;
