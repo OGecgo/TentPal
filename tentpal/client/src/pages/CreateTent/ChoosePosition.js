@@ -116,7 +116,7 @@ function ChoosePosition() {
       </div>
 
       {/* left panel and header */}
-      <LeftPanel />
+      <LeftPanel page = "1" />
       <Header />
     </>
   );
