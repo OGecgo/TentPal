@@ -12,16 +12,20 @@ function LeftPanel({page}) {
 
                 return (
                     <>
-                        <div className = {classes.linkButton}>
-                            <div className = {classes.upbuttons}>1. Take a position</div>
-                            <div className = {classes.upbuttons}>2. Set the stakes</div>
-                            <div className = {classes.upbuttons}>3. Take a tent</div>
-                            <div className = {classes.upbuttons}>4. Light</div>
+                        <div className = {classes.blocks}>
+                            <div className = {classes.upbuttons}>
+                                <div className = {`${classes.text}`}>1. Take a position</div>
+                                <div className = {`${classes.text}`}>2. Set the stakes</div>
+                                <div className = {`${classes.text}`}>3. Take a tent</div>
+                                <div className = {`${classes.text}`}>4. Light</div>
+                            </div>
 
-                            <Link to="#" className = {classes.midlebuttons}>Previous</Link>
-                            <Link to="#" className = {classes.midlebuttons}>Next</Link>
+                            <div className = {classes.midlebuttons}>
+                                <Link to="#" className = {`${classes.text}`}>Previous</Link>
+                                <Link to="#" className = {`${classes.text}`}>Next</Link>
+                            </div>
 
-                            <Link to="/Home" className = {classes.bottombuttons}>Exit</Link>
+                            <Link to="/Home" className = {`${classes.bottombuttons} ${classes.text}`}>Exit</Link>
                         </div>
 
                     </>
@@ -29,12 +33,13 @@ function LeftPanel({page}) {
 
             default:
                 return (
-                    <Link to = "/Home"  className = {`${classes.linkButton}`} 
+                    <Link to = "/Home"  className = {`${classes.blocks}`} 
                     style = {{
                         top: "calc(80% - 10px - (40px + 5vh + 2vw))", 
                         fontSize: "calc(100% + 3vh)", 
                         position: "relative", 
-                        backgroundColor:" #9c7670"
+                        backgroundColor:" #9c7670",
+                        textDecoration: "none",
                     }}>
                     Exit
                     </Link>

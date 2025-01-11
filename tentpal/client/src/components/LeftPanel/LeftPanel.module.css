@@ -20,7 +20,7 @@
     margin-top: 10px;
 }
 
-.linkButton {
+.blocks {
     position: fixed;
     width: 152px;
     height: 10vh;
@@ -28,32 +28,36 @@
     text-align: center;
     font-size: calc(3vh);
     line-height: 10vh; 
-    text-decoration: none; 
     top: calc(40px + 5vh + 2vw);
+    
 }
 
 @media (min-height: 650px) {
-    .linkButton {
+    .blocks {
         font-size: calc(2vh);
     }
     
 }
 
-
+.text{
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: #2a2a2a;
+}
 
 .upbuttons {
     background-color: #8a8b9d;
-    position: relative;
 }
 
 .midlebuttons {
-    position: relative;
+    background-color: #8a8b9d;
+    margin-top: calc(5vh - 7%);
 }
 
 .bottombuttons{
-    position: relative;
-    top: 20vh;
-
+    background-color: #b67272;
+    margin-top: calc(5vh - 7%);
 }
 
 .center {
