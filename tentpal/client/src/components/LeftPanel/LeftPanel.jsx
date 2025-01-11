@@ -33,16 +33,12 @@ function LeftPanel({page}) {
 
             default:
                 return (
-                    <Link to = "/Home"  className = {`${classes.blocks}`} 
-                    style = {{
-                        top: "calc(80% - 10px - (40px + 5vh + 2vw))", 
-                        fontSize: "calc(100% + 3vh)", 
-                        position: "relative", 
-                        backgroundColor:" #9c7670",
-                        textDecoration: "none",
-                    }}>
-                    Exit
-                    </Link>
+                    <div className = {classes.blocks}>
+                        <Link to = "/Home"  className = {`${classes.bottombuttons} ${classes.text}`} 
+                        style = {{marginTop: "calc(5 * 13vh + 5vh - 14%)"}}>
+                        Exit
+                        </Link>
+                    </div>
                 );
         }
 
