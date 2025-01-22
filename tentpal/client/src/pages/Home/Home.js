@@ -21,7 +21,7 @@ function Home() {
         <p></p>
       </div>
       <LeftPanel />
-      <Header login = "false" />
+      <Header panel = "login" />
     </>
 
     

@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 import Header from "../../components/Header/Header";
 import LeftPanel from "../../components/LeftPanel/LeftPanel";
@@ -26,7 +25,7 @@ function Login() {
         </form>
       </div>
 
-      <Header />  
+      <Header panel = "login" />  
       
     </>
 

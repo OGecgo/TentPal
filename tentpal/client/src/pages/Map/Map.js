@@ -45,7 +45,7 @@ function Map() {
 
   };
 
-  const [colormessege, setColormessege] = useState("green");
+  const [colormessage, setColormessege] = useState("green");
 
 
   useEffect(() => {
@@ -120,7 +120,7 @@ function Map() {
 
       {/* left panel and header */}
       <LeftPanel page = "1" />
-      <Header colormessege = {colormessege} setColormessege = {setColormessege} />
+      <Header panel={"messageBox"} colormessage = {colormessage} setColormessege = {setColormessege} />
     </>
   );
 }

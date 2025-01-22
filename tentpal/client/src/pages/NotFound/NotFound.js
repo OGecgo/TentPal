@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
 // components
 import Header from "../../components/Header/Header";
@@ -17,7 +16,7 @@ function Home() {
       <LeftPanel />
       <Header />
       <div className="centerContent">
-        <h1>ERROR 404</h1>
+        <h1>ERROR  404</h1>
       </div>
     </>
 
