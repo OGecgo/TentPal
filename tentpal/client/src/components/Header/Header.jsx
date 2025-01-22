@@ -1,21 +1,19 @@
-import React, {useState} from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 
+import MessageBox from "../MessageBox/MessageBox";
 
 // css
 import classes from "./Header.module.css";
 
-function Header ({login}) {
 
-  const showMessege = (colorBlock) => {
-    switch (colorBlock) {
-      case "red":
-        return <p>Red block is not availble places to make your tent</p>;
-      case "green":
-        return <p>Green block is availble places to make your tent</p>;
-      default:
-        return <p></p>;
-    }
+function Header ({login, colormessage, setColormessage}) {
+
+  console.log(colormessage);
+
+  
+  const chooseColor = (color) => {
+    setColormessage(color);
   }
 
   return (
@@ -27,11 +25,7 @@ function Header ({login}) {
             <Link to="/singUp" className={`${classes.singUp} ${classes.Link}`}>Sign Up</Link>
           </>
         ) : (
-          <>
-            <div className = {classes.textBox}>
-              {showMessege("green")}
-            </div>
-          </>
+          <MessageBox colormessege = {colormessage} />
         )}
         <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" />
       </div>

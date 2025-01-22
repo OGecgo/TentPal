@@ -1,10 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
-import Header from "../components/Headers/Header";
-import LeftPanel from "../components/LeftPanel/LeftPanel";
+import Header from "../../components/Header/Header";
+import LeftPanel from "../../components/LeftPanel/LeftPanel";
 
-import classes from "../styles/LoginForm.module.css";
+import classes from "./LoginForm.module.css";
 
 function SingUp() {
 
@@ -26,7 +26,7 @@ function SingUp() {
         </form>
       </div>
 
-      <Header login = "false"/>  
+      <Header />  
       
     </>
 

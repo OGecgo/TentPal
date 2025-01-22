@@ -2,12 +2,12 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import './App.css';
 // oi selides mou
-import Home from './pages/Home';
-import Login from './pages/Login';
-import NotFound from './pages/NotFound';
-import SingUp from "./pages/SingUp";
+import Home from './pages/Home/Home';
+import Login from './pages/LoginForm/Login';
+import NotFound from './pages/NotFound/NotFound';
+import SingUp from "./pages/LoginForm/SingUp";
 
-import ChoosePosition from "./pages/CreateTent/ChoosePosition";
+import Map from "./pages/Map/Map";
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         <Route path="/singUp" element={<SingUp />} />
         <Route path="*" element={<NotFound />} />
 
-        <Route path="/choosePosition" element={<ChoosePosition />} />
+        <Route path="/map" element={<Map />} />
       </Routes>
     </BrowserRouter>
   );

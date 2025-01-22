@@ -5,11 +5,9 @@ import { Link } from "react-router-dom";
 import classes from "./LeftPanel.module.css";
 
 function LeftPanel({page}) {
-
     const renderPage = () => {
         switch (page) {
             case "1":
-
                 return (
                     <>
                         <div className = {classes.blocks}>

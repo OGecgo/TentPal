@@ -1,11 +1,13 @@
 import React, { useRef, useState, useEffect } from "react";
 
-import Header from "../../components/Headers/Header";
+import Header from "../../components/Header/Header";
 import LeftPanel from "../../components/LeftPanel/LeftPanel";
 
-import classes from "../../styles/CreateTent/ChoosePosition.module.css";
+import classes from "./Map.module.css";
 
-function ChoosePosition() {
+
+function Map() {
+
   const imgRef = useRef(null);
   const gridSize = 10;
   const [mapSizes, setMapSizes] = useState({ width: 0, height: 0 });
@@ -24,8 +26,7 @@ function ChoosePosition() {
   const [takePosition,  changePosition] = useState({ row: -1, col: -1 });
   const changeColor = (row, col, color) => {
     changePosition({row, col});
-    console.log(takePosition);
-    console.log(row, col);
+
     setGridBlocksColor((prevGrid) =>
       prevGrid.map((gridRow, rIndex) =>
         gridRow.map((block, cIndex) => {
@@ -39,12 +40,12 @@ function ChoosePosition() {
   }
 
   const handleClick = (row, col) => {
-    console.log(`Block clicked at row: ${row}, col: ${col}`);
-
     changeColor(takePosition.row, takePosition.col, "rgba(0, 0, 0, 0)");
     changeColor(row, col, "rgba(22, 225, 63, 0.5)");
 
   };
+
+  const [colormessege, setColormessege] = useState("green");
 
 
   useEffect(() => {
@@ -57,6 +58,7 @@ function ChoosePosition() {
       }
     };
 
+    //set block rede
     changeColor(0, 0, "rgba(225, 22, 22, 0.5)");
     changeColor(1, 8, "rgba(225, 22, 22, 0.5)");
     changeColor(3, 4, "rgba(225, 22, 22, 0.5)");
@@ -73,6 +75,7 @@ function ChoosePosition() {
     };
   }, []);
 
+  //make array of grid blocks
   const gridBlocks = Array.from({ length: gridSize }, (_, row) =>
     Array.from({ length: gridSize }, (_, col) => (
       <div
@@ -117,9 +120,9 @@ function ChoosePosition() {
 
       {/* left panel and header */}
       <LeftPanel page = "1" />
-      <Header />
+      <Header colormessege = {colormessege} setColormessege = {setColormessege} />
     </>
   );
 }
 
-export default ChoosePosition;
+export default Map;
