@@ -1,0 +1,13 @@
+.image {
+    position: absolute;
+    display: block;
+    height: auto;
+    width: calc(100vh * 2);
+    min-width: 100%;
+}
+  
+.sizeGrid {
+    position: "absolute";
+    top: 0px;
+    left: 0;
+}

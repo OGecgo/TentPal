@@ -2,7 +2,7 @@ import React from "react";
 
 import classes from "./MessageBox.module.css";
 
-function MessageBox ({colormessege}) {
+function MessageBox ({message}) {
 
   const showMessage = (colorBlock) => {
     switch (colorBlock) {
@@ -11,14 +11,14 @@ function MessageBox ({colormessege}) {
       case "green":
         return <p>Green block is availble places to make your tent</p>;
       default:
-        return <p></p>;
+        return <p>You can choose position for your tent</p>;
     }
   }
 
   return (
     <>
       <div className = {classes.textBox}>
-        {showMessage(colormessege)}
+        {showMessage(message)}
       </div>
     </>
   );

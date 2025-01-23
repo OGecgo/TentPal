@@ -7,7 +7,7 @@ import MessageBox from "../MessageBox/MessageBox";
 import classes from "./Header.module.css";
 
 
-function Header ({panel, colormessage, setColormessage}) {
+function Header ({panel, message}) {
 
   const renderPage = (panel) => {
     switch(panel) {
@@ -20,7 +20,7 @@ function Header ({panel, colormessage, setColormessage}) {
         );
       case "messageBox":
         return (
-          <MessageBox colormessege = {colormessage} />
+          <MessageBox message = {message} />
         );
       default:
         return;

@@ -7,7 +7,7 @@ import Login from './pages/LoginForm/Login';
 import NotFound from './pages/NotFound/NotFound';
 import SingUp from "./pages/LoginForm/SingUp";
 
-import Map from "./pages/Map/Map";
+import SelectLocation from "./pages/SelectLocation/SelectLocation";
 
 
 function App() {
@@ -21,7 +21,7 @@ function App() {
         <Route path="/singUp" element={<SingUp />} />
         <Route path="*" element={<NotFound />} />
 
-        <Route path="/map" element={<Map />} />
+        <Route path="/selectLocation" element={<SelectLocation />} />
       </Routes>
     </BrowserRouter>
   );
