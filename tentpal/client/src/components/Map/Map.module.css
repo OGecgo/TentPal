@@ -1,13 +1,14 @@
+
+.block  {
+    border: 1px solid rgba(0, 0, 0, 1);
+    background-color: rgba(0, 0, 0, 0);
+}
+
+
 .image {
     position: absolute;
-    display: block;
-    height: auto;
-    width: calc(100vh * 2);
+    height: 100vh;
+    width: auto;
     min-width: 100%;
-}
-  
-.sizeGrid {
-    position: "absolute";
-    top: 0px;
-    left: 0;
+    min-height: calc(100vw / 2.18);
 }

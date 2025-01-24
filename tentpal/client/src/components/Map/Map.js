@@ -2,69 +2,68 @@
 
 
 
-import React, {useState, useEffect, useMemo} from "react";
+import React, {useRef, useState, useEffect, useMemo} from "react";
 
 import classes from "./Map.module.css";
 
-const gridSize = 10;
+const gridPlethera = 10 ;
 
 function Map() {
+    const refImg = useRef(null);
 
-    const [mapSizes, setMapSize] = useState({ width: 0, height: 0 });
+    const [gridSizes, setGridSize] = useState({ width: "0", height: "0" });
 
-    const blockWidth = mapSizes.width > 0
-        ? mapSizes.width / gridSize
-        : 0;
-    const blockHeight = mapSizes.height > 0 
-        ? mapSizes.height / gridSize
-        : 0;
-
-    const changeColor = (row, col, color) => {
-        setBackgroundColor(color);
-    }
+    const updateGridSize = () => {
+        if (!refImg.current) return;
+        setGridSize({
+            width: refImg.current.offsetWidth / gridPlethera,
+            height: refImg.current.offsetHeight / gridPlethera
+        });
+    };
 
     useEffect(() => {
+        updateGridSize();
+        window.addEventListener("resize", updateGridSize);
 
-            //set block rede
-            // changeColor(0, 0, "rgba(225, 22, 22, 0.5)");
-            // changeColor(1, 8, "rgba(225, 22, 22, 0.5)");
-            // changeColor(3, 4, "rgba(225, 22, 22, 0.5)");
-            // changeColor(6, 0, "rgba(225, 22, 22, 0.5)");
-            // changeColor(7, 0, "rgba(225, 22, 22, 0.5)");
-            // changeColor(8, 0, "rgba(225, 22, 22, 0.5)");
-            // changeColor(9, 0, "rgba(225, 22, 22, 0.5)");
-            // changeColor(9, 2, "rgba(225, 22, 22, 0.5)");
-        }
-    , []);
+        //set block rede
+        // changeColor(0, 0, "rgba(225, 22, 22, 0.5)");
+        // changeColor(1, 8, "rgba(225, 22, 22, 0.5)");
+        // changeColor(3, 4, "rgba(225, 22, 22, 0.5)");
+        // changeColor(6, 0, "rgba(225, 22, 22, 0.5)");
+        // changeColor(7, 0, "rgba(225, 22, 22, 0.5)");
+        // changeColor(8, 0, "rgba(225, 22, 22, 0.5)");
+        // changeColor(9, 0, "rgba(225, 22, 22, 0.5)");
+        // changeColor(9, 2, "rgba(225, 22, 22, 0.5)");   
+        }, []);
 
-    const [backgroundColor, setBackgroundColor] = useState("rgba(0, 0, 0, 0)");
 
-    const [takePosition, changePosition] = useState({ row: -1, col: -1 });
+
 
     const handleClick = (row, col) => {
-        changeColor(takePosition.row, takePosition.col, "rgba(0, 0, 0, 0)");
-        changeColor(row, col, "rgba(22, 225, 63, 0.5)");
+        //changeColor(takePosition.row, takePosition.col, "rgba(0, 0, 0, 0)");
+        // changeColor(row, col, "rgba(22, 225, 63, 0.5)");
     }
 
     const gridBlocks = useMemo(() => {
         let blocks = [];
-        for (let row = 0; row < gridSize; row++){
-            for (let col = 0; col < gridSize; col++){
+        for (let row = 0; row < gridPlethera; row++){
+            for (let col = 0; col < gridPlethera; col++){
+                console.log(row, col);
                 blocks.push(
                     <div
-                        key = {`${row}-${col}`}
+                        key = {`${row} ${col}`}
+                        className = {`${classes.block}`}
                         style = 
                         {
                             {
                             cursor: "pointer",
-                            backgroundColor: `${backgroundColor}`,
-                            position: "absolute",
-                            width: `${blockWidth}px`,
-                            height: `${blockHeight}px`,
-                            border: "1px solid rgba(0, 0, 0, 0.2)",
-                            left: `${col * blockWidth}px`,
-                            top: `${row * blockHeight}px`,
                             pointerEvents: "auto",
+                            position: "absolute",
+
+                            width: `${gridSizes.width}px`,
+                            height: `${gridSizes.height}px`,
+                            marginLeft: `${col * gridSizes.width}px`,
+                            marginTop: `${row * gridSizes.height}px`,
                             }
                         }
                         onClick = {() => handleClick(row, col)}
@@ -73,31 +72,16 @@ function Map() {
             }
         }
         return blocks;
-    }, [handleClick, blockWidth, blockHeight, backgroundColor]);
+    }, [handleClick]);
 
+    
 
 
 
     return (
         <>
-            <img
-            src={require("../../assets/CampingMap.webp")}
-            alt="Map"
-            className={classes.image}
-            style={{ width: `${mapSizes.width}px`, height: `${mapSizes.height}px` }}
-            />
-            <div
-            style =
-            {
-                {
-                position: "absolute",
-                top: 0,
-                left: 0,
-                width: `${mapSizes.width}px`,
-                height: `${mapSizes.height}px`,
-            }
-            }
-            > {gridBlocks} </div>
+            <img onLoad = {updateGridSize} ref = {refImg}  src={require("../../assets/CampingMap.webp")} alt="Map" className={`${classes.image}`} />
+            {gridBlocks}
         </>
     );
 }
