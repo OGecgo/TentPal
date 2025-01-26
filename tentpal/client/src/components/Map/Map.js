@@ -6,7 +6,7 @@ import React, {useRef, useState, useEffect, useMemo} from "react";
 
 import classes from "./Map.module.css";
 
-const gridPlethera = 10 ;
+const gridPlethera = 16 ; // only for /2
 
 function Map() {
     const refImg = useRef(null);
@@ -22,33 +22,48 @@ function Map() {
     };
 
     useEffect(() => {
-        updateGridSize();
         window.addEventListener("resize", updateGridSize);
 
+        //make array without colors
+        let array = [];
+        for (let row = 0; row < gridPlethera / 2; row++){
+            for (let col = 0; col < gridPlethera; col++){
+                array.push("rgba(0, 0, 0, 0)");
+            }
+        }
+        setArrayColors(array);
+
         //set block rede
-        // changeColor(0, 0, "rgba(225, 22, 22, 0.5)");
-        // changeColor(1, 8, "rgba(225, 22, 22, 0.5)");
-        // changeColor(3, 4, "rgba(225, 22, 22, 0.5)");
-        // changeColor(6, 0, "rgba(225, 22, 22, 0.5)");
-        // changeColor(7, 0, "rgba(225, 22, 22, 0.5)");
-        // changeColor(8, 0, "rgba(225, 22, 22, 0.5)");
-        // changeColor(9, 0, "rgba(225, 22, 22, 0.5)");
-        // changeColor(9, 2, "rgba(225, 22, 22, 0.5)");   
-        }, []);
+        changeColor(0, 0, "rgba(173, 56, 56, 0.62)");
+        changeColor(0, 1, "rgba(173, 56, 56, 0.62)");
+        changeColor(5, 6, "rgba(184, 142, 35, 0.52)");
+    }, []);
 
 
+    const [arrayColors, setArrayColors] = useState([]);
 
+    const changeColor = (row, col, color) => {
+        let pos = (row * gridPlethera) + col;
+
+        //setArrayColors giv to parametrs without changing the colorArray and whatever i want without changing from asichronus
+        setArrayColors((oldArray) => {
+            let newArray = [...oldArray]; //easy and clean copy array
+            newArray[pos] = color;
+            return newArray;
+        });
+    }
+
+    const [selectedPosition, setSelectedPosition] = useState({ row: -1, col: -1 });
 
     const handleClick = (row, col) => {
-        //changeColor(takePosition.row, takePosition.col, "rgba(0, 0, 0, 0)");
-        // changeColor(row, col, "rgba(22, 225, 63, 0.5)");
+        setSelectedPosition({ row, col });
     }
 
     const gridBlocks = useMemo(() => {
         let blocks = [];
-        for (let row = 0; row < gridPlethera; row++){
+        for (let row = 0; row < gridPlethera / 2; row++){
             for (let col = 0; col < gridPlethera; col++){
-                console.log(row, col);
+                let color = arrayColors[(row * gridPlethera) + col];
                 blocks.push(
                     <div
                         key = {`${row} ${col}`}
@@ -60,10 +75,16 @@ function Map() {
                             pointerEvents: "auto",
                             position: "absolute",
 
+                            backgroundColor: `${ 
+                                (selectedPosition.row === row && selectedPosition.col === col) 
+                                && (color !== 'rgba(173, 56, 56, 0.62)', color !== 'rgba(184, 142, 35, 0.52)')
+                                ? 'rgba(82, 194, 84, 0.52)' 
+                                :  color}`,
+
                             width: `${gridSizes.width}px`,
-                            height: `${gridSizes.height}px`,
+                            height: `${gridSizes.height * 2}px`,
                             marginLeft: `${col * gridSizes.width}px`,
-                            marginTop: `${row * gridSizes.height}px`,
+                            marginTop: `${row * gridSizes.height * 2}px`,
                             }
                         }
                         onClick = {() => handleClick(row, col)}
@@ -72,7 +93,7 @@ function Map() {
             }
         }
         return blocks;
-    }, [handleClick]);
+    }, [gridSizes, selectedPosition, arrayColors]);
 
     
 

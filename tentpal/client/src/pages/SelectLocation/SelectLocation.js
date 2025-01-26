@@ -21,7 +21,7 @@ function SelectLocation() {
       </div>
 
       <LeftPanel page = "1" />
-      <Header panel={"messageBox"} />
+      <Header panel={"messageBox"} message={"Hello world"} />
     </>
   );
 }
