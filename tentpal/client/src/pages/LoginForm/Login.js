@@ -11,7 +11,7 @@ function Login() {
 
     return (
     <>
-      <LeftPanel />
+      <LeftPanel page = {"exit"} linkNext={{link: "#", bool: false}} linkPrev={{link: "#", bool: false}} />
 
       <div className = {classes.centerContent}>
         <form className = {classes.form}>

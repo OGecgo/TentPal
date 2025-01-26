@@ -34,27 +34,27 @@ function LeftPanel({page, levelMakeTent, linkNext, linkPrev}) {
         switch (page) {
             case "makeTent":
                 return (
-                    <>
-                        <div className = {classes.blocks}>
-
-                            {createTent(levelMakeTent)}
-                            {links()}
-
-                            <Link to="/Home" className = {`${classes.bottombuttons} ${classes.text}`}>Exit</Link>
-                        </div>
-
-                    </>
+                    
+                    <div className = {classes.blocks}>
+                        {createTent(levelMakeTent)}
+                        {links()}
+                        <Link to="/Home" className = {`${classes.bottombuttons} ${classes.text}`}>Exit</Link>
+                    </div>
+                
                 );
 
-            default:
+            case "exit":
                 return (
                     <div className = {classes.blocks}>
+                        {links()}
                         <Link to = "/Home"  className = {`${classes.bottombuttons} ${classes.text}`} 
                         style = {{marginTop: "calc(5 * 13vh + 5vh - 14%)"}}>
                         Exit
                         </Link>
                     </div>
                 );
+            default:
+                return null;
         }
 
     }
