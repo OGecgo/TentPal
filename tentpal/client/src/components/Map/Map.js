@@ -8,7 +8,7 @@ import classes from "./Map.module.css";
 
 const gridPlethera = 16 ; // only for /2
 
-function Map() {
+function Map({colorChanged}) {
     const refImg = useRef(null);
 
     const [gridSizes, setGridSize] = useState({ width: "0", height: "0" });
@@ -57,6 +57,11 @@ function Map() {
 
     const handleClick = (row, col) => {
         setSelectedPosition({ row, col });
+
+        //change color from SelectLocation
+        let color = arrayColors[(row * gridPlethera) + col];
+        if (color !== 'rgba(173, 56, 56, 0.62)' && color !== 'rgba(184, 142, 35, 0.52)') color = 'rgba(82, 194, 84, 0.52)'; 
+        colorChanged(color);
     }
 
     const gridBlocks = useMemo(() => {
@@ -77,7 +82,7 @@ function Map() {
 
                             backgroundColor: `${ 
                                 (selectedPosition.row === row && selectedPosition.col === col) 
-                                && (color !== 'rgba(173, 56, 56, 0.62)', color !== 'rgba(184, 142, 35, 0.52)')
+                                && (color !== 'rgba(173, 56, 56, 0.62)' && color !== 'rgba(184, 142, 35, 0.52)')
                                 ? 'rgba(82, 194, 84, 0.52)' 
                                 :  color}`,
 
