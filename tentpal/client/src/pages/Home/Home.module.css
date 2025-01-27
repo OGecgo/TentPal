@@ -1,15 +1,6 @@
 
 
-
-.centerContent {
-    position: absolute;
-    height: calc(100vh - (40px + 5vh + 2vw));
-    width: calc(100vw - 150px);
-    margin-left: 150px;
-    margin-top: calc(40px + 5vh + 2vw);
-}
-
-.centerContent h1 {
+.centerContentHome h1 {
     position: relative;
     font-size: calc(200% + 4vw + 4vh);
     color: #000000;
@@ -24,7 +15,7 @@
     padding: 1vh 0;
 }
 
-.centerContent .Link {
+.centerContentHome .Link {
     position: relative;
     font-size: calc( 4vw + 4vh - 80%);
     padding: 2px calc(20px + 4vw + 4vh);
@@ -33,7 +24,7 @@
     left: calc(50% - (20px + 8vw + 8vh));
 }
 
-.centerContent p {
+.centerContentHome p {
     position: relative;
     font-size : calc(50% + 1vw + 1vh);
     position: relative;
