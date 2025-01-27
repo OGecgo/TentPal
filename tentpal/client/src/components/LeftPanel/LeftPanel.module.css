@@ -71,13 +71,12 @@
 
 
 .nextButton {
-    background-color: rgb(138, 139, 157);
     position: fixed;
     width: 152px;
     margin-top: calc(44vh);
 }
 .prevButton {
-    background-color: rgb(138, 139, 157);
+    background-color: rgb(120, 122, 179);
     position: fixed;
     width: 152px;
     margin-top: calc(56vh);

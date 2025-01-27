@@ -8,17 +8,12 @@ function LeftPanel({page, levelMakeTent, linkNext, linkPrev}) {
     const links = () => {
         return (
             <>
+                {linkNext.bool && (<Link to = {!linkNext.lock ? linkNext.link : "#"} style={{ background: !linkNext.lock ? 'rgb(120, 122, 179)' : 'rgb(169, 169, 193)' }} className = {`${classes.text} ${classes.nextButton}`}>Next</Link>)}
                 {linkPrev.bool && (<Link to = {linkPrev.link} className = {`${classes.text} ${classes.prevButton}`}>Previous</Link>)}
-                {linkNext.bool && (<Link to = {linkNext.link} className = {`${classes.text} ${classes.nextButton}`}>Next</Link>)}
             </>
 
         );
 
-    }
-
-    const styling = () => {
-        return ( "position: fixed; width: 152px; margin-top: calc(40px + 5vh + 2vw);"
-        );
     }
 
     const createTent = (lvl) => {
@@ -50,8 +45,7 @@ function LeftPanel({page, levelMakeTent, linkNext, linkPrev}) {
                 return (
                     <div className = {classes.blocks}>
                         {links()}
-                        <Link to = "/Home"  className = {`${classes.exitButton} ${classes.text}`} 
-                        style = {{marginTop: "calc(5 * 13vh + 5vh - 14%)"}}>
+                        <Link to = "/Home"  className = {`${classes.exitButton} ${classes.text}`}>
                         Exit
                         </Link>
                     </div>
