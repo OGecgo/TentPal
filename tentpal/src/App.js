@@ -5,7 +5,6 @@ import './App.css';
 import Home from './pages/Home/Home';
 import Login from './pages/LoginForm/Login';
 import NotFound from './pages/NotFound/NotFound';
-import SingUp from "./pages/LoginForm/SingUp";
 
 import SelectLocation from "./pages/SelectLocation/SelectLocation";
 
@@ -18,7 +17,6 @@ function App() {
         <Route index element={<Home />} />
         <Route path="/home" element={<Home />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/singUp" element={<SingUp />} />
         <Route path="*" element={<NotFound />} />
 
         <Route path="/selectLocation" element={<SelectLocation />} />

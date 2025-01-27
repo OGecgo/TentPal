@@ -4,8 +4,6 @@
 h1 {
     position: relative;
     font-size: calc(200% + 4vw + 4vh);
-    color: #000000;
     text-align: center;
-    margin-top: calc(40px + 15vh + 2vw);
      
 }

@@ -15,7 +15,7 @@ function Home() {
     <>
       <LeftPanel page = {"exit"} linkNext={{link: "#", bool: false}} linkPrev={{link: "#", bool: false}} />
       <Header />
-      <div className = {classes.centerContent}>
+      <div className = "centerContent">
         <h1>ERROR  404</h1>
       </div>
     </>

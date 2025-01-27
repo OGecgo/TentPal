@@ -14,7 +14,7 @@ function Header ({panel, message}) {
       case "login":
         return (
           <>
-            <Link to="/login" className={`${classes.login} ${classes.Link}`}>Login</Link>
+            <Link  to="/login" className={`${classes.login} ${classes.Link}`}>Login</Link>
             <Link to="/singUp" className={`${classes.singUp} ${classes.Link}`}>Sign Up</Link>
           </>
         );

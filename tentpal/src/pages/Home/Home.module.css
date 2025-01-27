@@ -3,7 +3,6 @@
 .centerContentHome h1 {
     position: relative;
     font-size: calc(200% + 4vw + 4vh);
-    color: #000000;
     text-align: center;
     margin-top: calc(40px + 5vh + 2vw);
     
@@ -19,8 +18,9 @@
     position: relative;
     font-size: calc( 4vw + 4vh - 80%);
     padding: 2px calc(20px + 4vw + 4vh);
-    color: #000000;
-    background-color: #949494;
+    color: rgb(42, 42, 42);
+    background-color: rgb(138, 139, 157);
+    border-radius: 10px;
     left: calc(50% - (20px + 8vw + 8vh));
 }
 
@@ -28,7 +28,6 @@
     position: relative;
     font-size : calc(50% + 1vw + 1vh);
     position: relative;
-    color: #000000;
     text-align: center;
     margin-top: 10vh;
 }

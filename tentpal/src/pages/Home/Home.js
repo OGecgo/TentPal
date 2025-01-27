@@ -7,7 +7,6 @@ import LeftPanel from "../../components/LeftPanel/LeftPanel";
 
 // css
 import classes from "./Home.module.css"; // that styling used only on this page
-import "./CenterContent.css";
 
 function Home() {
 
