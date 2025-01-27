@@ -1,12 +1,7 @@
 
-.centerContent {
-    position: absolute;
-    height: 100vh;
-    width: calc(100vw - 150px);
-    margin-left: 150px;
-}
 
-.centerContent h1 {
+
+h1 {
     position: relative;
     font-size: calc(200% + 4vw + 4vh);
     color: #000000;
