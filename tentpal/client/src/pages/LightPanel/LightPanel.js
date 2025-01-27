@@ -16,7 +16,7 @@ function LightPanel(){
 return(
     
     <>
-    <div className = {mycss.centerContent}>
+    <div className = "centerContent" >
       <div className={mycss.main}>
         <div className={mycss.panel}>
             <div className={mycss.container}>
