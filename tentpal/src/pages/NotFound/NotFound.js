@@ -5,7 +5,7 @@ import Header from "../../components/Header/Header";
 import LeftPanel from "../../components/LeftPanel/LeftPanel";
 
 //css
-import classes from "./NotFound.css";
+import "./NotFound.module.css";
 
 function Home() {
 
