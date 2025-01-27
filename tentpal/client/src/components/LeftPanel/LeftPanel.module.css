@@ -22,8 +22,6 @@
 
 .blocks {
     position: fixed;
-    width: 152px;
-    color: rgb(0, 0, 0);
     text-align: center;
     font-size: calc(3vh);
     line-height: 10vh; 
@@ -45,21 +43,51 @@
     color: #2a2a2a;
 }
 
-.upbuttons {
+
+
+.content1{
+    position: fixed;
+    width: 152px;
 }
 
-.midlebuttons {
+.content2{
+    position: fixed;
+    width: 152px;
+    margin-top: 10vh;
+}
+
+.content3{
+    position: fixed;
+    width: 152px;
+    margin-top: 20vh;
+}
+
+.content4{
+    position: fixed;
+    width: 152px;
+    margin-top: 30vh;
+}
+
+
+
+.nextButton {
     background-color: rgb(138, 139, 157);
-    margin-top: calc(5vh - 7%);
+    position: fixed;
+    width: 152px;
+    margin-top: calc(44vh);
+}
+.prevButton {
+    background-color: rgb(138, 139, 157);
+    position: fixed;
+    width: 152px;
+    margin-top: calc(56vh);
 }
 
-.bottombuttons{
+
+.exitButton{
     background-color: #b67272;
-    margin-top: calc(5vh - 7%);
+    position: fixed;
+    width: 152px;
+    margin-top: calc(70vh);
 }
 
-.center {
-    position: relative;
-    left: 170px;
-    width: calc(100% - 170px);
-}

@@ -4,8 +4,6 @@ import Header from "../../components/Header/Header";
 import LeftPanel from "../../components/LeftPanel/LeftPanel";
 import Map from "../../components/Map/Map";
 
-import classes from "./SelectLocation.module.css";
-
 
 function SelectLocation() {
 
@@ -33,7 +31,7 @@ function SelectLocation() {
         <Map colorChanged = {setColor} />
       </div>
 
-      <LeftPanel page = "makeTent" levelMakeTent = {1} linkNext = {{link: "/home", bool: true}} linkPrev = {{link: "#", bool: false}}/>
+      <LeftPanel page = "makeTent" levelMakeTent = {1} linkNext = {{link: "/home", bool: true}} linkPrev = {{link: "#", bool: true}}/>
       <Header panel={"messageBox"} message={message} />
     </>
   );
