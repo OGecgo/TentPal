@@ -46,11 +46,10 @@
 }
 
 .upbuttons {
-    background-color: #8a8b9d;
 }
 
 .midlebuttons {
-    background-color: #8a8b9d;
+    background-color: rgb(138, 139, 157);
     margin-top: calc(5vh - 7%);
 }
 
