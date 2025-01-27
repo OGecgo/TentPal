@@ -18,6 +18,7 @@ function Home() {
       <div className = {classes.centerContent}>
         <h1>TentPal</h1>
         <Link to = "/selectLocation" className = {classes.Link}>Start</Link>
+        <Link to = "/lightPanel" className = {classes.Link}>Start</Link>
         <p></p>
       </div>
       <LeftPanel />
