@@ -11,7 +11,7 @@
 
 
 .centerContent .form {
-    margin-left: calc(40vw - 170px);
+    margin-left: calc(50vw - 152px - 5vw);
 }
 
 .centerContent .form label {

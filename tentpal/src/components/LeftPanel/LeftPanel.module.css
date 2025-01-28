@@ -1,0 +1,91 @@
+
+
+
+.left {
+    width: 152px;
+    height: 100vh;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    background-color: rgb(187, 186, 202);
+
+}
+
+.left img {
+    cursor: pointer;
+    width: calc(40px + 5vh + 2vw);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.blocks {
+    position: fixed;
+    text-align: center;
+    font-size: calc(3vh);
+    line-height: 10vh; 
+    top: calc(40px + 5vh + 2vw);    
+}
+
+@media (min-height: 650px) {
+    .blocks {
+        font-size: calc(2vh);
+    }
+    
+}
+
+.text{
+    position: relative;
+    display: block;
+    text-decoration: none;
+    color: rgb(42, 42, 42);
+}
+
+
+
+.content1{
+    position: fixed;
+    width: 152px;
+}
+
+.content2{
+    position: fixed;
+    width: 152px;
+    margin-top: 10vh;
+}
+
+.content3{
+    position: fixed;
+    width: 152px;
+    margin-top: 20vh;
+}
+
+.content4{
+    position: fixed;
+    width: 152px;
+    margin-top: 30vh;
+}
+
+
+
+.nextButton {
+    position: fixed;
+    width: 152px;
+    margin-top: calc(44vh);
+}
+.prevButton {
+    background-color: rgb(120, 122, 179);
+    position: fixed;
+    width: 152px;
+    margin-top: calc(56vh);
+}
+
+
+.exitButton{
+    background-color: rgb(181, 115, 115);
+    position: fixed;
+    width: 152px;
+    margin-top: calc(70vh);
+}
+

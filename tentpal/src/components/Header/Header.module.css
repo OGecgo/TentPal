@@ -21,8 +21,10 @@
 
 .Link{
     text-align: center;
-    text-decoration: none;
     padding: 1vh 0;
+    border-radius: 10px;
+    color: rgb(42, 42, 42);
+    text-decoration: none;
 }
 
 .header .singUp {
@@ -30,7 +32,7 @@
     width: calc(10vw + 10px);
     font-size: calc(1vh + 1vw);
     font-size: calc(1vh + 1vw);
-    background-color: #fdfdfd;
+    background-color: rgb(234, 234, 234);
     left: calc(100vw - (10vw + 10px) - (40px + 2vh + 2vw) - 3vw);
     top: 20px;
 }
@@ -40,8 +42,8 @@
     width: calc(10vw + 10px);
     font-size: calc(1vh + 1vw);
     font-size: calc(1vh + 1vw);
-    background-color: #fdfdfd;
-    left: calc(100vw - (10vw + 10px) * 2 - (40px + 2vh + 2vw) - 3vw);
+    background-color: rgb(234, 234, 234);
+    left: calc(100vw - (10vw + 10px) * 1.7 - (40px + 2vh + 2vw) - 3vw);
     top: 20px;
 }
 

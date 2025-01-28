@@ -1,0 +1,20 @@
+
+body{
+  background-color: #dfdcec;
+}
+
+.centerContent {
+  position: absolute;
+  height: calc(100vh - (40px + 5vh + 2vw));
+  width: calc(100vw - 150px);
+  margin-left: 150px;
+  margin-top: calc(40px + 5vh + 2vw);
+}
+
+p{
+  color: rgb(42, 42, 42);
+}
+
+h1{
+  color: rgb(42, 42, 42);
+}

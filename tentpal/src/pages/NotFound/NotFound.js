@@ -5,7 +5,7 @@ import Header from "../../components/Header/Header";
 import LeftPanel from "../../components/LeftPanel/LeftPanel";
 
 //css
-import "./NotFound.css";
+import "./NotFound.module.css";
 
 function Home() {
 
@@ -15,7 +15,7 @@ function Home() {
     <>
       <LeftPanel page = {"exit"} linkNext={{link: "#", bool: false}} linkPrev={{link: "#", bool: false}} />
       <Header />
-      <div className="centerContent">
+      <div className = "centerContent">
         <h1>ERROR  404</h1>
       </div>
     </>
