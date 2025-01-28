@@ -9,7 +9,7 @@ import "./NotFound.module.css";
 
 function Home() {
 
-
+ 
 
   return (
     <>
@@ -25,3 +25,4 @@ function Home() {
 }
 
 export default Home;
+
