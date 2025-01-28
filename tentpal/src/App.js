@@ -7,6 +7,7 @@ import Login from './pages/LoginForm/Login';
 import NotFound from './pages/NotFound/NotFound';
 
 import SelectLocation from "./pages/SelectLocation/SelectLocation";
+import SetStakes from "./pages/SetStakes/SetStakes";
 
 
 function App() {
@@ -19,7 +20,8 @@ function App() {
         <Route path="/login" element={<Login />} />
         <Route path="*" element={<NotFound />} />
 
-        <Route path="/selectLocation" element={<SelectLocation />} />
+        <Route path="/selectLocation" element={<SelectLocation />} />]
+        <Route path="/setStakes" element={<SetStakes />} />
       </Routes>
     </BrowserRouter>
   );

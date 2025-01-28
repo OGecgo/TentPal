@@ -36,7 +36,7 @@ function SelectLocation() {
         <Map colorChanged = {setColor} />
       </div>
 
-      <LeftPanel page = "makeTent" levelMakeTent = {1} linkNext = {{link: "/home", bool: true, lock: lockNext}} linkPrev = {{link: "#", bool: false}}/>
+      <LeftPanel page = "makeTent" levelMakeTent = {1} linkNext = {{link: "/setStakes", bool: true, lock: lockNext}} linkPrev = {{link: "#", bool: false}}/>
       <Header panel={"messageBox"} message={message} />
     </>
   );

@@ -1,0 +1,29 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+.sky{
+    background-color: #b3d6ee;
+    height: 55%;
+    width: 100%;
+}
+
+
+
+.grass{
+    background-color: #487e48;
+    height: 13%;
+    width: 100%;
+}
+
+
+.dirt{
+    
+    background-color: #7a5941;
+    height: 32%;
+    width: 100%;
+}
