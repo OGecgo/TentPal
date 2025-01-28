@@ -4,7 +4,6 @@ body{
 }
 
 .centerContent {
-  display: flex;
   position: absolute;
   height: calc(100vh - (40px + 5vh + 2vw));
   width: calc(100vw - 152px);
