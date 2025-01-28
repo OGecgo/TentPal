@@ -1,31 +1,36 @@
-
+:root{
+    --top-position: calc(6vh - 1vw);
+    --header-height: calc(40px + 5vh + 2vw);
+    --handrent-present: (75vh - var(--header-height));
+    --height-stick: calc( var(--handrent-present) - var(--top-position) );
+}
 
 
 .cup{
     position: absolute; 
     background-color: #b8b8b8;
-    width: 200px;
-    height: 100px;
-    margin-top: 2vh;
-    margin-left: 50%;
+    width: 16vh;
+    height: 8vh;
+    margin-top: var(--top-position);
+    margin-left: calc(50% - 8vh);
 }
 
 .stick{
     position: absolute;
     background-color: #868686;
-    width: 75px;
-    height: 500px;
-    margin-top: 2vh;
-    margin-left: calc(50% + 100px - 37.5px);
+    width: 5vh;
+    height: var(--height-stick);
+    margin-top:var(--top-position);
+    margin-left: calc(50% - 2.5vh);
 }
 
 .triangle{
     position: absolute;
-    border-left: 50px solid transparent;
-    border-right: 50px solid transparent;
-    border-bottom: 100px solid transparent;
-    border-top: 100px solid #797979;
-    margin-top: calc(2vh + 500px);
-    margin-left: calc(50% + 100px - 50px);
+    border-left: 4vh solid transparent;
+    border-right: 4vh solid transparent;
+    border-bottom: 0px solid transparent;
+    border-top: 8vh solid #797979;
+    margin-top: calc(var(--top-position) + var(--height-stick));
+    margin-left: calc(50% - 4vh);
 
 }

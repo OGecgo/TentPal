@@ -14,12 +14,12 @@ function SetStakes() {
 
     return (
         <>
-            <Header panel = {"messageBox"} />
-            <LeftPanel page = "makeTent" levelMakeTent = {2} linkNext = {{link: "#", bool: true, lock: true}} linkPrev = {{link: "/selectLocation", bool: true}}/>
             <div className = "centerContent">
                 <Stake />   
                 <Environmental />
             </div>
+            <Header panel = {"messageBox"} />
+            <LeftPanel page = "makeTent" levelMakeTent = {2} linkNext = {{link: "#", bool: true, lock: true}} linkPrev = {{link: "/selectLocation", bool: true}}/>
         </>
     );
 }
