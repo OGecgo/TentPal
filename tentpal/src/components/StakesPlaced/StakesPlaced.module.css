@@ -1,22 +1,19 @@
 
-
-.topPanel{
-    display: flex;
-
-}
-
-.leftPanel{
+.rightPanel{
     margin-left: calc(50% + 76px);
     width: calc(50% - 76px);
 }
 
-.topPanel{
-    height: calc(50vh - var(--top-Panel-Height)/2);
+.leftPanel{
+    display: flex;
+    flex-direction: column;
     width: calc(50vw - 76px);
+}
+.topPanel{
+    height: 50%;
 }
 
 
 .bottomPanel{
-    height: calc(50vh - var(--top-Panel-Height)/2);
-    width: calc(50vw - 76px);
+    height: 50%;
 }

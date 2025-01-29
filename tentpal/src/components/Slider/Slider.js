@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import classes from "./Slider.module.css";
 
-function Slider({precent, width, marginLeft, marginTop}) {
+function Slider({precent, width, marginLeft, marginTop, setNewPercent}) {
   const [percent, setPercent] = useState(20);
   
   const handleMouseMove = (e) => {
@@ -26,11 +26,12 @@ function Slider({precent, width, marginLeft, marginTop}) {
   };
 
   useEffect(() => {
+    if (setNewPercent !== undefined) setPercent(setNewPercent);
     return () => {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
     };
-  }, []);
+  }, [setNewPercent]);
 
   return (
     <>

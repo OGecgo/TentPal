@@ -1,5 +1,6 @@
 :root{
   --top-Panel-Height: calc(40px + 5vh + 2vw);
+  --black: rgb(42, 42, 42);
 }
 
 
@@ -16,9 +17,9 @@ body{
 }
 
 p{
-  color: rgb(42, 42, 42);
+  color: var(--black);
 }
 
 h1{
-  color: rgb(42, 42, 42);
+  color: var(--black);
 }

@@ -1,0 +1,38 @@
+.panel{
+    position: relative;
+    background-color: #487e48;
+    border-radius: 20px;
+    margin-top: 2%;
+    margin-left: 2%;
+    width: 96%;
+    height: 96%;
+}
+
+.ball{
+    position: absolute;
+    background-color: #b8b8b8;
+    cursor: pointer;
+    width: 16px;
+    height: 16px;
+    border-radius: 20px;
+}
+
+.pos1{
+    top: 6vh;
+    left: 3vw;
+}
+
+.pos2{
+    top: 6vh;
+    right: 3vw;
+}
+
+.pos3{
+    bottom: 6vh;
+    left: 3vw;
+}
+
+.pos4{
+    bottom: 6vh;
+    right: 3vw;
+}
