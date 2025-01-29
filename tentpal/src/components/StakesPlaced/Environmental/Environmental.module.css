@@ -1,6 +1,7 @@
 
 .container{
     display: flex;
+    position: absolute;
     flex-direction: column;
     height: 100%;
     width: 100%;
@@ -16,7 +17,7 @@
 
 .grass{
     background-color: #487e48;
-    height: 13%;
+    height: 10%;
     width: 100%;
 }
 
@@ -24,6 +25,6 @@
 .dirt{
     
     background-color: #7a5941;
-    height: 32%;
+    height: 35%;
     width: 100%;
 }

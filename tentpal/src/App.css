@@ -1,3 +1,7 @@
+:root{
+  --top-Panel-Height: calc(40px + 5vh + 2vw);
+}
+
 
 body{
   background-color: #dfdcec;
@@ -5,10 +9,10 @@ body{
 
 .centerContent {
   position: absolute;
-  height: calc(100vh - (40px + 5vh + 2vw));
+  height: calc(100vh - var(--top-Panel-Height));
   width: calc(100vw - 152px);
   margin-left: 152px;
-  margin-top: calc(40px + 5vh + 2vw);
+  margin-top: var(--top-Panel-Height);
 }
 
 p{

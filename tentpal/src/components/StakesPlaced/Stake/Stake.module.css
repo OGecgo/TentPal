@@ -1,9 +1,4 @@
-:root{
-    --top-position: calc(6vh - 1vw);
-    --header-height: calc(40px + 5vh + 2vw);
-    --handrent-present: (75vh - var(--header-height));
-    --height-stick: calc( var(--handrent-present) - var(--top-position) );
-}
+
 
 
 .cup{
@@ -30,7 +25,7 @@
     border-right: 4vh solid transparent;
     border-bottom: 0px solid transparent;
     border-top: 8vh solid #797979;
-    margin-top: calc(var(--top-position) + var(--height-stick));
+    margin-top: var(--low-position);
     margin-left: calc(50% - 4vh);
 
 }
