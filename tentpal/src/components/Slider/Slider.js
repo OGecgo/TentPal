@@ -37,6 +37,8 @@ function Slider({precent, width, marginLeft, marginTop, setNewPercent}) {
     <>
       <div className={classes.slider}
       style={{ width: width, marginLeft: marginLeft, marginTop: marginTop }}
+      onMouseDown={handleMouseDown}
+      onClick={handleMouseMove}
       >
         <div
           className={classes.sliderContent}
