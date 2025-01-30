@@ -12,14 +12,6 @@ function ChooseTent() {
         e.dataTransfer.setData('imageSrc', e.target.src);
     };
 
-    const handleDrop = (e) => {
-        e.preventDefault();
-        setImageSrc(e.dataTransfer.getData('imageSrc'));
-    };
-
-    const handleDragOver = (e) => {
-        e.preventDefault();
-    };
 
     return (
         <>
@@ -28,10 +20,10 @@ function ChooseTent() {
                     <div className={classes.leftPanel}>
                         <div 
                             className={classes.inputContaner} 
-                            onDrop={handleDrop} 
-                            onDragOver={handleDragOver}
+                            onDrop={(e) => {setImageSrc(e.dataTransfer.getData('imageSrc'))}} //is droped
+                            onDragOver={(e) => {e.preventDefault()}} // valid drop (allow drop)
                         >
-                            {imageSrc && <img src={imageSrc} alt= {`Dropped ${imageSrc}`} />}
+                            {<img src={imageSrc} alt= {`Dropped ${imageSrc}`} />}
                         </div>
                     </div>
                     <div className={classes.rightPanel}>
