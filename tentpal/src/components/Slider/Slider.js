@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useCallback } from "react";
 import classes from "./Slider.module.css";
 
-function Slider({precent, width, marginLeft, marginTop, setNewPercent}) {
+function Slider({precent, width, Left, Top, setNewPercent}) {
   const [percent, setPercent] = useState(20);
   
-  const handleMouseMove = (e) => {
+  const handleMouseMove = useCallback((e) => {
     const slider = document.querySelector(`.${classes.slider}`);
     if (slider) {
       const rect = slider.getBoundingClientRect();
@@ -13,12 +13,12 @@ function Slider({precent, width, marginLeft, marginTop, setNewPercent}) {
       precent(newPercent);
       setPercent(newPercent);
     }
-  };
+  }, [precent]);
 
-  const handleMouseUp = () => {
+  const handleMouseUp = useCallback(() => {
     document.removeEventListener("mousemove", handleMouseMove);
     document.removeEventListener("mouseup", handleMouseUp);
-  };
+  }, [handleMouseMove]);
 
   const handleMouseDown = () => {
     document.addEventListener("mousemove", handleMouseMove);// use handeleMouseMove
@@ -31,12 +31,12 @@ function Slider({precent, width, marginLeft, marginTop, setNewPercent}) {
       document.removeEventListener("mousemove", handleMouseMove);
       document.removeEventListener("mouseup", handleMouseUp);
     };
-  }, [setNewPercent]);
+  }, [setNewPercent, handleMouseMove, handleMouseUp]);
 
   return (
     <>
       <div className={classes.slider}
-      style={{ width: width, marginLeft: marginLeft, marginTop: marginTop }}
+      style={{ width: width, left: Left, top: Top }}
       onMouseDown={handleMouseDown}
       onClick={handleMouseMove}
       >

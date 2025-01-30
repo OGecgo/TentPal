@@ -6,20 +6,17 @@ function Selected({inset, width, height, color}) {
 
     return(
         <>
-            <style>
-                {`
-                    :root{
-                        --top: ${inset.top};
-                        --left: ${inset.left};
-                        --right: ${inset.right};
-                        --bottom: ${inset.bottom};
-                        --width: ${width};
-                        --height: ${height};
-                        --color: ${color};
-                    }
-                `}
-            </style>
-            <div className = {classes.block}></div>
+            <div className = {classes.block}
+                style={{
+                        width: width,
+                        height: height,
+                        borderColor: color,
+                        left: inset.left,
+                        right: inset.right,
+                        top: inset.top,
+                        bottom: inset.bottom
+                    }}
+            ></div>
         </>
     );    
 }

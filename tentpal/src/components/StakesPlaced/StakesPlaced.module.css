@@ -1,7 +1,11 @@
 
 .rightPanel{
     margin-left: calc(50% + 76px);
-    width: calc(50% - 76px);
+    width: calc(50% - 76px - 14px);
+    height: calc(100% - 14px - var(--top-Panel-Height));
+    background-color: #8a8b9d;
+    top: 7px;
+    border-radius: 20px;
 }
 
 .leftPanel{

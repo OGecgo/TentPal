@@ -1,12 +1,5 @@
 
 .block{
     position: absolute;
-    width: var(--width);
-    height: var(--height);
-    border-color: var(--color);
     border-style: dashed;
-    left: var(--left);
-    right: var(--right);
-    top: var(--top);
-    bottom: var(--bottom);
 }

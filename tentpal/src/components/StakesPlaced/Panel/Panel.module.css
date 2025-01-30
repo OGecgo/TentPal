@@ -1,8 +1,26 @@
 .panel{
-    background-color: rgb(180, 180, 180);
+    position: relative;
+    background-color: #bbbaca;
     border-radius: 20px;
     margin-top: 1%;
     margin-left: 2%;
     width: 96%;
     height: 96%;
+}
+
+.text{
+    position: absolute;
+    font-size: 3vh;
+    font-weight: bold;
+    color: var(--black);
+}
+
+.deep{
+    top: 10%;
+    left: calc(50% - 6vw);
+}
+
+.degre{
+    top: 40%;
+    left: calc(50% - 9vw);
 }

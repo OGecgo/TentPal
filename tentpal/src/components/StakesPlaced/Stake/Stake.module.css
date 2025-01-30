@@ -1,3 +1,13 @@
+:root{
+        --top-position: var(--top-position-Stake);
+        --rotate: var(--rotate-Stake);
+        --header-height: calc(40px + 5vh + 2vw);
+        --handrent-present: (75vh - var(--header-height));
+        --height-stick: calc( 45vh);
+        --low-position: calc( var(--top-position) + var(--height-stick) );
+}
+
+
 
 .block{
     
@@ -24,13 +34,22 @@
     margin-left: calc(50% - 2.5vh);
 }
 
+.stickShadow{
+    position: absolute;
+    background-color: #737373;
+    width: 5vh;
+    height: 11vh;
+    margin-top: var(--top-position);
+    margin-left: calc(50% - 2.5vh);
+}
+
+
 .triangle{
     position: absolute;
     border-left: 4vh solid transparent;
     border-right: 4vh solid transparent;
     border-bottom: 0px solid transparent;
-    border-top: 8vh solid #797979;
+    border-top: 6vh solid #797979;
     margin-top: var(--low-position);
     margin-left: calc(4vh);
-
 }

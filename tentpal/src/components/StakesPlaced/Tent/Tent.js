@@ -22,19 +22,19 @@ function Tent({funct}) {
         funct(num);
         switch (num) {
             case 1:
-                setInset("calc(6vh - 7.5px)", "calc(3vw - 7.5px)", "", "");
+                setInset("calc(6vh - 8px)", "calc(3vw - 8px)", "", "");
                 break;
             case 2:
-                setInset("calc(6vh - 7.5px)", "", "calc(3vw - 7.5px)", "");
+                setInset("calc(6vh - 8px)", "", "calc(3vw - 8px)", "");
                 break;
             case 3:
-                setInset("", "calc(3vw - 7.5px)", "", "calc(6vh - 7.5px)");
+                setInset("", "calc(3vw - 8px)", "", "calc(6vh - 8px)");
                 break;
             case 4:
-                setInset("", "", "calc(3vw - 7.5px)", "calc(6vh - 7.5px)");
+                setInset("", "", "calc(3vw - 8px)", "calc(6vh - 8px)");
                 break;
             default:
-                setInset("calc(6vh - 7.5px)", "calc(3vw - 7.5px)", "", "");
+                setInset("calc(6vh - 8px)", "calc(3vw - 8px)", "", "");
                 break;
         }
     }

@@ -1,19 +1,20 @@
 import React from "react";
 
 import Slider from "../../Slider/Slider";
+import MessageBox from "../../MessageBox/MessageBox";
 
 import classes from "./Panel.module.css";
 
 
 function Panel({precentDeep, precentDeepSlider, precentDegre, precentDegreSlider}) {
-
-  const fun = (num) => {
-  }
-
+  
   return (
       <div className={classes.panel}>
-          <Slider precent={precentDeep} width={"70%"} marginLeft={`13%`} marginTop={"5vh"} setNewPercent={precentDeepSlider} />
-          <Slider precent={precentDegre} width={"70%"} marginLeft={`13%`} marginTop={"15vh"} setNewPercent={precentDegreSlider} />
+          <Slider precent={precentDeep} width={"70%"} Left={`13%`} Top={"35%"} setNewPercent={precentDeepSlider} />
+          <Slider precent={precentDegre} width={"70%"} Left={`13%`} Top={"80%"} setNewPercent={precentDegreSlider} />
+          <MessageBox message = {"Set Deep For Stake"} width={"95%"} height={"20%"} left = {"1vw"} top = {"1vw"}/>
+          <MessageBox message = {"Set Degre For Stake"} width={"95%"} height={"20%"} left = {"1vw"} top = {"50%"}/>
+
       </div>
     );
 }

@@ -1,6 +1,6 @@
 :root{
   --top-Panel-Height: calc(40px + 5vh + 2vw);
-  --black: rgb(42, 42, 42);
+  --black: #2a2a2a;
 }
 
 

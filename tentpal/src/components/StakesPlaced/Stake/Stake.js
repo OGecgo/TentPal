@@ -7,16 +7,13 @@ function Stake({topPosition, rotation}) {
         <>
             <style>{`
                 :root{
-                    --rotate: ${rotation};
-                    --header-height: calc(40px + 5vh + 2vw);
-                    --handrent-present: (75vh - var(--header-height));
-                    --height-stick: calc( 45vh);
-                    --top-position: ${topPosition};
-                    --low-position: calc( var(--top-position) + var(--height-stick) );
+                    --rotate-Stake: ${rotation};
+                    --top-position-Stake: ${topPosition};
                 }
             `}</style>
             <div className = {classes.block}>
                 <div className = {classes.stick}></div>
+                <div className = {classes.stickShadow}></div>
                 <div className = {classes.cup}></div>
                 <div className = {classes.triangle}></div>
             </div>

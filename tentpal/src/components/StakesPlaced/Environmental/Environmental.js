@@ -9,7 +9,9 @@ function Environmental() {
             <div className = {classes.container}>
                 <div className = {classes.sky}></div>
                 <div className = {classes.grass}></div>
+                <div className = {classes.grassShadow}></div>
                 <div className = {classes.dirt}></div>
+                <div className = {classes.dirtShadow}></div>
             </div>
             
             

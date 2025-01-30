@@ -17,7 +17,7 @@ function StakesPlaced() {
     const [deepPres, setDeepPres] = useState(50);
     const [degrePres, setDegrePres] = useState(50);
     const [stake, SetStake] = useState(1);
-    const deepRealPres = 30 + deepPres / 7;
+    const deepRealPres = 30 + deepPres / 10;
     const degreRealPres = -10 + degrePres / 5;
 
     // remeber the stakes
