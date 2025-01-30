@@ -9,8 +9,8 @@ function SetStakes() {
     return (
         <>
             <StakesPlaced />
-            <Header panel = {"messageBox"} message={"Set the stake how you want"} />
-            <LeftPanel page = "makeTent" levelMakeTent = {2} linkNext = {{link: "#", bool: true, lock: false}} linkPrev = {{link: "/selectLocation", bool: true}}/>
+            <Header panel = {"messageBox"} message={"Choose stake and give properties"} />
+            <LeftPanel page = "makeTent" levelMakeTent = {2} linkNext = {{link: "/chooseTent", bool: true, lock: false}} linkPrev = {{link: "/selectLocation", bool: true}}/>
         </>
     );
 }

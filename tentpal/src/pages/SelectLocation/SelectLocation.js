@@ -21,7 +21,7 @@ function SelectLocation() {
       lockNext = true;
       break;
     case "rgba(82, 194, 84, 0.52)":
-      message = "You selected place. Now you can continue";
+      message = "--->>You selected place. Now you can continue<<---";
       lockNext = false;
       break;
     default:
