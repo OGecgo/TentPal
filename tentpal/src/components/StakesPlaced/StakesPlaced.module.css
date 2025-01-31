@@ -1,0 +1,23 @@
+
+.rightPanel{
+    margin-left: calc(40% + 76px);
+    width: calc(60% - 76px - 14px);
+    height: calc(100% - 14px - var(--top-Panel-Height));
+    background-color: #8a8b9d;
+    top: 7px;
+    border-radius: 20px;
+}
+
+.leftPanel{
+    display: flex;
+    flex-direction: column;
+    width: calc(40% - 76px);
+}
+.topPanel{
+    height: 50%;
+}
+
+
+.bottomPanel{
+    height: 50%;
+}

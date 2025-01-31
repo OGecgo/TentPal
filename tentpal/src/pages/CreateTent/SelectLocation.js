@@ -21,7 +21,7 @@ function SelectLocation() {
       lockNext = true;
       break;
     case "rgba(82, 194, 84, 0.52)":
-      message = "You selected place. Now you can continue";
+      message = "--->>You selected place. Now you can continue<<---";
       lockNext = false;
       break;
     default:
@@ -36,7 +36,7 @@ function SelectLocation() {
         <Map colorChanged = {setColor} />
       </div>
 
-      <LeftPanel page = "makeTent" levelMakeTent = {1} linkNext = {{link: "/home", bool: true, lock: lockNext}} linkPrev = {{link: "#", bool: false}}/>
+      <LeftPanel page = "makeTent" levelMakeTent = {1} linkNext = {{link: "/setStakes", bool: true, lock: lockNext}} linkPrev = {{link: "#", bool: false}}/>
       <Header panel={"messageBox"} message={message} />
     </>
   );

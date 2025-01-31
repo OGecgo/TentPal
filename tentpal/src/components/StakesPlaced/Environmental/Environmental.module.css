@@ -1,0 +1,46 @@
+
+.container{
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    top: 10px;
+    left: 10px;
+    height: calc(100% - 20px);
+    width: calc(100% - 20px);
+}
+
+.sky{
+    /* background: linear-gradient(to top, #78efff, #1fc3ff); Light blue to blue gradient */
+    background-color: #86c5f2;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 55%;
+    width: 100%;
+}
+
+.grass{
+    background-color: #487e48;
+    height: 6%;
+    width: 100%;
+}
+
+.grassShadow{
+    background-color: #3a5d3a;
+    height: 4%;
+    width: 100%;
+}
+
+
+.dirt{
+    background-color: #5d4d3a;
+    height: 25%;
+    width: 100%;
+}
+
+.dirtShadow{
+    background-color: #4a3a2d;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 10%;
+    width: 100%;
+}
