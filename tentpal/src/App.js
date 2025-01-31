@@ -6,9 +6,9 @@ import Home from './pages/Home/Home';
 import Login from './pages/LoginForm/Login';
 import NotFound from './pages/NotFound/NotFound';
 
-import SelectLocation from "./pages/SelectLocation/SelectLocation";
-import SetStakes from "./pages/SetStakes/SetStakes";
-import ChooseTent from "./pages/ChooseTent/ChooseTent";
+import SelectLocation from "./pages/CreateTent/SelectLocation";
+import SetStakes from "./pages/CreateTent/SetStakes";
+import ChooseTent from "./pages/CreateTent/ChooseTent";
 
 
 function App() {
