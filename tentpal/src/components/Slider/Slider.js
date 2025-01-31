@@ -5,7 +5,7 @@ function Slider({precent, width, Left, Top, setNewPercent}) {
   const [percent, setPercent] = useState(20);
   
   const handleMouseMove = useCallback((e) => {
-    const slider = document.querySelector(`.${classes.slider}`);
+    const slider = document.querySelector(`.${classes.mySlider}`);
     if (slider) {
       const rect = slider.getBoundingClientRect();
       let pos = ((e.clientX - rect.left) / rect.width) * 100;
@@ -35,7 +35,7 @@ function Slider({precent, width, Left, Top, setNewPercent}) {
 
   return (
     <>
-      <div className={classes.slider}
+      <div className={classes.mySlider}
       style={{ width: width, left: Left, top: Top }}
       onMouseDown={handleMouseDown}
       onClick={handleMouseMove}
