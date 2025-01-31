@@ -6,8 +6,9 @@ import Home from './pages/Home/Home';
 import Login from './pages/LoginForm/Login';
 import NotFound from './pages/NotFound/NotFound';
 
-import SelectLocation from "./pages/SelectLocation/SelectLocation";
-import SetStakes from "./pages/SetStakes/SetStakes";
+import SelectLocation from "./pages/CreateTent/SelectLocation";
+import SetStakes from "./pages/CreateTent/SetStakes";
+import ChooseTent from "./pages/CreateTent/ChooseTent";
 
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
 
         <Route path="/selectLocation" element={<SelectLocation />} />]
         <Route path="/setStakes" element={<SetStakes />} />
+        <Route path="/chooseTent" element={<ChooseTent />} />
       </Routes>
     </BrowserRouter>
   );

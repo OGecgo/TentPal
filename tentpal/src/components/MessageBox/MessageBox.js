@@ -2,13 +2,16 @@ import React from "react";
 
 import classes from "./MessageBox.module.css";
 
-function MessageBox ({message, width, height, top, left}) {
+function MessageBox ({
+  message, backgroundColor,
+  width, height, top, left
+}) {
 
 
 
   return (
     <>
-      <div className = {classes.textBox} style={{width: width, height: height, top: top, left: left}}>
+      <div className = {classes.textBox} style={{width: width, height: height, top: top, left: left, backgroundColor: backgroundColor}}>
         <p>{message}</p>
       </div>
     </>
