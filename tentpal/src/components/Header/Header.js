@@ -20,7 +20,7 @@ function Header ({panel, message}) {
         );
       case "messageBox":
         return (
-          <MessageBox message = {message} />
+          <MessageBox width = {`calc(100% - (4vw + 40px + 2vh + 2vw))`} message = {message} />
         );
       default:
         return;

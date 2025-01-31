@@ -1,5 +1,7 @@
 import mycss from './LightManually.module.css';
 import React, { useState } from "react";
+import MessageBox from '../../components/MessageBox/MessageBox';
+
 
 export default function LightManually(){
         // Λίστα διαθέσιμων χρωμάτων
@@ -19,6 +21,13 @@ export default function LightManually(){
     
     return(
     <>
+    <MessageBox message = {'Simple light section'} />
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
+    <br></br>
     {/* Dropdown για επιλογή χρώματος */}
     <div className={mycss.colorPicker}>
             <label htmlFor="color">Choose a color: </label>
@@ -55,6 +64,7 @@ export default function LightManually(){
                 opacity: lightIntensity / 110 +0.1,
                 }}
             ></div>
+            <button className={mycss.button33}>Apply changes</button>
         </div>
     </>
 )

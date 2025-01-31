@@ -8,7 +8,7 @@ import NotFound from './pages/NotFound/NotFound';
 import LightPanel from "./pages/LightPanel/LightPanel";
 
 import SelectLocation from "./pages/SelectLocation/SelectLocation";
-
+ 
 
 function App() {
 
