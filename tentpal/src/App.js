@@ -5,12 +5,15 @@ import './App.css';
 import Home from './pages/Home/Home';
 import Login from './pages/LoginForm/Login';
 import NotFound from './pages/NotFound/NotFound';
+
+
 import LightPanel from "./pages/LightPanel/LightPanel";
 
 import SelectLocation from "./pages/CreateTent/SelectLocation";
 import SetStakes from "./pages/CreateTent/SetStakes";
 import ChooseTent from "./pages/CreateTent/ChooseTent";
 
+ 
 
 function App() {
 
