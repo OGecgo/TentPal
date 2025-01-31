@@ -7,7 +7,7 @@ import DragPanelsTent from '../../components/DragPanelsTent/DragPanelsTent';
 function ChooseTent() {
 
     const [buttonNext, setButtonNext] = useState(true);
-    const [message, setMessage] = useState("Drag and Drop tent you want to space block");
+    const [message, setMessage] = useState("Drag and Drop tent you want to space block | Have a rain weather we sapose to take a rait tent");
     const setTent = (tent) => {
         if (tent === "") {
             setMessage("Drag and Drop tent you want to space block");
