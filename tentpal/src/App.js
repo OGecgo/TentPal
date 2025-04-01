@@ -7,7 +7,7 @@ import Login from './pages/LoginForm/Login';
 import NotFound from './pages/NotFound/NotFound';
 
 
-import LightPanel from "./pages/LightPanel/LightPanel";
+import LightPanel from "./pages/CreateTent/LightPanel/LightPanel";
 
 import SelectLocation from "./pages/CreateTent/SelectLocation";
 import SetStakes from "./pages/CreateTent/SetStakes";
@@ -26,7 +26,7 @@ function App() {
         <Route path="*" element={<NotFound />} />
 
         <Route path="/lightPanel" element={<LightPanel />} />
-        <Route path="/selectLocation" element={<SelectLocation />} />]
+        <Route path="/selectLocation" element={<SelectLocation />} />
         <Route path="/setStakes" element={<SetStakes />} />
         <Route path="/chooseTent" element={<ChooseTent />} />
       </Routes>
