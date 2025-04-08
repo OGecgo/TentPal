@@ -3,36 +3,30 @@ import React, { useState,useEffect } from "react";
 import LeftPanel from '../../../components/LeftPanel/LeftPanel';
 import Header from '../../../components/Header/Header';
 import MessageBox from '../../../components/MessageBox/MessageBox';
-import Cookies from 'js-cookie'
+
 
 
 function LightPanel(){
-
   const [SimpleLight, setSimpleLight] = useState(true);
   const [NightLight, setNightLight] = useState(null);
   const [color, setColor] = useState("#4CAF50");
   const [intensity, setIntensity] = useState(0.7);
-  const [history, setHistory] = useState([]);
+
 
   const finalColor=getAdjustedColor(color)
 
-  useEffect(() => {
-    // 🔹 Φόρτωση ιστορικού από cookies
-    const savedHistory = Cookies.get("lightSettingsHistory");
-    if (savedHistory) {
-      setHistory(JSON.parse(savedHistory));
+  useEffect(()=>{
+    if(localStorage.getItem('light_state')!=null){
+      let current_light__state = JSON.parse(localStorage.getItem('light_state'));
+      console.log(current_light__state);
+      setSimpleLight(current_light__state.SimpleLight);
+      setNightLight(current_light__state.NightLight);
+      setColor(current_light__state.color);
+      setIntensity(current_light__state.intensity);
+
     }
-  }, []);
-
-  useEffect(() => {
-    // 🔹 Προσθήκη στο ιστορικό και αποθήκευση στα cookies
-    const newEntry = { SimpleLight, NightLight, color, intensity };
-    const updatedHistory = [...history, newEntry].slice(-5); // Κρατάμε τις 5 τελευταίες ρυθμίσεις
-
-    setHistory(updatedHistory);
-    Cookies.set("lightSettingsHistory", JSON.stringify(updatedHistory), { expires: 7 }); // Λήξη σε 7 μέρες
-  }, [SimpleLight, NightLight, color, intensity]);
-
+  },
+  [])
 
 
   function changeLightMode(mode){
@@ -59,12 +53,16 @@ function LightPanel(){
 
 
   function getAdjustedColor(hex) {
+    if (!hex || hex.length < 7) {
+      console.error("Invalid color value:", hex);
+      hex = "#4CAF50"; // Χρησιμοποιούμε το προεπιλεγμένο χρώμα
+    }
+  
     let r = parseInt(hex.substring(1, 3), 16);
     let g = parseInt(hex.substring(3, 5), 16);
     let b = parseInt(hex.substring(5, 7), 16);
     return `rgba(${r}, ${g}, ${b}, ${intensity})`;
   }
-
 
   function setColorSettingsAutomatically(special_mode){
     if(special_mode==='nightLight' && !SimpleLight){
@@ -77,6 +75,14 @@ function LightPanel(){
     }
 
   }
+
+  function updateState(){
+    let light_state={SimpleLight,NightLight,color,intensity};
+    localStorage.setItem('light_state',JSON.stringify(light_state));
+  }
+
+
+
 
 
 return(
@@ -162,7 +168,7 @@ return(
           <span class="slider"></span>
         </label>
       </div>
-      <button className='apply-button' > Apply </button>
+      <button className='apply-button' onClick={()=> {updateState()}} > Apply </button>
 
     </div>
 
@@ -173,76 +179,5 @@ return(
   </>
 );
 }
-export default LightPanel;
-
-
-/*
-import React, { useState } from "react";
-
-function LightPanel() {
-  const [color, setColor] = useState("#ff0000"); // Αρχικό χρώμα (κόκκινο)
-  const [opacity, setOpacity] = useState(1); // Διαφάνεια (1 = 100%)
-
-  // Μετατροπή HEX σε RGB
-  function hexToRgb(hex) {
-    let r = parseInt(hex.substring(1, 3), 16);
-    let g = parseInt(hex.substring(3, 5), 16);
-    let b = parseInt(hex.substring(5, 7), 16);
-    return { r, g, b };
-  }
-
-  // Υπολογισμός τελικού χρώματος με opacity
-  function getAdjustedColor() {
-    const { r, g, b } = hexToRgb(color);
-    return `rgba(${r}, ${g}, ${b}, ${opacity})`;
-  }
-
-  return (
-    <div className="centerContent">
-      <h1>My Light Panel</h1>
-
-      {/* Επιλογή Χρώματος 
-      <div className="color-container">
-        <label htmlFor="colorInput">Choose Color:</label>
-        <input
-          id="colorInput"
-          type="color"
-          value={color}
-          onChange={(e) => setColor(e.target.value)}
-        />
-      </div>
-
-      {/* Ρύθμιση Διαφάνειας *
-      <div className="opacity-container">
-        <label htmlFor="opacityRange">Opacity:</label>
-        <input
-          type="range"
-          id="opacityRange"
-          min="0"
-          max="1"
-          step="0.01"
-          value={opacity}
-          onChange={(e) => setOpacity(Number(e.target.value))}
-        />
-        <span>{Math.round(opacity * 100)}%</span>
-      </div>
-
-      {/* Προβολή Τελικού Χρώματος *
-      <div
-        className="color-preview"
-        style={{
-          backgroundColor: getAdjustedColor(),
-          width: "120px",
-          height: "120px",
-          borderRadius: "10px",
-          marginTop: "20px",
-          border: "2px solid #000",
-        }}
-      ></div>
-      <p>Final Color</p>
-    </div>
-  );
-}
 
 export default LightPanel;
-*/
