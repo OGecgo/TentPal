@@ -6,6 +6,7 @@ import React, { useState,useEffect } from "react";
 import LeftPanel from '../../../components/LeftPanel/LeftPanel';
 import Header from '../../../components/Header/Header';
 import MessageBox from '../../../components/MessageBox/MessageBox';
+import info from '../../../assets/energy_info.png';
 
 
 function EnergyPanel(){
@@ -15,6 +16,7 @@ function EnergyPanel(){
     const[isAirCondition,setIsAirCondition]=useState(null);
     const[airConditionTemperature,setAirConditionTemperature]=useState(25);
     const[isElecticBlanket,setIsElectricBlanket]=useState(null)
+    const[isInfo,setIsInfo]=useState(false);
 
 
     let moisture=Math.floor((Math.random() *100));
@@ -61,6 +63,9 @@ function EnergyPanel(){
    <>
 
     <div className = "centerContent" >
+
+        <button className="info-button" onClick={()=>setIsInfo(true)}> Οδηγίες </button>
+
         <div className="energy-production">
             <h2 style={{fontSize: "1.8rem",fontWeight: "bold",}}> ⚡Παραγωγή ενέργειας</h2>
 
@@ -102,23 +107,31 @@ function EnergyPanel(){
             </div>   
             <div className="aircondition-temperature">
                 <p><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία Κλιματισμού: {isAirCondition ? airConditionTemperature+'°C' : '-'}</p>
-                <button  className="aircondition-temperature-button" onClick={() => setAirConditionTemperature((airConditionTemperature) => airConditionTemperature + 1)} variant="outline">
+                <button  className="aircondition-temperature-button" onClick={() => {
+                                                                        if (airConditionTemperature <30) {
+                                                                            setAirConditionTemperature((airConditionTemperature) => airConditionTemperature +1);}}} 
+                                                                        variant="outline">
                     +
                 </button>
-                <button  className="aircondition-temperature-button" onClick={() => setAirConditionTemperature((airConditionTemperature) => airConditionTemperature - 1)} variant="outline">
+                <button  className="aircondition-temperature-button" onClick={() => {
+                                                                        if (airConditionTemperature > 18) {
+                                                                            setAirConditionTemperature((airConditionTemperature) => airConditionTemperature -1);}}} 
+                                                                        variant="outline">
                     -
                 </button>
             </div>
-            <button className='apply-button' onClick={()=> {updateState()}} > Apply </button>
-
-    
-            
+            <br/>
+            <button className='apply-button' onClick={()=> {updateState()}} > Apply </button>            
         </div>
 
 
-
-
-
+            {isInfo && (<div className="info-container">   
+                <button className="close-button" onClick={() => setIsInfo(false)}>✖</button>
+                <div className="info-image-wrapper">
+                    <img src={info} alt="Οδηγίες" />
+                </div>
+            </div>
+            ) }
 
 
     </div>
