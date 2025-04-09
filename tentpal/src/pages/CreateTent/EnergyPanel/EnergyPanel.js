@@ -6,7 +6,7 @@ import React, { useState,useEffect } from "react";
 import LeftPanel from '../../../components/LeftPanel/LeftPanel';
 import Header from '../../../components/Header/Header';
 import MessageBox from '../../../components/MessageBox/MessageBox';
-import info from '../../../assets/energy_info.png';
+import InfoButton from "../../../components/InfoButton/InfoButton";
 
 
 function EnergyPanel(){
@@ -63,8 +63,6 @@ function EnergyPanel(){
    <>
 
     <div className = "centerContent" >
-
-        <button className="info-button" onClick={()=>setIsInfo(true)}> Οδηγίες </button>
 
         <div className="energy-production">
             <h2 style={{fontSize: "1.8rem",fontWeight: "bold",}}> ⚡Παραγωγή ενέργειας</h2>
@@ -123,21 +121,12 @@ function EnergyPanel(){
             <br/>
             <button className='apply-button' onClick={()=> {updateState()}} > Apply </button>            
         </div>
-
-
-            {isInfo && (<div className="info-container">   
-                <button className="close-button" onClick={() => setIsInfo(false)}>✖</button>
-                <div className="info-image-wrapper">
-                    <img src={info} alt="Οδηγίες" />
-                </div>
-            </div>
-            ) }
-
-
     </div>
 
+
+    <InfoButton page="energy"/>
     <LeftPanel page = "makeTent" levelMakeTent = {5} linkNext = {{link: "#", bool: true, lock: true}} linkPrev = {{link: "#", bool: true}}/>
-    <Header panel = {"messageBox"} message={'Σύστημα Ενεργειακού Ελέγχου'}/>
+    <Header panel = {"messageBox"} message={'Διαχείριση Ενέργειας'}/>
   </>
 );
 }

@@ -3,6 +3,7 @@ import React, { useState,useEffect } from "react";
 import LeftPanel from '../../../components/LeftPanel/LeftPanel';
 import Header from '../../../components/Header/Header';
 import MessageBox from '../../../components/MessageBox/MessageBox';
+import InfoButton from '../../../components/InfoButton/InfoButton';
 
 
 
@@ -88,10 +89,7 @@ function LightPanel(){
 return(
   <>
     <div className = "centerContent">
-    <br/>
-    <br/>
-    <br/>
-    <div class="toggle-container">
+    <div class="toggle-container1">
       <span class="toggle-label">Απλός Φωτισμός</span>
         <label class="switch">
           <input type="checkbox" id="special-light1-toggle"   checked={SimpleLight}  onChange={() => {changeLightMode('simple');
@@ -104,23 +102,16 @@ return(
           <span class="slider"></span>
         </label>
       </div>
-      <br/><br/><br/>
-       <MessageBox message={"Παρακαλώ επιλέξτε είδος φωτισμού"}
-        width={"900px"} height={"50px"} top={"10px"}/>
-        <br/>
-        <MessageBox message={"Απλός Φωτισμός: Επιλογή χρώματος και έντασης"}
-        width={"900px"} height={"50px"} top={"100px"}/>
+
+      
         <div class="color-container">
           <label class="color-label" for="colorInput">Επιλογή χρώματος:</label>
           <input type="color" id="colorInput"value={color}  disabled={!SimpleLight}
             onChange={(e) => setColor(e.target.value)}
             class="color-picker"/>
         </div>
-
-
-
               {/* Ρύθμιση Διαφάνειας */}
-      <div className="toggle-container">
+      <div className="bar-container">
         <label class="color-label" for="colorInput">Ένταση:</label>
         <input
           type="range"
@@ -134,7 +125,7 @@ return(
         />
       </div>
 
-        <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
+        <div className='final-preview-container'>
           <label style={{ fontWeight: "bold" }}>Τελική απόχρωση:</label>
           <div
             className="color-preview"
@@ -146,14 +137,7 @@ return(
             }}
           />
         </div>
-
-
-
-        <MessageBox message={"Σύνθετος  Φωτισμός: Επιλογή προεπιλγμένου mode"}
-        width={"900px"} height={"50px"} top={"330px"}/>
-
-      <br/><br/><br/><br/><br/>
-      <div class="toggle-container">
+      <div class="toggle-container2">
       <span class="toggle-label">Φωτισμός για Εκδηλώσεις</span>
         <label class="switch">
           <input type="checkbox" id="special-light1-toggle" checked={!SimpleLight && !NightLight && NightLight!=null} onChange={() => {changeComplexLightMode("partyLight");
@@ -169,11 +153,15 @@ return(
         </label>
       </div>
       <button className='apply-button' onClick={()=> {updateState()}} > Apply </button>
-
     </div>
 
-
-
+    <InfoButton page="light"/>
+    <MessageBox message={"Παρακαλώ επιλέξτε είδος φωτισμού"}
+      width={"900px"} height={"50px"} top={"140px"} left={"160px"}/>
+    <MessageBox message={"Απλός Φωτισμός: Επιλογή χρώματος και έντασης"}
+      width={"900px"} height={"50px"} top={"250px"} left={"160px"}/>
+    <MessageBox message={"Σύνθετος  Φωτισμός: Επιλογή προεπιλγμένου mode"}
+      width={"900px"} height={"50px"} top={"460px"} left={"160px"}/>
     <LeftPanel page = "makeTent" levelMakeTent = {4} linkNext = {{link: "#", bool: true, lock: true}} linkPrev = {{link: "#", bool: true}}/>
     <Header panel = {"messageBox"} message={'Light Section'}/>
   </>
