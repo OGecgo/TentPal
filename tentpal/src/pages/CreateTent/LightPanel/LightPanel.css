@@ -8,32 +8,103 @@ button{
   cursor: pointer;
 }
 
-.apply-button{
-  background-color: hsl(120, 75%, 33%);
-
-
+.centerContent{
+  margin-left: 170px;
 }
+
+.apply-button{
+  position: absolute;
+  background-color: hsl(120, 75%, 33%);
+  top: 450px;
+  left: 20%;
+}
+
 .apply-button:hover{
   background-color: hsl(120, 60%, 33%);
 }
 
-.toggle-container {
+.toggle-container1 {
+  position: absolute;
+  top: 85px;
+  left: 440px;
+  transform: translate(-50%, -50%); /* Το κάνει να κεντραριστεί ακριβώς */
   display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0px 10px;
+}
+
+.toggle-container2 {
+  position: absolute;
+  top: 410px;
+  left: 440px;
+  transform: translate(-50%, -50%); /* Το κάνει να κεντραριστεί ακριβώς */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0px 10px;
+}
+
+
+.color{
+  position: absolute;
+  top: 410px;
+  left: 440px;
+  transform: translate(-50%, -50%); /* Το κάνει να κεντραριστεί ακριβώς */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0px 10px;
+
+}
+
+.color-container {
+  position: absolute;
+  top: 205px;
+  left: 140px;
+  transform: translate(-50%, -50%); /* Το κάνει να κεντραριστεί ακριβώς */
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0px 10px;
+}
+
+.bar-container {
+  position: absolute;
+  top: 230px;
+  left: 40px;
   align-items: center;
   gap: 10px; /* Απόσταση μεταξύ του διακόπτη και του κειμένου */
 }
+
+.final-preview-container{
+  display: flex;
+  flex-direction: row;
+  position: absolute;
+  top: 255px;
+  left: 40px;
+  align-items: center;
+  gap: 10px; /* Απόσταση μεταξύ του διακόπτη και του κειμένου */
+}
+
+
+
+
+
 
 .switch {
   position: relative;
   display: inline-block;
   width: 50px;
   height: 25px;
+  margin-right: 20px;
 }
 
 .switch input {
   opacity: 0;
   width: 0;
   height: 0;
+
 }
 
 .slider {
@@ -74,13 +145,6 @@ input:checked + .slider::before {
 }
 
 
-
-.color-container {
-  display: flex;
-  align-items: center; /* Κρατάει label & input στην ίδια γραμμή */
-  gap: 10px; /* Προσθέτει διάστημα μεταξύ τους */
-  margin-top: 10px;
-}
 
 .color-label {
   font-size: 16px;

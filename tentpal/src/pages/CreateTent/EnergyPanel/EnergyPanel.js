@@ -6,6 +6,7 @@ import React, { useState,useEffect } from "react";
 import LeftPanel from '../../../components/LeftPanel/LeftPanel';
 import Header from '../../../components/Header/Header';
 import MessageBox from '../../../components/MessageBox/MessageBox';
+import InfoButton from "../../../components/InfoButton/InfoButton";
 
 
 function EnergyPanel(){
@@ -15,6 +16,7 @@ function EnergyPanel(){
     const[isAirCondition,setIsAirCondition]=useState(null);
     const[airConditionTemperature,setAirConditionTemperature]=useState(25);
     const[isElecticBlanket,setIsElectricBlanket]=useState(null)
+    const[isInfo,setIsInfo]=useState(false);
 
 
     let moisture=Math.floor((Math.random() *100));
@@ -61,6 +63,7 @@ function EnergyPanel(){
    <>
 
     <div className = "centerContent" >
+
         <div className="energy-production">
             <h2 style={{fontSize: "1.8rem",fontWeight: "bold",}}> ⚡Παραγωγή ενέργειας</h2>
 
@@ -102,29 +105,28 @@ function EnergyPanel(){
             </div>   
             <div className="aircondition-temperature">
                 <p><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία Κλιματισμού: {isAirCondition ? airConditionTemperature+'°C' : '-'}</p>
-                <button  className="aircondition-temperature-button" onClick={() => setAirConditionTemperature((airConditionTemperature) => airConditionTemperature + 1)} variant="outline">
+                <button  className="aircondition-temperature-button" onClick={() => {
+                                                                        if (airConditionTemperature <30) {
+                                                                            setAirConditionTemperature((airConditionTemperature) => airConditionTemperature +1);}}} 
+                                                                        variant="outline">
                     +
                 </button>
-                <button  className="aircondition-temperature-button" onClick={() => setAirConditionTemperature((airConditionTemperature) => airConditionTemperature - 1)} variant="outline">
+                <button  className="aircondition-temperature-button" onClick={() => {
+                                                                        if (airConditionTemperature > 18) {
+                                                                            setAirConditionTemperature((airConditionTemperature) => airConditionTemperature -1);}}} 
+                                                                        variant="outline">
                     -
                 </button>
             </div>
-            <button className='apply-button' onClick={()=> {updateState()}} > Apply </button>
-
-    
-            
+            <br/>
+            <button className='apply-button' onClick={()=> {updateState()}} > Apply </button>            
         </div>
-
-
-
-
-
-
-
     </div>
 
+
+    <InfoButton page="energy"/>
     <LeftPanel page = "makeTent" levelMakeTent = {5} linkNext = {{link: "#", bool: true, lock: true}} linkPrev = {{link: "#", bool: true}}/>
-    <Header panel = {"messageBox"} message={'Σύστημα Ενεργειακού Ελέγχου'}/>
+    <Header panel = {"messageBox"} message={'Διαχείριση Ενέργειας'}/>
   </>
 );
 }
