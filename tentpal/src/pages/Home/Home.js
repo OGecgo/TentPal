@@ -22,8 +22,6 @@ function Home() {
       <LeftPanel />
       <Header panel = "login" />
     </div>
-
-    
   );
 }
 

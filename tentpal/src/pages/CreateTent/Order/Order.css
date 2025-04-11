@@ -1,0 +1,49 @@
+
+button{
+    font-size: 1.7rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .apply-button1{
+    position: absolute;
+    background-color: hsl(120, 75%, 33%);
+    bottom: 50px;
+    left:150px
+  }
+  
+  .apply-button:hover{
+    background-color: hsl(120, 60%, 33%);
+  }
+
+  .add-subtract-button{
+    background-color: rgb(64, 236, 236);
+    color: rgb(255, 255, 255);
+  }
+
+
+  .display-menu {
+  margin-top: 20px;
+  margin-left: 150px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+  background-color: rgb(206, 203, 203);
+  width: 300px;
+  height: 625px;
+}
+
+
+
+.menu-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #333;
+}
+
+ 
