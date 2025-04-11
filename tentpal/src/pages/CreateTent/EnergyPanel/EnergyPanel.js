@@ -89,7 +89,7 @@ function EnergyPanel(){
             <h2 style={{fontSize: "1.8rem",fontWeight: "bold",}}> ⚡Κατανάλωση ενέργειας</h2>
             <p><FontAwesomeIcon icon={faBolt} /> Κατανάλωση ενέργειας τώρα: {generateEnergyConsumption()}Wh</p>
 
-            <br/>
+        
 
         <span class="toggle-label">Ηλεκτρική Κουβέρτα: </span>
         <label class="switch">
@@ -118,7 +118,6 @@ function EnergyPanel(){
                     -
                 </button>
             </div>
-            <br/>
             <button className='apply-button' onClick={()=> {updateState()}} > Apply </button>            
         </div>
     </div>
@@ -126,7 +125,7 @@ function EnergyPanel(){
 
     <InfoButton page="energy"/>
     <LeftPanel page = "makeTent" levelMakeTent = {5} linkNext = {{link: "#", bool: true, lock: true}} linkPrev = {{link: "#", bool: true}}/>
-    <Header panel = {"messageBox"} message={'Διαχείριση Ενέργειας'}/>
+    <Header panel = {"messageBox"} message={'Διαχείριση Ενέργειας Ενεργειακού Ελέγχου'}/>
   </>
 );
 }

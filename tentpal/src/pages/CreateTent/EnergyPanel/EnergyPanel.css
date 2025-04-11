@@ -9,6 +9,17 @@ button{
     cursor: pointer;
   }
 
+  .apply-button{
+    position: absolute;
+    background-color: hsl(120, 75%, 33%);
+    top: 250px;
+    left:10px;
+  }
+  
+  .apply-button:hover{
+    background-color: hsl(120, 60%, 33%);
+  }
+
   .aircondition-temperature-button{
     background-color: aqua;
     color: white;
@@ -82,7 +93,7 @@ button{
   .energy-consumption{
     position: absolute; 
     left: 50px; 
-    top: 400px;
+    top: 200px;
   }
   .weather{
     position: absolute; 
