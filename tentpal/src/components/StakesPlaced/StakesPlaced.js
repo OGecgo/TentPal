@@ -63,25 +63,27 @@ function StakesPlaced() {
         }
     }
     
-    return(
+    return (
         <>
-            <div className={`centerContent ${classes.leftPanel}`}>
-                <div className={classes.topPanel}>
-                    <Tent funct={SetStake} />
+            <div className={`centerContent`}>
+                <div className={classes.leftPanel}>
+                    <div className={classes.topPanel}>
+                        <Tent funct={SetStake} />
+                    </div>
+                    <div className={classes.bottomPanel}>
+                        <Panel 
+                            precentDeep={setDeepPres} precentDeepSlider={startWith ? deepPres : undefined}
+                            precentDegre={setDegrePres} precentDegreSlider={startWith ? degrePres : undefined}
+                        />
+                    </div>
                 </div>
-                <div className={classes.bottomPanel}>
-                    <Panel 
-                        precentDeep={setDeepPres} precentDeepSlider={startWith ? deepPres : undefined}
-                        precentDegre={setDegrePres} precentDegreSlider={startWith ? degrePres : undefined}
-                    />
+                <div className={classes.rightPanel}>
+                    <Environmental />
+                    <Stake 
+                        topPosition={`calc(${deepRealPres}vh - var(--top-Panel-Height))`} 
+                        rotation={`${degreRealPres}deg`}
+                    />   
                 </div>
-            </div>
-            <div className={`centerContent ${classes.rightPanel}`}>
-                <Environmental />
-                <Stake 
-                    topPosition={`calc(${deepRealPres}vh - var(--top-Panel-Height))`} 
-                    rotation={`${degreRealPres}deg`}
-                />   
             </div>
         </>
     );
