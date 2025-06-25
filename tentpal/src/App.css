@@ -12,8 +12,7 @@ body{
   position: absolute;
   height: calc(100vh - var(--top-Panel-Height));
   width: calc(100vw - 152px);
-  margin-left: 152px;
-  margin-top: var(--top-Panel-Height);
+  top: var(--top-Panel-Height);
 }
 
 p{

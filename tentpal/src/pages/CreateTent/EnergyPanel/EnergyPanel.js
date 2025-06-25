@@ -123,9 +123,9 @@ function EnergyPanel(){
     </div>
 
 
-    <InfoButton page="energy"/>
-    <LeftPanel page = "makeTent" levelMakeTent = {5} linkNext = {{link: "#", bool: true, lock: true}} linkPrev = {{link: "#", bool: true}}/>
-    <Header panel = {"messageBox"} message={'Διαχείριση Ενέργειας Ενεργειακού Ελέγχου'}/>
+    {/* <InfoButton page="energy"/> */}
+    <LeftPanel page = "makeTent" levelMakeTent = {5} linkNext = {{link: "#", bool: true, lock: true}} linkPrev = {{link: "/lightPanel", bool: true}}/>
+    <Header panel = {"messageBox"} message={'Διαχείριση Ενέργειας Ενεργειακού Ελέγχου'} helpPage={'energy'}/>
   </>
 );
 }

@@ -2,13 +2,13 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 import MessageBox from "../MessageBox/MessageBox";
+import InfoButton from "../InfoButton/InfoButton";
 
 // css
 import classes from "./Header.module.css";
 
 
-function Header ({panel, message}) {
-
+function Header ({panel, message, helpPage}) {
   const renderPage = (panel) => {
     switch(panel) {
       case "login":
@@ -20,7 +20,12 @@ function Header ({panel, message}) {
         );
       case "messageBox":
         return (
-          <MessageBox message = {message} width={"calc(100% - (4vw + 40px + 2vh + 2vw))"} height={" calc(40px + 5vh + 2vw - 20px)"} top = {"10px"} left = {"10px"}/>
+          <>
+            <MessageBox message={message} width={"calc(100% - (40px + 5vh + 2vw - 20px) - 20px - (40px + 5vh + 2vw - 20px) - 20px)"} height={" calc(40px + 5vh + 2vw - 20px)"} top = {"10px"} left = {"10px"}/>
+            {helpPage && (
+              <InfoButton page={helpPage} sizeX={"calc(40px + 5vh + 2vw - 20px)"} sizeY={"calc(40px + 5vh + 2vw - 20px)"} fontSize={25} top={"10px"} left={"calc(100% - (40px + 5vh + 2vw - 20px) - 20px - (40px + 5vh + 2vw - 20px)"}/>
+            )}
+          </>
         );
       default:
         return;
@@ -32,7 +37,9 @@ function Header ({panel, message}) {
     <>
       <div className = {classes.header}>
         {renderPage(panel)}
-        <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" />
+        <div className={`${classes.user}`}>
+          <img  src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" />
+        </div>
       </div>
     </>  
   );

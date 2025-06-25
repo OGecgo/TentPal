@@ -8,14 +8,32 @@
     left: 152px;
 }
 
+.header .Help{
+    position: fixed;
+    width: calc(40px + 5vh + 2vw - 20px);
+    height: calc(40px + 5vh + 2vw - 20px);
+    background-color: #484848;
+    border-radius: 20%;
+    top: 10px;
+    left: calc(100% - (40px + 5vh + 2vw - 20px) - 20px - (40px + 5vh + 2vw - 20px));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
 
-.header img{
+.header .Help p{
+    font-size: 25px;
+}
+
+
+.header .user img{
     position: fixed;
     width: calc(40px + 5vh + 2vw - 20px);
     height: calc(40px + 5vh + 2vw - 20px);
     border-radius: 100%;
-    background-color: #000000;
-    left: calc(98vw - (40px + 2vh + 2vw - 10px));
+    background-color: var(--black);
+    left: calc(100% - (40px + 5vh + 2vw - 10px));
     top: 10px;
 }
 
