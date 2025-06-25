@@ -88,12 +88,14 @@ function LightPanel(){
 
 return(
   <>
-    <div className = "centerContent">
-    <div className="toggle-container1">
-      <span className="toggle-label">Απλός Φωτισμός</span>
+    <div className="centerContent">
+
+      <div className="upperPanel">
+        <MessageBox message={"Παρακαλώ επιλέξτε είδος φωτισμού"} width="calc(100% - 20px)" height={"40%"} top={"10px"} left={"10px"}/>
+
+        <p style={{position: "absolute", marginLeft: "10px", marginTop: "15vh"}}>Απλός Φωτισμός</p>
         <label className="switch">
-          <input type="checkbox" id="special-light1-toggle"   checked={SimpleLight}  onChange={() => {changeLightMode('simple');
-  }} />
+          <input type="checkbox" id="special-light1-toggle"   checked={SimpleLight}  onChange={() => {changeLightMode('simple');}} />
           <span className="slider"></span>
         </label>
         <span className="toggle-label">Σύνθετος Φωτισμός</span>
@@ -103,61 +105,67 @@ return(
         </label>
       </div>
 
-      
-        <div className="color-container">
-          <label className="color-label" htmlFor="colorInput">Επιλογή χρώματος:</label>
-          <input type="color" id="colorInput"value={color}  disabled={!SimpleLight}
-            onChange={(e) => setColor(e.target.value)}
-            className="color-picker"/>
+      <div className="midlePanel"></div>
+      <div className="bottomPanel"></div>
+
+
+      <div className="toggle-container1">
+
         </div>
-              {/* Ρύθμιση Διαφάνειας */}
-      <div className="bar-container">
-        <label className="color-label" htmlFor="colorInput">Ένταση:</label>
-        <input
-          type="range"
-          id="opacityRange"
-          min="0"
-          max="1"
-          step="0.01"
-          value={intensity}
-          disabled={!SimpleLight}
-          onChange={(e) => setIntensity(Number(e.target.value))}
-        />
-      </div>
 
-        <div className='final-preview-container'>
-          <label style={{ fontWeight: "bold" }}>Τελική απόχρωση:</label>
-          <div
-            className="color-preview"
-            style={{
-              backgroundColor: finalColor,
-              width: "50px",
-              height: "50px",
-
-            }}
+        
+          <div className="color-container">
+            <label className="color-label" htmlFor="colorInput">Επιλογή χρώματος:</label>
+            <input type="color" id="colorInput"value={color}  disabled={!SimpleLight}
+              onChange={(e) => setColor(e.target.value)}
+              className="color-picker"/>
+          </div>
+                {/* Ρύθμιση Διαφάνειας */}
+        <div className="bar-container">
+          <label className="color-label" htmlFor="colorInput">Ένταση:</label>
+          <input
+            type="range"
+            id="opacityRange"
+            min="0"
+            max="1"
+            step="0.01"
+            value={intensity}
+            disabled={!SimpleLight}
+            onChange={(e) => setIntensity(Number(e.target.value))}
           />
         </div>
-      <div className="toggle-container2">
-      <span className="toggle-label">Φωτισμός για Εκδηλώσεις</span>
-        <label className="switch">
-          <input type="checkbox" id="special-light1-toggle" checked={!SimpleLight && !NightLight && NightLight!=null} onChange={() => {changeComplexLightMode("partyLight");
-                                                                                                   setColorSettingsAutomatically("partyLight"); }}/>
-          <span className="slider"></span>
-        </label>
 
-        <span className="toggle-label">Νυχτερινό Φως</span>
-        <label className="switch">
-          <input type="checkbox" id="special-light2-toggle"checked={!SimpleLight && NightLight} onChange={() => {changeComplexLightMode("nightLight");
-                                                                                                   setColorSettingsAutomatically("nightLight"); }}/>
-          <span className="slider"></span>
-        </label>
-      </div>
-      <button className='apply-button' onClick={()=> {updateState()}} > Apply </button>
+          <div className='final-preview-container'>
+            <label style={{ fontWeight: "bold" }}>Τελική απόχρωση:</label>
+            <div
+              className="color-preview"
+              style={{
+                backgroundColor: finalColor,
+                width: "50px",
+                height: "50px",
+
+              }}
+            />
+          </div>
+        <div className="toggle-container2">
+        <span className="toggle-label">Φωτισμός για Εκδηλώσεις</span>
+          <label className="switch">
+            <input type="checkbox" id="special-light1-toggle" checked={!SimpleLight && !NightLight && NightLight!=null} onChange={() => {changeComplexLightMode("partyLight");
+                                                                                                    setColorSettingsAutomatically("partyLight"); }}/>
+            <span className="slider"></span>
+          </label>
+
+          <span className="toggle-label">Νυχτερινό Φως</span>
+          <label className="switch">
+            <input type="checkbox" id="special-light2-toggle"checked={!SimpleLight && NightLight} onChange={() => {changeComplexLightMode("nightLight");
+                                                                                                    setColorSettingsAutomatically("nightLight"); }}/>
+            <span className="slider"></span>
+          </label>
+        </div>
+        <button className='apply-button' onClick={()=> {updateState()}} > Apply </button>
     </div>
 
     <InfoButton page="light"/>
-    <MessageBox message={"Παρακαλώ επιλέξτε είδος φωτισμού"}
-      width={"900px"} height={"50px"} top={"140px"} left={"160px"}/>
     <MessageBox message={"Απλός Φωτισμός: Επιλογή χρώματος και έντασης"}
       width={"900px"} height={"50px"} top={"250px"} left={"160px"}/>
     <MessageBox message={"Σύνθετος  Φωτισμός: Επιλογή προεπιλγμένου mode"}
