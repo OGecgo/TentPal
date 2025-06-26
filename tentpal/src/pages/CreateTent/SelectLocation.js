@@ -32,7 +32,7 @@ function SelectLocation() {
 
   return (
     <>
-      <div className={`centerContent`} style={{ position: "relative" }}>
+      <div className={`centerContent`}>
         <Map colorChanged = {setColor} />
       </div>
 

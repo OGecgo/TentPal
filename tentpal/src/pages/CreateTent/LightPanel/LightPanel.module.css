@@ -1,0 +1,61 @@
+.leftContent {
+  position: absolute;
+  background-color: #BBBACA;
+  border-radius: 20px;
+  width: calc(50% - 20px);
+  left: 10px;
+  height: calc(100% - 20px);
+  top: 10px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+
+
+.upperPanel{
+  position: absolute;
+  top: 0px;
+  height: calc(100% / 3 );
+  width: 100%;
+}
+
+.blockData{
+  background-color: #DFDCEC;
+  border-radius: 10px;
+  position: absolute;
+  top: 50%;
+  height: 40%;
+  width: calc(100% - 40px);
+  left: 20px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+
+.midlePanel{
+  position: absolute;
+  top: calc(100% / 3);
+  height: calc(100% / 3);
+  width: 100%;
+}
+
+.bottomPanel{
+  position: absolute;
+  top: calc((100% * 2) / 3);
+  height: calc(100% / 3);
+  width: 100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+

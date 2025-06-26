@@ -3,7 +3,7 @@ import React from "react";
 import classes from "./MessageBox.module.css";
 
 function MessageBox ({
-  message, backgroundColor,
+  message, backgroundColor, color,
   width, height, top, left
 }) {
 
@@ -11,7 +11,7 @@ function MessageBox ({
   return (
     <>
       <div className = {classes.textBox} style={{width: width, height: height, top: top, left: left, backgroundColor: backgroundColor}}>
-        <p>{message}</p>
+        <p style={{color: color}}>{message}</p>
       </div>
     </>
   );

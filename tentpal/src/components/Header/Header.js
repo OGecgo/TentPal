@@ -22,9 +22,7 @@ function Header ({panel, message, helpPage}) {
         return (
           <>
             <MessageBox message={message} width={"calc(100% - (40px + 5vh + 2vw - 20px) - 20px - (40px + 5vh + 2vw - 20px) - 20px)"} height={" calc(40px + 5vh + 2vw - 20px)"} top = {"10px"} left = {"10px"}/>
-            {helpPage && (
-              <InfoButton page={helpPage} sizeX={"calc(40px + 5vh + 2vw - 20px)"} sizeY={"calc(40px + 5vh + 2vw - 20px)"} fontSize={25} top={"10px"} left={"calc(100% - (40px + 5vh + 2vw - 20px) - 20px - (40px + 5vh + 2vw - 20px)"}/>
-            )}
+            <InfoButton page={helpPage} sizeX={"calc(40px + 5vh + 2vw - 20px)"} sizeY={"calc(40px + 5vh + 2vw - 20px)"} fontSize={25} top={"10px"} left={"calc(100% - (40px + 5vh + 2vw - 20px) - 20px - (40px + 5vh + 2vw - 20px)"}/>
           </>
         );
       default:
