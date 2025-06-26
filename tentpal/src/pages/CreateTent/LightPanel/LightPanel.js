@@ -112,39 +112,7 @@ return(
 
           <div className={classes.midlePanel}>
             <MessageBox message={"Απλός Φωτισμός: Επιλογή χρώματος και έντασης"} width="calc(100% - 40px)" height={"30%"} top={"10%"} left={"20px"}/>
-            <div className={classes.blockData}></div>
-            <div className={classes.color_container}>
-              <label className={classes.color_label} htmlFor="colorInput">Επιλογή χρώματος:</label>
-              <input type="color" id="colorInput"value={color}  disabled={!SimpleLight}
-                onChange={(e) => setColor(e.target.value)}
-                className={classes.color_picker}/>
-            </div>
-            {/* Ρύθμιση Διαφάνειας */}
-            <div className={classes.bar_container}>
-              <label className={classes.color_label} htmlFor="colorInput">Ένταση:</label>
-              <input
-                type="range"
-                id="opacityRange"
-                min="0"
-                max="1"
-                step="0.01"
-                value={intensity}
-                disabled={!SimpleLight}
-                onChange={(e) => setIntensity(Number(e.target.value))}
-              />
-            </div>
-                        <div className={classes.final_preview_container}>
-              <label style={{ fontWeight: "bold" }}>Τελική απόχρωση:</label>
-              <div
-                className={classes.color_preview}
-                style={{
-                  backgroundColor: finalColor,
-                  width: "50px",
-                  height: "50px",
 
-                }}
-              />
-            </div>
           </div>
           <div className={classes.bottomPanel}>
             <MessageBox message={"Σύνθετος  Φωτισμός: Επιλογή προεπιλγμένου mode"} width="calc(100% - 40px)" height={"30%"} top={"10%"} left={"20px"}/>
@@ -152,6 +120,19 @@ return(
           </div>
 
         </div>
+
+
+
+        <div className={classes.rightPanel}>
+          <div className={classes.sky}>
+          <div className={classes.shadowSky}></div>
+          <div className={classes.shadowDSky}></div>
+
+          <div className={classes.ground}></div>
+          <div className={classes.shadowGround}></div>
+          </div>
+        </div>
+
      </div>
 
 
@@ -160,37 +141,6 @@ return(
 
 
 
-
-    {/* 
-
-        <div className="toggle-container1">
-
-          </div>
-
-
-
-
-          <div className={classes.toggle_container2}>
-          <span className={classes.toggle_label}>Φωτισμός για Εκδηλώσεις</span>
-            <label className={classes.switch}>
-              <input type="checkbox" id="special-light1-toggle" checked={!SimpleLight && !NightLight && NightLight!=null} onChange={() => {changeComplexLightMode("partyLight");
-                                                                                                      setColorSettingsAutomatically("partyLight"); }}/>
-              <span className={classes.slider}></span>
-            </label>
-
-            <span className={classes.toggle_label}>Νυχτερινό Φως</span>
-            <label className={classes.switch}>
-              <input type="checkbox" id="special-light2-toggle"checked={!SimpleLight && NightLight} onChange={() => {changeComplexLightMode("nightLight");
-                                                                                                      setColorSettingsAutomatically("nightLight"); }}/>
-              <span className={classes.slider}></span>
-            </label>
-          </div>
-          <button className={classes.apply_button} onClick={()=> {updateState()}} > Apply </button>
-      </div>
-
-      <InfoButton page="light"/>
-
-      */}
 
 
       <LeftPanel page = "makeTent" levelMakeTent = {4} linkNext = {{link: "/energyPanel", bool: true, lock: false}} linkPrev = {{link: "/chooseTent", bool: true}}/>

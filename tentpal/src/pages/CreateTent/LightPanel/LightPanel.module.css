@@ -53,8 +53,65 @@
 
 
 
+.rightPanel{
+  position: absolute;
+  background-color: #8A8B9D;
+  border-radius: 20px;
+  width: calc(50% - 20px);
+  left: calc(50% + 10px);
+  height: calc(100% - 20px);
+  top: 10px;
+}
 
 
+.rightPanel .sky{
+  position: absolute;
+  background-color: #08025f;
+  border-radius: 20px;
+  width: calc(100% - 20px);
+  left: 10px;
+  height: calc(100% - 20px);
+  top: 10px;
+}
+.shadowSky{
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  background-color: rgba(0, 0, 0, 0.202);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.shadowDSky{
+  position: absolute;
+  width: 100%;
+  height: 70%;
+  background-color: rgba(0, 0, 0, 0.202);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+
+.shadowGround{
+  position: absolute;
+  margin-bottom: 40%;
+  width: 100%;
+  height: 40%;
+  background-color: rgba(0, 0, 0, 0.202);
+  border-top-left-radius: 0px;
+  border-top-right-radius: 0px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+
+.ground{
+  position:absolute;
+  top: 80%;
+  background-color: #325e21;
+  width: 100%;
+  height: 10%;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
 
 
 
