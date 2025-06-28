@@ -1,9 +1,12 @@
 import classes from './LightPanel.module.css';
 import { useState,useEffect } from "react";
+
 import LeftPanel from 'components/LeftPanel/LeftPanel';
 import Header from 'components/Header/Header';
 import MessageBox from 'components/MessageBox/MessageBox';
 
+import Environmental from './Environmental/Environmental';
+import StickLamp from './StickLamp/StickLamp';
 
 function LightPanel(){
   const [SimpleLight, setSimpleLight] = useState(true);
@@ -123,15 +126,15 @@ return(
 
 
 
-        <div className={classes.rightPanel}>
-          <div className={classes.sky}>
-          <div className={classes.shadowSky}></div>
-          <div className={classes.shadowDSky}></div>
+      <div className={classes.rightPanel}>
+        <Environmental/>
+        <StickLamp width={"2vh"} height={"12vw"} left={"calc(20%)"} top={"calc(90% - 12vw)"}/>
+        <StickLamp width={"2vh"} height={"17vw"} left={"calc(40%)"} top={"calc(90% - 17vw)"}/>
+        <StickLamp width={"2vh"} height={"17vw"} left={"calc(60%)"} top={"calc(90% - 17vw)"}/>
+        <StickLamp width={"2vh"} height={"12vw"} left={"calc(80%)"} top={"calc(90% - 12vw)"}/>
 
-          <div className={classes.ground}></div>
-          <div className={classes.shadowGround}></div>
-          </div>
-        </div>
+
+      </div>
 
      </div>
 
