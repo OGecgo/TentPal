@@ -2,8 +2,8 @@ import { useState } from "react";
 import "./InfoButton.css"; // για στυλ
 
 
-import energy_guide from "../../assets/energy_info.png";
-import light_guide from "../../assets/light_info.png";
+import energy_guide from "assets/energy_info.png";
+import light_guide from "assets/light_info.png";
 // // κλπ...
 
 const guides = {

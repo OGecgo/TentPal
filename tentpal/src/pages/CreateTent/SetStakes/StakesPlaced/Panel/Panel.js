@@ -1,7 +1,7 @@
 import React from "react";
 
-import Slider from "../../Slider/Slider";
-import MessageBox from "../../MessageBox/MessageBox";
+import Slider from "components/Slider/Slider";
+import MessageBox from "components/MessageBox/MessageBox";
 
 import classes from "./Panel.module.css";
 

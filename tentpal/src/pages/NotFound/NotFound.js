@@ -1,8 +1,8 @@
 import React from "react";
 
 // components
-import Header from "../../components/Header/Header";
-import LeftPanel from "../../components/LeftPanel/LeftPanel";
+import Header from "components/Header/Header";
+import LeftPanel from "components/LeftPanel/LeftPanel";
 
 //css
 import "./NotFound.module.css";

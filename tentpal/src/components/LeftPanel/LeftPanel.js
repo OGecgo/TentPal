@@ -58,7 +58,7 @@ function LeftPanel({page, levelMakeTent, linkNext, linkPrev}) {
     return(
 
         <div className = {`${classes.left}`}>
-            <Link to = "/Home"><img src = {require("../../assets/Logo.webp")} alt = "logo" /></Link>
+            <Link to = "/Home"><img src = {require("assets/Logo.webp")} alt = "logo" /></Link>
             {Panel()}
         </div>
 

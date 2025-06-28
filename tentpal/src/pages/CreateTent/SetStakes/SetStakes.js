@@ -1,8 +1,8 @@
 import React from "react";
 
-import Header from "../../components/Header/Header";
-import LeftPanel from "../../components/LeftPanel/LeftPanel";
-import StakesPlaced from "../../components/StakesPlaced/StakesPlaced";
+import Header from "components/Header/Header";
+import LeftPanel from "components/LeftPanel/LeftPanel";
+import StakesPlaced from "./StakesPlaced/StakesPlaced";
 
 function SetStakes() {
     

@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 
-import Header from "../../components/Header/Header";
-import LeftPanel from "../../components/LeftPanel/LeftPanel";
-import DragPanelsTent from '../../components/DragPanelsTent/DragPanelsTent';
+import Header from "components/Header/Header";
+import LeftPanel from "components/LeftPanel/LeftPanel";
+import DragPanelsTent from './DragPanelsTent/DragPanelsTent';
 
 function ChooseTent() {
 

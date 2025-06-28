@@ -1,8 +1,8 @@
 import classes from './LightPanel.module.css';
 import { useState,useEffect } from "react";
-import LeftPanel from '../../../components/LeftPanel/LeftPanel';
-import Header from '../../../components/Header/Header';
-import MessageBox from '../../../components/MessageBox/MessageBox';
+import LeftPanel from 'components/LeftPanel/LeftPanel';
+import Header from 'components/Header/Header';
+import MessageBox from 'components/MessageBox/MessageBox';
 
 
 function LightPanel(){

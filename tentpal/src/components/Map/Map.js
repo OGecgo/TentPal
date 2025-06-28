@@ -106,7 +106,7 @@ function Map({colorChanged}) {
 
     return (
         <>
-            <img onLoad = {updateGridSize} ref = {refImg}  src={require("../../assets/CampingMap.webp")} alt="Map" className={`${classes.image}`} />
+            <img onLoad = {updateGridSize} ref = {refImg}  src={require("assets/CampingMap.webp")} alt="Map" className={`${classes.image}`} />
             {gridBlocks}
         </>
     );

@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from "react";
 
-import Header from "../../components/Header/Header";
-import LeftPanel from "../../components/LeftPanel/LeftPanel";
+import Header from "components/Header/Header";
+import LeftPanel from "components/LeftPanel/LeftPanel";
 
 import classes from "./LoginForm.module.css";
 

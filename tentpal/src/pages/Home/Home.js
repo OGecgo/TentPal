@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 // components
-import Header from "../../components/Header/Header";
-import LeftPanel from "../../components/LeftPanel/LeftPanel";
+import Header from "components/Header/Header";
+import LeftPanel from "components/LeftPanel/LeftPanel";
 
 // css
 import classes from "./Home.module.css"; // that styling used only on this page

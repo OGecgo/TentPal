@@ -2,7 +2,7 @@ import React, {useState} from "react";
 
 import classes from "./Tent.module.css";
 
-import Selected from "../../Selected/Selected";
+import Selected from "components/Selected/Selected";
 
 function Tent({funct}) {
 

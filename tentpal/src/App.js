@@ -11,8 +11,8 @@ import Order from "./pages/CreateTent/Order/Order";
 import EnergyPanel from "./pages/CreateTent/EnergyPanel/EnergyPanel";
 import LightPanel from "./pages/CreateTent/LightPanel/LightPanel";
 import SelectLocation from "./pages/CreateTent/SelectLocation";
-import SetStakes from "./pages/CreateTent/SetStakes";
-import ChooseTent from "./pages/CreateTent/ChooseTent";
+import SetStakes from "./pages/CreateTent/SetStakes/SetStakes";
+import ChooseTent from "./pages/CreateTent/ChooseTent/ChooseTent";
 
 
 

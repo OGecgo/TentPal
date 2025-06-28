@@ -1,8 +1,8 @@
 import React from "react";
 
-import Header from "../../components/Header/Header";
-import LeftPanel from "../../components/LeftPanel/LeftPanel";
-import Map from "../../components/Map/Map";
+import Header from "components/Header/Header";
+import LeftPanel from "components/LeftPanel/LeftPanel";
+import Map from "components/Map/Map";
 
 
 function SelectLocation() {

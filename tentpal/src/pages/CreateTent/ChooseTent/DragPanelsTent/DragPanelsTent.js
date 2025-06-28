@@ -1,12 +1,12 @@
 import React, {useState, useEffect} from "react";
 
-import ImageBlock from "../ImageBlock/ImageBlock";
-import MessageBox from "../MessageBox/MessageBox";
+import ImageBlock from "components/ImageBlock/ImageBlock";
+import MessageBox from "components/MessageBox/MessageBox";
 
 import classes from "./DragPanelsTent.module.css";
 
-import NomalWebp from "../../assets/Normal.webp";
-import RainWebp from "../../assets/Rain.webp";
+import NomalWebp from "assets/Normal.webp";
+import RainWebp from "assets/Rain.webp";
 
 function DragPanelsTent({returnTent}) {
 
