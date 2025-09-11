@@ -60,3 +60,22 @@ label{
     border: none;
     cursor: pointer;
 }
+
+
+.linkApply{
+    border-radius: 10px;
+    background-color: #5FA171;
+    border: 0.2em solid #498458;
+
+    cursor: pointer;
+    text-decoration: none;
+    color: #dfdcec;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 2em;
+}
+.linkApply:hover {
+    background-color: #498458;
+    border: 0.2em solid #396c46;
+}

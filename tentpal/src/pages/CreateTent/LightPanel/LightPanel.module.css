@@ -52,25 +52,17 @@
     width: 50%;
     left: 25%;
 }
-.linkAplhy{
+
+
+.linkApplyLight{
     position: absolute;
     top: 150%;
     width: calc(50% - 0.3em);
     left: 25%;
     height: calc(40% - 0.3em);
-    border-radius: 10px;
-    background-color: #5FA171;
-    border: 0.2em solid #498458;
 
-    cursor: pointer;
-    text-decoration: none;
-    color: #dfdcec;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 2em;
+
 }
-
 
 
 .blockCheckBox {

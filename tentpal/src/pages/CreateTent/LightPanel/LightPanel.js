@@ -155,7 +155,7 @@ function LightPanel() {
                                 <div className={SimpleLight ? `${classes.orangeBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => {if (SimpleLight)setNewColor(1386);}}></div>
                             </div>
                         </div>
-                        <Link to = {"#"} className={classes.linkAplhy}>Aply</Link>
+                        <Link to = {"#"} className={`linkApply ${classes.linkApplyLight}`}>Apply</Link>
                     </div>
                 </div>
 
@@ -168,7 +168,7 @@ function LightPanel() {
                     <StickLamp width={"2%"} height={"20%"} left={"68%"} top={"60%"} lampColor={finalColor} />
 
                     <StickLamp width={"2%"} height={"30%"} left={"15%"} top={"55%"} lampColor={finalColor} />
-                    <FrontTent width={"60%"} height={"40%"} left={"20%"} top={"44%"} color={"rgb(49, 49, 49)"} light={finalColor} />
+                    <FrontTent width={"60%"} height={"40%"} left={"20%"} top={"44%"} color={"rgba(53, 53, 53, 0.99)"} light={finalColor} />
 
                     <StickLamp width={"2%"} height={"30%"} left={"83%"} top={"55%"} lampColor={finalColor} />
 

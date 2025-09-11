@@ -1,0 +1,155 @@
+
+
+
+.itemBox {
+    position: absolute;
+    width : calc(48% - 2em);
+    height: calc(48% - 2em);
+    background-color: #BBBACA;
+    border: 1em solid #8A8B9D;
+    border-radius: 10px;
+}
+.topLeft {
+    background-color: #EBC8C3;
+    border: 1em solid #CCB1B1;
+    left: 1%;
+    top : 1%;
+}
+.topRight {
+    background-color: #EDEDCE;
+    border: 1em solid #CCCCB1;
+    left: 51%;
+    top :  1%;
+}
+.bottomLeft {
+    background-color: #EDEDCE;
+    border: 1em solid #CCCCB1;
+    top : 51%;
+    left:  1%;
+    height: 25%;
+}
+.bottomRight {
+    top: 51%;
+    left: 51%;
+    height: 25%;
+}
+
+.textBox{
+    position: absolute;
+    width: 100%;
+    top: 30%;
+}
+.textP {
+    position: relative;
+    font-size: calc(0.7vh + 0.7vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.textWarning{
+    color: rgb(220, 90, 90);
+    font-weight: bold;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.applyButton {
+    position: absolute;
+    background-color: hsl(120, 75%, 33%);
+    top: 250px;
+    left: 10px;
+}
+
+.applyButton:hover {
+    background-color: hsl(120, 60%, 33%);
+}
+
+.buttonTemp {
+    width: 30%;
+    height: 50%;
+    border: 2px solid #2B2B2B;
+    padding: 5px;
+    font-size: 1.5em;
+    border-radius: 5px;
+    background-color: #BBBACA;
+    cursor: pointer;
+}
+
+
+
+
+
+
+.textBoxSlider{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+}
+.textBoxSliderTwo{
+    top: 50%;
+}
+.textBoxSliderThree{
+    left: 50%;
+}
+.slider {
+    position: absolute;
+    cursor: pointer;
+    background-color: #C8C7D9;
+    transition: .3s;
+    border-radius: 25px;
+    width: 50px;
+    height: 25px;
+    left: 100%;
+}
+
+.slider::before {
+    content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    left: 4px;
+    bottom: 3px;
+    background-color: #DFDCEC;
+    transition: .3s;
+    border-radius: 50%;
+}
+
+input:checked+.slider {
+    background-color: #5FA171;
+}
+
+input:checked+.slider::before {
+    transform: translateX(24px);
+}
+
+.toggleLabel {
+    font-size: 16px;
+    color: black;
+}
+
+.checkBox{
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+
+
+
+
+.linkApplyEnergy{
+    position: absolute;
+    top: 85%;
+    left: 25%;
+    width: 50%;
+    height: 10%;
+}
