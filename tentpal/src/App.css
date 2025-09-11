@@ -24,6 +24,10 @@ h1{
   color: var(--black);
 }
 
+label{
+  color: var(--black);
+}
+
 /*my slider*/
 .blockSlider{
     width : 80%;
