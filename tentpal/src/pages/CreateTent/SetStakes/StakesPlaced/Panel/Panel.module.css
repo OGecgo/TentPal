@@ -24,3 +24,17 @@
     top: 40%;
     left: calc(50% - 9vw);
 }
+
+.blockSize{
+    position: absolute;
+    width: 90%;
+    left:13%;
+}
+
+.blockSizeUp{
+    top: 35%;
+}
+
+.blockSizeBottom{
+    top: 80%
+}

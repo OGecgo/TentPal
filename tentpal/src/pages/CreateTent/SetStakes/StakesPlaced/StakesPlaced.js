@@ -10,29 +10,36 @@ import Tent from "./Tent/Tent";
 let stakeDeepVar = [50, 50, 50, 50];
 let stakeDegreVar = [50, 50, 50, 50];
 let stakeUse = [true, false, false, false];
-let startWith = true;
 
 function StakesPlaced() {
 
-    const [deepPres, setDeepPres] = useState(50);
-    const [degrePres, setDegrePres] = useState(50);
+    const [deepPres, setDeepPres] = useState(0.5);
+    const [degrePres, setDegrePres] = useState(0.5);
     const [stake, SetStake] = useState(1);
-    const deepRealPres = 30 + deepPres / 10;
-    const degreRealPres = -10 + degrePres / 5;
+    const deepRealPres = 30 + 100*deepPres / 10;
+    const degreRealPres = 10 - 100*degrePres / 5;
 
-    // remeber the stakes
-    for (let i = 0; i < 4; i++) {
-        if (stakeUse[i]) {
+    useEffect(() => {
+        for (let i = 0; i < 4; i++) {
             stakeDeepVar[i] = deepPres;
             stakeDegreVar[i] = degrePres;
         }
-    }
+    
+    }, [])
+
+    // Update the current stake's values when sliders change
     useEffect(() => {
-        startWith = false;
+        for (let i = 0; i < 4; i++) {
+            if (stakeUse[i]) {
+                stakeDeepVar[i] = deepPres;
+                stakeDegreVar[i] = degrePres;
+                break;
+            }
+        }
     }, [deepPres, degrePres]);
 
+    // Load stake values when switching stakes
     useEffect(() => {
-        startWith = true;
         playStake(stake);
     }, [stake]);
 
@@ -72,8 +79,8 @@ function StakesPlaced() {
                     </div>
                     <div className={classes.bottomPanel}>
                         <Panel 
-                            precentDeep={setDeepPres} precentDeepSlider={startWith ? deepPres : undefined}
-                            precentDegre={setDegrePres} precentDegreSlider={startWith ? degrePres : undefined}
+                            precentDeep={setDeepPres} precentDeepSlider={deepPres}
+                            precentDegre={setDegrePres} precentDegreSlider={degrePres}
                         />
                     </div>
                 </div>

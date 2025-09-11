@@ -23,3 +23,36 @@ p{
 h1{
   color: var(--black);
 }
+
+/*my slider*/
+.blockSlider{
+    width : 80%;
+    height: 1.2vh;
+    cursor: pointer;
+    appearance: none;
+    border-radius: 100px;
+    background-color: #8A8B9D;
+}
+.blockSlider:hover {
+    opacity: 1;
+}
+.blockSlider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2.8vh;
+    height: 2.8vh;
+    background: #2A2A2A;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+}
+.blockSlider::-moz-range-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 2.8vh;
+    height: 2.8vh;
+    background: #2A2A2A;
+    border-radius: 100%;
+    border: none;
+    cursor: pointer;
+}

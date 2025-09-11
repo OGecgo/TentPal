@@ -1,118 +1,155 @@
 .leftContent {
-  position: absolute;
-  background-color: #BBBACA;
-  border-radius: 20px;
-  width: calc(50% - 20px);
-  left: 10px;
-  height: calc(100% - 20px);
-  top: 10px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
+    position: absolute;
+    background-color: #BBBACA;
+    border-radius: 20px;
+    width: calc(50% - 20px);
+    left: 10px;
+    height: calc(100% - 20px);
+    top: 10px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
 }
 
 
 
-.upperPanel{
-  position: absolute;
-  top: 0px;
-  height: calc(100% / 3 );
-  width: 100%;
+.upperPanel {
+    position: absolute;
+    top: 0px;
+    height: calc(100% / 3);
+    width: 100%;
 }
 
-.blockData{
-  background-color: #DFDCEC;
-  border-radius: 10px;
-  position: absolute;
-  top: 50%;
-  height: 40%;
-  width: calc(100% - 40px);
-  left: 20px;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-}
-
-
-.midlePanel{
-  position: absolute;
-  top: calc(100% / 3);
-  height: calc(100% / 3);
-  width: 100%;
-}
-
-.bottomPanel{
-  position: absolute;
-  top: calc((100% * 2) / 3);
-  height: calc(100% / 3);
-  width: 100%;
+.midlePanel {
+    position: absolute;
+    top: calc(100% / 3);
+    height: calc(100% / 3);
+    width: 100%;
 }
 
 
 
 
 
-
-.rightPanel{
-  position: absolute;
-  background-color: #8A8B9D;
-  border-radius: 20px;
-  width: calc(50% - 20px);
-  left: calc(50% + 10px);
-  height: calc(100% - 20px);
-  top: 10px;
+.blockData {
+    background-color: #DFDCEC;
+    border-radius: 10px;
+    position: absolute;
+    top: 50%;
+    height: 40%;
+    width: calc(100% - 40px);
+    left: 20px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
 }
 
-
-.rightPanel .sky{
-  position: absolute;
-  background-color: #08025f;
-  border-radius: 20px;
-  width: calc(100% - 20px);
-  left: 10px;
-  height: calc(100% - 20px);
-  top: 10px;
-}
-.shadowSky{
-  position: absolute;
-  width: 100%;
-  height: 30%;
-  background-color: rgba(0, 0, 0, 0.202);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.shadowDSky{
-  position: absolute;
-  width: 100%;
-  height: 70%;
-  background-color: rgba(0, 0, 0, 0.202);
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
-}
-
-.shadowGround{
-  position: absolute;
-  margin-bottom: 40%;
-  width: 100%;
-  height: 40%;
-  background-color: rgba(0, 0, 0, 0.202);
-  border-top-left-radius: 0px;
-  border-top-right-radius: 0px;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-}
-
-.ground{
-  position:absolute;
-  top: 80%;
-  background-color: #325e21;
-  width: 100%;
-  height: 10%;
-  border-bottom-left-radius: 20px;
-  border-bottom-right-radius: 20px;
+.blockBottom {
+    position: absolute;
+    top: calc((100% * 2) / 2);
 }
 
 
 
 
+.blockCheckBox {
+    appearance: none;
+    background-color: #fff;
+    color: #2A2A2A;
+    width: 1.5em;
+    height: 1.5em;
+    border: 0.15em solid #2A2A2A;
+    border-radius: 0.15em;
+    cursor: pointer;
+}
+.blockCheckBox:checked {
+    cursor: default;
+    background-color: #5FA171;
+}
+.blockCheckBoxOff {
+    background-color: #2A2A2A;
+    cursor: default;
+}
+.labelLeft {
+    font-size: 1.4em;
+}
+.labelRight {
+    font-size: 1.4em;
+    padding-left: 1em;
+}
+
+
+
+.blockDataSize {
+    width: 50%;
+    height: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.blockColor {
+    border: none;
+    cursor: pointer;
+    background: transparent;
+    padding: 0;
+    width: 80%;
+    height: 80%;
+}
+
+.rainbowLine {
+    background-color: transparent;
+    background-image: linear-gradient(to right, red, Magenta, blue, Cyan, green, yellow, red);
+    height: 2vh;
+    border: solid #2A2A2A, 2px;
+}
+
+.whiteLine {
+    background-color: white;
+    height: 2vh;
+    border: solid #2A2A2A, 2px;
+}
+
+
+
+
+
+
+
+.rightContent {
+    position: absolute;
+    background-color: #8A8B9D;
+    border-radius: 20px;
+    width: calc(50% - 20px);
+    left: calc(50% + 10px);
+    height: calc(100% - 20px);
+    top: 10px;
+}
+
+/* Εκδηλώσεις choices */
+.colorBox{
+    margin-left: 5%;
+    width: 50%;
+    height: 80%;
+    background-color: #FFFFFF;
+    border: 2px solid #2A2A2A;
+}
+.purpleBox{
+    background-color: #EE00FF;
+    cursor: pointer;
+}
+.blueBox{
+    background-color: #008BFF;
+    cursor: pointer;
+}
+.greenBox{
+    background-color: #00FF5F;
+    cursor: pointer;
+}
+.yellowBox{
+    background-color: #F2FF00;
+    cursor: pointer;
+}
+.orangeBox{
+    background-color: #FF9000;
+    cursor: pointer;
+}
