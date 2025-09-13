@@ -1,11 +1,11 @@
-.info-container {
+.infoContainer {
   position: fixed;         
   top: calc( var(--top-Panel-Height) + 10px);
   width: calc(100vw - 152px - 40px);
   right: 10px;
   max-width: 750px;
   max-height: 700px; /* επιτρέπει scroll όταν χρειάζεται */
-  overflow: auto;    /* scroll ΜΟΝΟ μέσα στο info-container */
+  overflow: auto;    /* scroll ΜΟΝΟ μέσα στο infoContainer */
   background-color: white;
   border: 1px solid #ccc;
   z-index: 1000;
@@ -14,13 +14,13 @@
   border-radius: 8px;
 }
 
-.info-container img {
+.infoContainer img {
   width: 100%;
   height: auto;
   transition: transform 0.2s ease;
 }
 
-.close-background{
+.closeBackground{
   top: 0px;
   left: 0px;
   position: fixed;
@@ -30,7 +30,7 @@
   cursor: default;
 }
 
-.info-button{
+.infoButton{
   position: fixed; 
   background-color: #484848;
   color: #BBBACA;
@@ -39,21 +39,25 @@
   justify-content: center;
   border-radius: 20px;
   border: none;
+  cursor: pointer;
+}
+.infoButton:hover {
+    background-color: #3c3c3c;
 }
 
-.info-button p{
+.infoButton p{
   color: #bbbaca;
   font-size: calc(1vw + 1vh);
 }
 
 
-.info-image-wrapper {
+.infoImageWrapper {
   width: 100%;
   height: auto;
   overflow: hidden;
 }
 
-.info-image-wrapper img {
+.infoImageWrapper img {
   width: 100%;
   height: auto;
   transition: transform 0.2s ease;
@@ -61,7 +65,7 @@
 
 
 
-.close-button {
+.closeButton {
   position: fixed;
   margin-top: 1px;
   right: 20px;
@@ -77,7 +81,7 @@
 
 
 
-.close-button:hover {
+.closeButton:hover {
   background-color: rgba(224, 29, 29, 0.7);
   color: white;
 }

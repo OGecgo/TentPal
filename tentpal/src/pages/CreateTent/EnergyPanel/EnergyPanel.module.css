@@ -10,8 +10,8 @@
     border-radius: 10px;
 }
 .topLeft {
-    background-color: #EBC8C3;
-    border: 1em solid #CCB1B1;
+    background-color: #7cc18e;
+    border: 1em solid #6ca07a;
     left: 1%;
     top : 1%;
 }
@@ -77,14 +77,17 @@
 .buttonTemp {
     width: 30%;
     height: 50%;
-    border: 2px solid #2B2B2B;
+    margin-left: 5%;
+    border: none;
     padding: 5px;
     font-size: calc(1vh + 1vw);
     border-radius: 5px;
-    background-color: #BBBACA;
+    background-color: #8A8B9D;
     cursor: pointer;
 }
-
+.buttonTemp:hover {
+    background-color: #777889;
+}
 
 
 

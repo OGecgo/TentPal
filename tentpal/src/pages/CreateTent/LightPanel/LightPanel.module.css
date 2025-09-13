@@ -69,8 +69,8 @@
     appearance: none;
     background-color: #fff;
     color: #2A2A2A;
-    width: 1.5em;
-    height: 1.5em;
+    width: 1.2vw;
+    height: 1.2vw;
     border: 0.15em solid #2A2A2A;
     border-radius: 0.15em;
     cursor: pointer;
@@ -84,10 +84,10 @@
     cursor: default;
 }
 .labelLeft {
-    font-size: 1.4em;
+    font-size: calc(1vh + 1vw);
 }
 .labelRight {
-    font-size: 1.4em;
+    font-size: calc(1vh + 1vw);
     padding-left: 1em;
 }
 

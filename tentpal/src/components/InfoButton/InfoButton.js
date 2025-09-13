@@ -1,5 +1,5 @@
 import { useState } from "react";
-import "./InfoButton.css"; // για στυλ
+import classes from "./InfoButton.module.css"; // για στυλ
 
 
 import energy_guide from "assets/energy_info.png";
@@ -18,9 +18,9 @@ export default function InfoButton({ page, sizeX, sizeY, top, left }) {
   console.log("Guide for page:", guides[page], page);
 
   return (
-    <div className="info-wrapper">
+    <div className={classes.infoWrapper}>
       <button
-        className="info-button"
+        className={classes.infoButton}
         style={{ width: sizeX, height: sizeY, top: top, left: left }}
         onClick={() => setIsOpen(true)}
       >
@@ -29,15 +29,15 @@ export default function InfoButton({ page, sizeX, sizeY, top, left }) {
 
       {isOpen && (
         <>
-          <div className="info-container" >
-            <button className="close-button" onClick={() => setIsOpen(false)}>
+          <div className={classes.infoContainer} >
+            <button className={classes.closeButton} onClick={() => setIsOpen(false)}>
               ✖
             </button>
-            <div className="info-image-wrapper">
+            <div className={classes.infoImageWrapper}>
                 <img src={guides[page]} alt="Δεν βρέθηκε οδηγός" />
             </div>
           </div>
-          <button className="close-background" onClick={() => setIsOpen(false)}></button>
+          <button className={classes.closeBackground}  onClick={() => setIsOpen(false)}></button>
         </>
       )}
     </div>

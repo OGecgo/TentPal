@@ -44,7 +44,7 @@ function EnergyPanel() {
 
             <div className="centerContent" >
                 <div className={` ${classes.itemBox} ${classes.topLeft}`}>
-                    <MessageBox backgroundColor={"#CCB1B1"} height={"20%"} left={"5%"} width={"90%"} message={"Ο Καιρός Τώρα"} top={"2%"} />
+                    <MessageBox backgroundColor={"#6ca07a"} height={"20%"} left={"5%"} width={"90%"} message={"Ο Καιρός Τώρα"} top={"2%"} />
                     <div className={classes.textBox}>
                         <p className={classes.textP}><FontAwesomeIcon icon={faBolt} /> Καιρός: Ηλιοφάνεια</p>
                         <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία: {temperature}°C</p>
