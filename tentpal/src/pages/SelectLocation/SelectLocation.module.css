@@ -1,0 +1,16 @@
+
+.colorBlock{
+    width : 100px;
+    height:  75px;
+    cursor: pointer;
+}
+
+.red{
+    background-color: #ad38389e;
+}
+.orange{
+    background-color: #b88e2385;
+}
+.green{
+    background-color: #48b82385;
+}

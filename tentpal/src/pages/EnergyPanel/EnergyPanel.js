@@ -8,6 +8,7 @@ import LeftPanel from 'components/LeftPanel/LeftPanel';
 import Header from 'components/Header/Header';
 import MessageBox from 'components/MessageBox/MessageBox';
 
+import userData from 'dataSet/userData'
 
 function EnergyPanel() {
 

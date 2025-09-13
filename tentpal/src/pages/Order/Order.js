@@ -18,7 +18,7 @@ function Order() {
     const [cocaCola, setCocaCola] = useState(0);
 
     // position message
-    const [posMessage, setPosMessage] = useState(0);
+    let [posMessage, setPosMessage] = useState(0);
     const [chatMessages, setChatMessages] = useState([]);
 
     const generatePrice = () => {
@@ -103,8 +103,8 @@ function Order() {
 
                     <div className={classes.displayOrders}>
                         <div className={classes.chat}>
-                            {chatMessages.map((msg) => (
-                                <p className={classes.orderStyle}>{msg}</p>
+                            {chatMessages.map((msg, index) => (
+                                <p key={index} className={classes.orderStyle}>{msg}</p>
                             ))}
                         </div>
                         <div className={classes.chatMessage}>

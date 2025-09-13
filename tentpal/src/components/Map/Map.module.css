@@ -1,14 +1,31 @@
 
-.block  {
-    border: 1px solid rgba(0, 0, 0, 0.3);
-    background-color: rgba(0, 0, 0, 0);
+:root {
+    --width-map : 2000px;
+    --height-map: 1500px;
+    --count-blocks: 20;
 }
 
+.mapBlocks{
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    width : var(--width-map);
+    height: var(--height-map);
+}
+
+.block {
+    width : calc(var(--width-map ) / var(--count-blocks) - 2px);
+    height: calc(var(--height-map) / var(--count-blocks)) - 2px;
+    
+    cursor: pointer;
+    border: 1px solid #0000004d;
+    background-color: #ff000000;
+}
+
+.blockGreen {
+    background-color: #52c254db;
+}
 
 .image {
     position: absolute;
-    height: 100%;
-    width: auto;
-    min-width: 100%;
-    min-height: calc(100vw / 2.18);
 }

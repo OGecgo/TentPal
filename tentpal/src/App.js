@@ -1,18 +1,20 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import './App.css';
-// oi selides mou
-import Home from './pages/Home/Home';
-import Login from './pages/LoginForm/Login';
+import Menu     from './pages/Menu/Menu';
+import Login    from './pages/LoginForm/Login';
 import NotFound from './pages/NotFound/NotFound';
 
+// create tent
+import SelectLocation from "./pages/SelectLocation/SelectLocation";
+import SetStakes      from "./pages/SetStakes/SetStakes";
 
-import Order from "./pages/CreateTent/Order/Order";
-import EnergyPanel from "./pages/CreateTent/EnergyPanel/EnergyPanel";
-import LightPanel from "./pages/CreateTent/LightPanel/LightPanel";
-import SelectLocation from "./pages/CreateTent/SelectLocation";
-import SetStakes from "./pages/CreateTent/SetStakes/SetStakes";
-import ChooseTent from "./pages/CreateTent/ChooseTent/ChooseTent";
+// home interface
+import Home           from "./pages/Home/Home"
+import Order          from "./pages/Order/Order";
+import EnergyPanel    from "./pages/EnergyPanel/EnergyPanel";
+import LightPanel     from "./pages/LightPanel/LightPanel";
+import ChooseTent     from "./pages/ChooseTent/ChooseTent";
 
 
 
@@ -26,18 +28,19 @@ function App() {
     
     <BrowserRouter>
       <Routes>
-        <Route index element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="*" element={<NotFound />} />
+        <Route index         element={<Menu />    } />
+        <Route path="/menu"  element={<Menu />    } />
+        <Route path="/login" element={<Login />   } />
+        <Route path="*"      element={<NotFound />} />
 
-
-        <Route path="/order" element={<Order />} />
-        <Route path="/energyPanel" element={<EnergyPanel />} />
-        <Route path="/lightPanel" element={<LightPanel />} />
         <Route path="/selectLocation" element={<SelectLocation />} />
-        <Route path="/setStakes" element={<SetStakes />} />
-        <Route path="/chooseTent" element={<ChooseTent />} />
+        <Route path="/setStakes"      element={<SetStakes />     } />
+
+        <Route path="/Home"        element={<Home />       } />
+        <Route path="/order"       element={<Order />      } />
+        <Route path="/energyPanel" element={<EnergyPanel />} />
+        <Route path="/lightPanel"  element={<LightPanel /> } />
+        <Route path="/chooseTent"  element={<ChooseTent /> } />
       </Routes>
     </BrowserRouter>
   );

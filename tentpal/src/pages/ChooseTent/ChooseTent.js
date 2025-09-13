@@ -24,7 +24,7 @@ function ChooseTent() {
                 <DragPanelsTent returnTent = {setTent} />
             </div>
             <Header panel={"messageBox"} message={message} />
-            <LeftPanel page="makeTent" levelMakeTent={3} linkNext={{ link: "/lightPanel", bool: true, lock: buttonNext }} linkPrev={{ link: "/setStakes", bool: true }} />
+            <LeftPanel mode="createTent" levelPage={3} linkNext={{ link: "/lightPanel", bool: true, lock: buttonNext }} linkPrev={{ link: "/setStakes", bool: true }} />
         </>
     );
 }

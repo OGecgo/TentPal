@@ -15,8 +15,6 @@ const guides = {
 export default function InfoButton({ page, sizeX, sizeY, top, left }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  console.log("Guide for page:", guides[page], page);
-
   return (
     <div className={classes.infoWrapper}>
       <button

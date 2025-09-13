@@ -7,7 +7,7 @@
     position: fixed;
     top: 0px;
     left: 0px;
-    background-color: rgb(187, 186, 202);
+    background-color: #bbbaca;
 
 }
 
@@ -39,11 +39,18 @@
     position: relative;
     display: block;
     text-decoration: none;
-    color: rgb(42, 42, 42);
+    color: #2a2a2a;
+    font-weight: 500;
 }
 
 
-
+/* left pos block */
+.blockColorOff{
+    background-color: #8A8B9D;
+}
+.blockColorOn{
+    background-color:  #787AB3;
+}
 .content1{
     position: fixed;
     width: 152px;
@@ -61,27 +68,28 @@
     margin-top: 20vh;
 }
 
-.content4{
-    position: fixed;
-    width: 152px;
-    margin-top: 30vh;
-}
 
 
-
+/* next back */
 .nextButton {
+    background-color: #787ab3;
     position: fixed;
     width: 152px;
     margin-top: calc(44vh);
 }
+.buttonOff{
+    background-color: #a9a9c1;
+    cursor: default;
+}
 .prevButton {
-    background-color: rgb(120, 122, 179);
+    background-color: #787ab3;
     position: fixed;
     width: 152px;
     margin-top: calc(56vh);
 }
 
 
+/*  exit  */
 .exitButton{
     background-color: rgb(181, 115, 115);
     position: fixed;
