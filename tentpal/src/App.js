@@ -2,7 +2,6 @@ import { Routes, Route, BrowserRouter } from "react-router-dom";
 
 import './App.css';
 import Menu     from './pages/Menu/Menu';
-import Login    from './pages/LoginForm/Login';
 import NotFound from './pages/NotFound/NotFound';
 
 // create tent
@@ -14,7 +13,7 @@ import Home           from "./pages/Home/Home"
 import Order          from "./pages/Order/Order";
 import EnergyPanel    from "./pages/EnergyPanel/EnergyPanel";
 import LightPanel     from "./pages/LightPanel/LightPanel";
-import SetTent     from "./pages/SetTent/SetTent";
+import SetTent        from "./pages/SetTent/SetTent";
 
 
 
@@ -28,19 +27,18 @@ function App() {
     
     <BrowserRouter>
       <Routes>
-        <Route index         element={<Menu />    } />
-        <Route path="/menu"  element={<Menu />    } />
-        <Route path="/login" element={<Login />   } />
+        <Route index         element={<Menu     />} />
+        <Route path="/menu"  element={<Menu     />} />
         <Route path="*"      element={<NotFound />} />
 
         <Route path="/selectLocation" element={<SelectLocation />} />
-        <Route path="/setStakes"      element={<SetStakes />     } />
+        <Route path="/setStakes"      element={<SetStakes      />} />
 
-        <Route path="/Home"        element={<Home />       } />
-        <Route path="/order"       element={<Order />      } />
+        <Route path="/Home"        element={<Home        />} />
+        <Route path="/order"       element={<Order       />} />
         <Route path="/energyPanel" element={<EnergyPanel />} />
-        <Route path="/lightPanel"  element={<LightPanel /> } />
-        <Route path="/setTent"     element={<SetTent /> } />
+        <Route path="/lightPanel"  element={<LightPanel  />} />
+        <Route path="/setTent"     element={<SetTent     />} />
       </Routes>
     </BrowserRouter>
   );

@@ -80,7 +80,7 @@
 .nextButton:hover{
     background-color: #696b9e;
 }
-.buttonOff{
+.buttonOff ,.buttonOff:hover{
     background-color: #a9a9c1;
     cursor: default;
 }

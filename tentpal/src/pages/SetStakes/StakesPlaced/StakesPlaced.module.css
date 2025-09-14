@@ -1,12 +1,25 @@
 
 .rightPanel{
     position: absolute;
-    margin-left: 50%;
-    margin-top: 1%;
-    width: 50%;
-    height: 97.5%;
-    background-color: #8a8b9d;
+    left: 50%;
+    top: 2%;
+    width: 49%;
+    height: 97%;
+    background-color: #BBBACA;
     border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.topPanel{
+    height: 100%;
+    width: 100%;
+}
+.bottomPanel{
+    height: 100%;
+    width: 100%;
 }
 
 .leftPanel{
@@ -16,11 +29,12 @@
     width: 50%;
     height: 100%;
 }
-.topPanel{
-    height: 50%;
-}
 
 
-.bottomPanel{
-    height: 50%;
+.natureSize {
+    position: relative;
+    top: 2.5%;
+    height: 95%;
+    left: 2.5%;
+    width: 95%;
 }

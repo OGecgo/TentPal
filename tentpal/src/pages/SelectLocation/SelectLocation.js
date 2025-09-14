@@ -114,7 +114,7 @@ function SelectLocation() {
             </div>
 
             <LeftPanel mode="createTent" levelPage={1} linkNext={{ link: "/setStakes", bool: true, lock: lockNext }} linkPrev={{ link: "#", bool: false }} />
-            <Header panel={"messageBox"} colorType={typeMessage} message={message} />
+            <Header panel={true} colorType={typeMessage} message={message} />
         </>
     );
 }

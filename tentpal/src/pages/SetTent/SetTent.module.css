@@ -1,0 +1,106 @@
+
+
+.mainPanel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+}
+
+.panel {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+
+/* left block */
+
+.tentBlock {
+    position: relative;
+    height: 80%;
+    width: 80%;
+    background-color: #BBBACA;
+    border: none;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.blockItem{
+    height: 50%;
+    width: 50%;
+
+}
+
+.nameTent{
+    position: relative;
+    background-color: #DFDCEC;
+    border: none;
+    border-radius: 10px;
+    top: 5%;
+    left: 10%;
+    width: 80%;
+    height: 15%;
+
+        
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    font-size: calc(0.8vh + 0.8vw);
+}
+
+.backImg{
+    position: relative;
+    background-color: #DFDCEC;
+    border: none;
+    border-radius: 10px;
+    top: 10%;
+    left: 10%;
+    width: 80%;
+    height: 60%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.backImg img{
+    height: auto;
+    width: auto;
+    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+}
+
+
+
+
+/* right block */
+
+.natureSize {
+    position: absolute;
+    left: 5%;
+    top: 5%;
+    height: 90%;
+    width: 90%;
+}
+
+.tentSize{
+    position: absolute;
+    left: 25%;
+    top: 35%;
+    height: 50%;
+    width: 50%;   
+}

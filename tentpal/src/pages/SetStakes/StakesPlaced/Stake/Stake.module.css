@@ -10,7 +10,7 @@
 
 
 .block{
-    
+    position: absolute;
     margin-left: calc(50% - 8vh);
     height: calc(var(--height-stick) * 1.5);
     width: 16vh;

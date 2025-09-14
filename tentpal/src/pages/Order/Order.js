@@ -5,7 +5,6 @@ import classes from './Order.module.css';
 
 import LeftPanel from 'components/LeftPanel/LeftPanel';
 import Header from 'components/Header/Header';
-import MessageBox from 'components/MessageBox/MessageBox';
 
 import potatoImg   from 'assets/food/potato.jpg'
 import chickenImg  from 'assets/food/fried_chicken.jpg'
@@ -44,7 +43,7 @@ function Order() {
                 <div className={classes.blocks}>
 
                     <div className={classes.displayMenu}>
-                        <MessageBox message={"Τιμοκατάλογος"} width={"80%"} height={"10%"} top={"3%"} backgroundColor={"#B5AF94"} />
+                        <p className={classes.mainTitle} width={"80%"} height={"10%"} top={"3%"} backgroundColor={"#B5AF94"}>Τιμοκατάλογος</p>
                         <div className={classes.menuBlock}>
                             <div className={classes.menuItem}>
                                 <div className={classes.pBlock}>
@@ -108,7 +107,7 @@ function Order() {
                             ))}
                         </div>
                         <div className={classes.chatMessage}>
-                            <input className={classes.textBox} placeholder="Not Work Error" type="text"></input>
+                            <input className={classes.textBox} placeholder="Error" type="text"></input>
                             <button className={classes.textButton} type="button"> {'>'} </button>
                         </div>
                     </div>
@@ -117,7 +116,7 @@ function Order() {
             </div>
 
             <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
-            <Header panel={"messageBox"} message={'Καντίνα'} />
+            <Header panel={true} message={'Καντίνα'} userOn={true} />
         </>
     );
 }

@@ -1,24 +1,49 @@
 
+.block {
+    display: flex;
+    flex-direction: column;
+
+    height: 100%;
+    width: 100%;
+}
 
 .Stick {
-    position: absolute;
-    width : 100%;
-    top: 10%;
-    height: 90%;
+    position: relative;
+    left: 45%;
+    width: 10%;
+    height: 100%;
     background-color: #332203;
 }
 
+.light{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    width: 100%;
+    aspect-ratio: 1 / 1;
+}
 .Lamp {
     position: absolute;
-    top: 5%;
-    width: 100%;
-    height: 10%;
+    width: 30%;
+    height: 30%;
     border-radius: 100%;
+    opacity: 0.95;
 }
 
-.lightLampt1 {
+.lightLamp1 {
     position: absolute;
-    width: 150%;
-    height: 20%;
+    width: 100%;
+    height: 100%;
     border-radius: 100%;
+    opacity: 0.50;
+}
+
+.lightLamp2{
+    position: absolute;
+    width: 200%;
+    height: 200%;
+    border-radius: 100%;
+    opacity: 0.10;
 }

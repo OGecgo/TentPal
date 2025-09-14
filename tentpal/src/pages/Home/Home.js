@@ -44,10 +44,10 @@ function Home (){
     const randomIntensityWeather = () => {
         let i = Math.floor(Math.random()*2);
         if (i === 0){
-            // i = Math.floor(Math.random()*2);
-            // if (i == 0){
+            i = Math.floor(Math.random()*2);
+            if (i == 0){
                 userData.setIntensityWeather("warning");
-            // }
+            }
         }
         else{
             userData.setIntensityWeather("good");
@@ -119,9 +119,9 @@ function Home (){
 
             <LeftPanel mode="userMode" levelPage={2} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "#", bool: false, lock: false }} /> 
             {userData.getIntensityWeather() === "good" ?
-                <Header panel={"messageBox"} message={`Weather ${userData.getTypeWeather()}`} helpPage={"light"} />
+                <Header panel={true} message={`Weather ${userData.getTypeWeather()}`} helpPage={"light"} userOn={true}/>
                 :
-                <Header panel={"messageBox"} message={"--->>Warning !!! Press SOS Map and follow the path<<---"} helpPage={"light"} />
+                <Header panel={true} message={"--->>Warning !!! Press SOS Map and follow the path<<---"} colorType={"warning"} helpPage={"light"} userOn={true}/>
             }
         </>
     )

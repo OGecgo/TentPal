@@ -4,12 +4,12 @@ import { Link } from "react-router-dom";
 
 import LeftPanel from 'components/LeftPanel/LeftPanel';
 import Header from 'components/Header/Header';
-import MessageBox from 'components/MessageBox/MessageBox';
+import Environmental from 'components/Environmental/Environmental';
+import FrontTent from 'components/FrontTent/FrontTent';
 
+import userData from 'dataSet/userData';
 
-import Environmental from './Environmental/Environmental';
 import StickLamp from './StickLamp/StickLamp';
-import FrontTent from './FrontTent/FrontTent';
 
 function LightPanel() {
     const [SimpleLight, setSimpleLight] = useState(true);
@@ -21,7 +21,7 @@ function LightPanel() {
 
 
     const getAdjustedColor = (hex) => {
-        if (intensity < 0.5 && !NightLight){ setIntensity(0.75) }
+        if (intensity < 0.5 && !NightLight) { setIntensity(0.75) }
         let r = parseInt(hex.substring(1, 3), 16);
         let g = parseInt(hex.substring(3, 5), 16);
         let b = parseInt(hex.substring(5, 7), 16);
@@ -65,7 +65,7 @@ function LightPanel() {
             // Blue to Cyan
             r = 0;
             g = value - 512;
-            b = 255;    
+            b = 255;
         }
         else if (value < 1024) {
             // Cyan to Green
@@ -99,18 +99,13 @@ function LightPanel() {
         <>
 
             <div className="centerContent">
+                <div className={classes.flexBlocks}>
+                    <div className={classes.leftContent}>
 
-                <div className={classes.leftContent}>
-
-                    <div className={classes.upperPanel}>
-                        <MessageBox message={"Παρακαλώ επιλέξτε είδος φωτισμού"} width="calc(100% - 40px)" height={"30%"} top={"10%"} left={"20px"} />
+                        <p>Παρακαλώ επιλέξτε είδος φωτισμού</p>
                         <div className={classes.blockData}>
-                            <div className={classes.blockDataSizeUp}>
-                                <MessageBox backgroundColor={"rgba(0, 0, 0, 0)"} message={"Σύνθετος Φωτισμός"} height={"50%"} width={"50%"} />
-                            </div>
-                            <div className={classes.blockDataSizeUp}>
-                                <MessageBox backgroundColor={"rgba(0, 0, 0, 0)"} message={"Νυχτερινό Φως"} height={"50%"} width={"50%"} />
-                            </div>
+                            <p>Σύνθετος Φωτισμός</p>
+                            <p> Νυχτερινό Φως</p>
                             <div className={classes.blockDataSizeUp}>
                                 <label className={classes.labelLeft}> on </label>
                                 <input className={classes.blockCheckBox} type="checkbox" id="special-light2-toggle" checked={SimpleLight} onChange={() => changeLightMode('simple')} />
@@ -121,21 +116,14 @@ function LightPanel() {
                                 <label className={classes.labelLeft}> on </label>
                                 <input className={SimpleLight ? ` ${classes.blockCheckBox} ${classes.blockCheckBoxOff}` : classes.blockCheckBox} type="checkbox" id="special-light2-toggle" disabled={SimpleLight} checked={!SimpleLight && NightLight} onChange={() => { setNightLight(true); setColor('#FFFFFF'); setIntensity(0.3); }} />
                                 <label className={classes.labelRight}> off </label>
-                                <input className={SimpleLight ? ` ${classes.blockCheckBox} ${classes.blockCheckBoxOff}` : classes.blockCheckBox} type="checkbox" id="special-light2-toggle" disabled={SimpleLight} checked={!SimpleLight && !NightLight} onChange={() => { setNightLight(false);}} />
+                                <input className={SimpleLight ? ` ${classes.blockCheckBox} ${classes.blockCheckBoxOff}` : classes.blockCheckBox} type="checkbox" id="special-light2-toggle" disabled={SimpleLight} checked={!SimpleLight && !NightLight} onChange={() => { setNightLight(false); }} />
                             </div>
-
                         </div>
-                    </div>
 
-                    <div className={classes.midlePanel}>
-                        <MessageBox message={"Color Options"} width="calc(100% - 40px)" height={"30%"} top={"10%"} left={"20px"} />
+                        <p>Color Options</p>
                         <div className={classes.blockData}>
-                            <div className={classes.blockDataSizeUp}>
-                                <MessageBox backgroundColor={"rgba(0, 0, 0, 0)"} message={"Επιλογή χρώματος"} height={"50%"} width={"50%"} />
-                            </div>
-                            <div className={classes.blockDataSizeUp}>
-                                <MessageBox backgroundColor={"rgba(0, 0, 0, 0)"} message={"Ένταση"} height={"50%"} width={"50%"} />
-                            </div>
+                            <p>Επιλογή χρώματος</p>
+                            <p>Ένταση</p>
                             <div className={classes.blockDataSizeUp}>
                                 <input className={SimpleLight ? `blockSlider ${classes.rainbowLine}` : `blockSlider ${classes.whiteLine}`} type="range" id="opacityRange" min="0" max="1535" step="1" value={valueColor} onChange={SimpleLight ? (e) => setNewColor(Number(e.target.value)) : (e) => { setColor("#FFFFFF"); setValueColor(Number(e.target.value)) }} />
                             </div>
@@ -143,37 +131,40 @@ function LightPanel() {
                                 <input className={"blockSlider"} type="range" id="opacityRange" min="0.5" max="1" step="0.01" value={intensity} disabled={NightLight} onChange={(e) => setIntensity(Number(e.target.value))} />
                             </div>
                         </div>
+
+
                         <div className={`${classes.blockData} ${classes.blockBottom}`}>
+                            <p>Εκδηλώσεις</p>
                             <div className={classes.blockDataSizeDown}>
-                                <MessageBox backgroundColor={"rgba(0, 0, 0, 0)"} message={"Εκδηλώσεις"} height={"50%"} width={"50%"} />
-                            </div>                        
-                            <div className={classes.blockDataSizeDown}>
-                                <div className={SimpleLight ? `${classes.purpleBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => {if (SimpleLight)setNewColor(272 );}}></div>
-                                <div className={SimpleLight ? `${classes.blueBox  } ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => {if (SimpleLight)setNewColor(649 );}}></div>
-                                <div className={SimpleLight ? `${classes.greenBox } ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => {if (SimpleLight)setNewColor(925 );}}></div>
-                                <div className={SimpleLight ? `${classes.yellowBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => {if (SimpleLight)setNewColor(1262);}}></div>
-                                <div className={SimpleLight ? `${classes.orangeBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => {if (SimpleLight)setNewColor(1386);}}></div>
+                                <div className={SimpleLight ? `${classes.purpleBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(272); }}></div>
+                                <div className={SimpleLight ? `${classes.blueBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(649); }}></div>
+                                <div className={SimpleLight ? `${classes.greenBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(925); }}></div>
+                                <div className={SimpleLight ? `${classes.yellowBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(1262); }}></div>
+                                <div className={SimpleLight ? `${classes.orangeBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(1386); }}></div>
                             </div>
                         </div>
-                        <Link to = {"#"} className={`linkApply ${classes.linkApplyLight}`}>Apply</Link>
+                        <Link to={"#"} className={`linkApply ${classes.linkApplyLight}`}>Apply</Link>
+                    </div>
+
+
+                    <div className={classes.rightContent}>
+                        <div className={classes.naturBlock}>
+                            <Environmental time={"night"}/>
+                        </div>
+                        <div className={classes.blockRightHiden}>
+                            <div className={classes.tentStyling}>
+                                <FrontTent colorType={userData.getTentType()} lightColor={finalColor} lightOn={1}/>
+                            </div>
+                            <div className={classes.stickStyling}>
+                                <StickLamp lampColor={finalColor} />
+                            </div>
+                            <div className={`${classes.stickStyling} ${classes.rightStick}`}>
+                                <StickLamp lampColor={finalColor} />
+                            </div>
+                        </div>
+                        <div className={classes.nightMode}></div>
                     </div>
                 </div>
-
-
-
-                <div className={classes.rightContent}>
-                    <Environmental />
-
-                    <StickLamp width={"2%"} height={"20%"} left={"30%"} top={"60%"} lampColor={finalColor} />
-                    <StickLamp width={"2%"} height={"20%"} left={"68%"} top={"60%"} lampColor={finalColor} />
-
-                    <StickLamp width={"2%"} height={"30%"} left={"15%"} top={"55%"} lampColor={finalColor} />
-                    <FrontTent width={"60%"} height={"40%"} left={"20%"} top={"44%"} color={"rgba(53, 53, 53, 0.99)"} light={finalColor} />
-
-                    <StickLamp width={"2%"} height={"30%"} left={"83%"} top={"55%"} lampColor={finalColor} />
-
-                </div>
-
             </div>
 
 
@@ -185,7 +176,7 @@ function LightPanel() {
 
 
             <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
-            <Header panel={"messageBox"} message={'Light Section'} helpPage={"light"} />
+            <Header panel={true} message={'Light Section'} helpPage={"light"} />
         </>
     );
 }

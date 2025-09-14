@@ -3,7 +3,7 @@ import React, {useEffect, useState} from "react";
 import classes from "./StakesPlaced.module.css";
 
 import Stake from "./Stake/Stake";
-import Environmental from "./Environmental/Environmental";
+import Environmental from "components/Environmental/Environmental";
 import Panel from "./Panel/Panel";
 import Tent from "./Tent/Tent";
 
@@ -85,7 +85,9 @@ function StakesPlaced() {
                     </div>
                 </div>
                 <div className={classes.rightPanel}>
-                    <Environmental />
+                    <div className={classes.natureSize}>
+                        <Environmental time={"day"} place={"bottom"}/>
+                    </div>
                     <Stake 
                         topPosition={`calc(${deepRealPres}vh - var(--top-Panel-Height))`} 
                         rotation={`${degreRealPres}deg`}

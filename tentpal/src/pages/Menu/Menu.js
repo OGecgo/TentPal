@@ -24,7 +24,7 @@ function Menu() {
                 <p>ashoudkjflhaksdhfuahslkdfjhklasjhdlkfjhasldkj</p>
             </div>
             <LeftPanel />
-            <Header panel="login" />
+            <Header panel={false} />
         </div>
     );
 }

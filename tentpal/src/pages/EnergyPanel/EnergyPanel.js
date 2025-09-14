@@ -88,38 +88,38 @@ function EnergyPanel() {
                             <input className={classes.checkBox} type="checkbox" id="aircondition-toggle" checked={isAirCondition} onClick={() => isAirCondition ? setIsAirCondition(false) : setIsAirCondition(true)} />
                             <span className={classes.slider}></span>
                         </div>
-                    </label>
+                    </label>                            
 
                     <div className={`${classes.textBoxSlider} ${classes.textBoxSliderThree}`}>
                         <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία Κλιματισμού: {isAirCondition ? airConditionTemperature + '°C' : '-'}</p>
                         {isAirCondition ? 
-                        <>
-                            <button className={classes.buttonTemp} onClick={() => {
-                                if (airConditionTemperature < 30) {
-                                    setAirConditionTemperature((airConditionTemperature) => airConditionTemperature + 1);
-                                }
-                            }} variant="outline"> + </button>
-                            <button className={classes.buttonTemp} onClick={() => {
-                                if (airConditionTemperature > 18) {
-                                    setAirConditionTemperature((airConditionTemperature) => airConditionTemperature - 1);
-                                }
-                            }} variant="outline"> - </button>
-                        </>
-                        : 
-                        <></>
+                            <>
+                                <button className={classes.buttonTemp} onClick={() => {
+                                    if (airConditionTemperature < 30) {
+                                        setAirConditionTemperature((airConditionTemperature) => airConditionTemperature + 1);
+                                    }
+                                }} variant="outline"> + </button>
+                                <button className={classes.buttonTemp} onClick={() => {
+                                    if (airConditionTemperature > 18) {
+                                        setAirConditionTemperature((airConditionTemperature) => airConditionTemperature - 1);
+                                    }
+                                }} variant="outline"> - </button>
+                            </>
+                            : 
+                            <></>
                         }
 
                     </div>
                 </div>
                                         
-                <Link to = {"#"} className={`linkApply ${classes.linkApplyEnergy}`}>Apply</Link>
+                <Link to = {"/Home"} className={`linkApply ${classes.linkApplyEnergy}`}>Apply</Link>
 
             </div>
 
 
 
             <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
-            <Header panel={"messageBox"} message={'Διαχείριση Ενέργειας Ενεργειακού Ελέγχου'} helpPage={"energy"} />
+            <Header panel={true} message={'Διαχείριση Ενέργειας Ενεργειακού Ελέγχου'} helpPage={"energy"} />
         </>
     );
 }

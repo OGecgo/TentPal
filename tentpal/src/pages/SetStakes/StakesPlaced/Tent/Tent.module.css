@@ -1,8 +1,8 @@
 :root{
-    --B-top-bottom: 8vh;
-    --B-left-right: 5vw;
-    --C-top-bottom: calc(8vh - 12px);
-    --C-left-right: calc(5vw - 12px);
+    --B-top-bottom: 7vh;
+    --B-left-right: 7vh;
+    --C-top-bottom: 5vh;
+    --C-left-right: 5vh;
 }
 
 
@@ -10,10 +10,10 @@
     position: relative;
     background-color: #487e48;
     border-radius: 20px;
-    margin-top: 2%;
-    margin-left: 2%;
-    width: 96%;
-    height: 96%;
+    top: 4%;
+    left: 4%;
+    width: 94%;
+    height: 95%;
 }
 
 .ball{
@@ -21,8 +21,8 @@
     background-color: #b8b8b8;
     border: none;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 5vh;
+    height: 5vh;
     border-radius: 20px;
 }
 
@@ -51,9 +51,9 @@
 
 .selected {
     position: absolute;
-    border: 7px dashed  #B8B8B8;
-    width: 50px;
-    height: 50px;
+    border: 1vh dashed  #B8B8B8;
+    width: 7vh;
+    height: 7vh;
 }
 .posC1{
     top: var(--C-top-bottom);

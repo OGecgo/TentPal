@@ -1,0 +1,83 @@
+
+.container{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+}
+
+
+/* -------day------ */
+.sky{
+    background-color: #86c5f2;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 55%;
+    width: 100%;
+}
+
+.grass{
+    background-color: #487e48;
+    height: 6%;
+    width: 100%;
+}
+
+.grassShadow{
+    background-color: #3a5d3a;
+    height: 4%;
+    width: 100%;
+}
+
+
+.dirt{
+    background-color: #5d4d3a;
+    height: 25%;
+    width: 100%;
+}
+
+.dirtShadow{
+    background-color: #4a3a2d;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 10%;
+    width: 100%;
+}
+
+.sky2{
+    background-color:  #86c5f2; 
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    height: 90%;
+    width: 100%;
+}
+.grass2{
+    background-color: #487e48;
+    height: 10%;
+    width: 100%;
+}
+
+.grassShadow2{
+    background-color: #3a5d3a;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    height: 5%;
+    width: 100%;
+}
+
+/* ----night------ */
+
+
+.skyNight{
+    background: #171153; 
+}
+
+.grassNight{
+    background-color: #2d4f2d;
+}
+
+.grassShadowNight{
+    background-color: #263d26;
+}
+
+/* for bottom not need the night version */
+

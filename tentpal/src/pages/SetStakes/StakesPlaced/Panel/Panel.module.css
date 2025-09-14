@@ -2,10 +2,12 @@
     position: relative;
     background-color: #bbbaca;
     border-radius: 20px;
-    margin-top: 1%;
-    margin-left: 2%;
-    width: 96%;
-    height: 96%;
+    border: none;
+
+    top: 2.5%;
+    left: 4%;
+    height: 95%;
+    width: 94%;
 }
 
 .text{
@@ -37,4 +39,26 @@
 
 .blockSizeBottom{
     top: 80%
+}
+
+.textBox {
+    position: relative;
+    margin: 0;
+    width: 85%;
+    height: 20%;
+    left: 7.5%;
+    top: 8%;
+    
+    background-color: #8A8B9D;
+    border: none;
+    border-radius: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1vh + 1vw);
+}
+
+.textBox2{
+    top: 30%;
 }
