@@ -68,3 +68,26 @@
     top: 20px;
 }
 
+/* ---messageBox---- */
+
+.messageBox {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: calc(100% - (40px + 5vh + 2vw - 20px) - 20px - (40px + 5vh + 2vw - 20px) - 20px);
+    height: calc(40px + 5vh + 2vw - 20px);
+    background-color: #8A8B9D;
+    color: #2A2A2A;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(1.2vh + 1.2vw);
+}
+
+.messageBoxSuccess {
+    background-color: #8a9d8a;
+}
+.messageBoxWarning{
+    background-color: #9d8a8a;
+}

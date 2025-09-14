@@ -39,11 +39,12 @@ function SelectLocation() {
     }
 
     const [lockNext, setLockNext] = useState(true);
-    const [message, setMessage] = useState("none");
+    const [message, setMessage] = useState("You can select place for your tent on the map");
 
 
     const [pos, setPos] = useState(-1);
     const [blocksColors, setBlockColors] = useState(null);
+    const [typeMessage, setTypeMessage] = useState("default");
     const [seedRandomBlock, setSeedRandomBlock] = useState( createSeedRandomBlocks() );
 
 
@@ -52,22 +53,28 @@ function SelectLocation() {
         setBlockColors(generateColorBlocks());
     }, [pos]);
 
+
+
     const takeMapPos = (x, y) => {
         if (x === -3) {
             setMessage("Red place can't be selected. Is dangerous place");
             setLockNext(true);
+            setTypeMessage("default");
         }
         else if (x === -2) {
             setMessage("Yellow place can't be selected. Tha place is reserved");
             setLockNext(true);
+            setTypeMessage("default");
         }
         else if (x === -1) {
             setMessage("You can select place for your tent on the map");
             setLockNext(true);
+            setTypeMessage("default");
         }
         else {
             setMessage("--->>You selected place. Now you can continue<<---");
             setLockNext(false);
+            setTypeMessage("success");
             userData.setPosMap(x * 100, y * 75); // save top left pixel of block
         }
         setPos(x + y * countBlocks);
@@ -107,7 +114,7 @@ function SelectLocation() {
             </div>
 
             <LeftPanel mode="createTent" levelPage={1} linkNext={{ link: "/setStakes", bool: true, lock: lockNext }} linkPrev={{ link: "#", bool: false }} />
-            <Header panel={"messageBox"} message={message} />
+            <Header panel={"messageBox"} colorType={typeMessage} message={message} />
         </>
     );
 }

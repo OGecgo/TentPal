@@ -56,8 +56,8 @@
 }
 
 .energy {
-    background-color: #d7d7c9;
-    border: 1vh solid #bebeae;
+    background-color: #d7d6c9;
+    border: 1vh solid #bebdae;
 }
 .energy:hover {
     background-color: #c8c8b5;
@@ -71,4 +71,13 @@
 .events:hover {
     background-color: #bcceba;
     border: 1vh solid #9fb3a0;
+}
+
+.sos {
+    background-color: #d7c9c9;
+    border: 1vh solid #beaeae;
+}
+.sos:hover {
+    background-color: #c8b5b5;
+    border: 1vh solid #b29c9c;
 }

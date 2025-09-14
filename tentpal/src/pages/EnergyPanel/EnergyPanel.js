@@ -1,12 +1,14 @@
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBolt, faBatteryFull, faSolarPanel } from "@fortawesome/free-solid-svg-icons";
-import classes from './EnergyPanel.module.css';
 import React, { useState } from "react";
 import {Link} from "react-router-dom"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBolt, faBatteryFull, faSolarPanel } from "@fortawesome/free-solid-svg-icons";
+
+
+import classes from './EnergyPanel.module.css';
+
 import LeftPanel from 'components/LeftPanel/LeftPanel';
 import Header from 'components/Header/Header';
-import MessageBox from 'components/MessageBox/MessageBox';
 
 import userData from 'dataSet/userData'
 
@@ -45,7 +47,7 @@ function EnergyPanel() {
 
             <div className="centerContent" >
                 <div className={` ${classes.itemBox} ${classes.topLeft}`}>
-                    <MessageBox backgroundColor={"#6ca07a"} height={"20%"} left={"5%"} width={"90%"} message={"Ο Καιρός Τώρα"} top={"2%"} />
+                    <p className={`${classes.title} ${classes.titleGreen}`}>Ο Καιρός Τώρα</p>
                     <div className={classes.textBox}>
                         <p className={classes.textP}><FontAwesomeIcon icon={faBolt} /> Καιρός: Ηλιοφάνεια</p>
                         <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία: {temperature}°C</p>
@@ -55,7 +57,7 @@ function EnergyPanel() {
 
 
                 <div className={`${classes.itemBox} ${classes.topRight}`}>
-                    <MessageBox backgroundColor={"#CCCCB1"} height={"20%"} left={"5%"} width={"90%"} message={"Παραγωγή ενέργειας"} top={"2%"} />
+                    <p className={`${classes.title} ${classes.titleYellow}`}>Παραγωγή ενέργειας</p>
                     <div className={classes.textBox}>
                         <p className={classes.textP}><FontAwesomeIcon icon={faBolt} /> Παραγωγή ενέργειας τώρα: 15,2 Wh</p>
                         <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Επίπεδο αποθέματος ενέργειας: 15%</p>
@@ -64,14 +66,14 @@ function EnergyPanel() {
                 </div>
 
                 <div className={`${classes.itemBox} ${classes.bottomLeft}`}>
-                    <MessageBox backgroundColor={"#CCCCB1"} height={"20%"} left={"5%"} width={"90%"} message={"Κατανάλωση ενέργειας"} top={"2%"} />
+                    <p className={`${classes.title} ${classes.titleYellow}`}>Κατανάλωση ενέργειας</p>
 
                     <p className={`${classes.textBox} ${classes.textP}`}><FontAwesomeIcon icon={faBolt} /> Κατανάλωση ενέργειας τώρα: {generateEnergyConsumption()}Wh</p>
 
                 </div>
 
                 <div className={`${classes.itemBox} ${classes.bottomRight}`}>
-                    <MessageBox backgroundColor={"#8A8B9D"} height={"20%"} left={"5%"} width={"90%"} message={"Options"} top={"2%"} />
+                    <p className={classes.title}>Options</p>
 
                     <label className={classes.textBoxSlider}>
                         <div className={classes.textP}>

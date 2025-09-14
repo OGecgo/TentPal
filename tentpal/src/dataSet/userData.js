@@ -9,9 +9,9 @@ let tentType = "none";
 let stakesData = [[50, 50], [50, 50], [50, 50], [50, 50]]; 
 
 // normal, warm, cold, rain
-let typeOfWeather = "none"; 
+let typeWeather = "none"; 
 // no_warning, warning
-let intensityWeather = "no_warning";
+let intensityWeather = "good";
 
 
 
@@ -28,8 +28,8 @@ function getStakesData()  {return stakesData;}
 function setStakesData(e) {stakesData = e;}
 
 // Weather
-function getTypeOfWeather()     {return typeOfWeather;}
-function setTypeOfWeather(e)    {typeOfWeather = e;}
+function getTypeWeather()     {return typeWeather;}
+function setTypeWeather(e)    {typeWeather = e;}
 
 function getIntensityWeather()  {return intensityWeather;}
 function setIntensityWeather(e) {intensityWeather = e;}
@@ -39,8 +39,8 @@ function resetData() {
     posMap = [-1, -1];
     tentType = "none";
     stakesData = [[50, 50], [50, 50], [50, 50], [50, 50]]; 
-    typeOfWeather = "none"; 
-    intensityWeather = "no_warning";
+    typeWeather = "none"; 
+    intensityWeather = "good";
 }
 
 
@@ -54,8 +54,8 @@ export default {
     getStakesData,
     setStakesData,
 
-    getTypeOfWeather,    
-    setTypeOfWeather,
+    getTypeWeather,    
+    setTypeWeather,
     getIntensityWeather,
     setIntensityWeather,
     

@@ -1,6 +1,8 @@
 
 
 
+
+/* blocks */
 .itemBox {
     position: absolute;
     width : calc(48% - 2em);
@@ -10,20 +12,20 @@
     border-radius: 10px;
 }
 .topLeft {
-    background-color: #7cc18e;
-    border: 1em solid #6ca07a;
+    background-color: #bbcaba;
+    border: 1em solid #8a9d8a;
     left: 1%;
     top : 1%;
 }
 .topRight {
-    background-color: #EDEDCE;
-    border: 1em solid #CCCCB1;
+    background-color: #c9caba;
+    border: 1em solid #9d9c8a;
     left: 51%;
     top :  1%;
 }
 .bottomLeft {
-    background-color: #EDEDCE;
-    border: 1em solid #CCCCB1;
+    background-color: #c9caba;
+    border: 1em solid #9d9c8a;
     top : 51%;
     left:  1%;
     height: 25%;
@@ -54,14 +56,34 @@
 
 
 
+/* titles */
+.title {
+    position: relative;
+    margin: 0;
+    background-color: #8A8B9D;
+    height: 20%;
+    left: 5%;
+    top: 4%;
+    width: 90%;
+    border:none;
+    border-radius: 10px;
+    
+    font-size: calc(1vh + 1vw);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.titleGreen {
+    background-color: #8A9D8A;
+}
+.titleYellow {
+    background-color: #9D9C8A;
+}
 
 
 
 
-
-
-
-
+/* apply button */
 
 .applyButton {
     position: absolute;
@@ -91,7 +113,7 @@
 
 
 
-
+/* checkbox -> Slider */
 
 .textBoxSlider{
     position: absolute;
@@ -147,7 +169,7 @@ input:checked+.slider::before {
 
 
 
-
+/* link */
 
 .linkApplyEnergy{
     position: absolute;

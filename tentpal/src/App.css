@@ -28,7 +28,7 @@ label{
   color: var(--black);
 }
 
-/*my slider*/
+/*----my slider-----*/
 .blockSlider{
     width : 80%;
     height: 1.2vh;
@@ -61,7 +61,7 @@ label{
     cursor: pointer;
 }
 
-
+/*----link apply-----*/
 .linkApply{
     border-radius: 10px;
     background-color: #5FA171;
@@ -79,3 +79,4 @@ label{
     background-color: #498458;
     border: 0.2em solid #396c46;
 }
+
