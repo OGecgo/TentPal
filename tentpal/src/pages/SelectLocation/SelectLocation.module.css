@@ -4,13 +4,16 @@
     height:  75px;
     cursor: pointer;
 }
+.colorBlock:hover{
+    background-color: #48b82333;
+}
 
-.red{
-    background-color: #ad38389e;
+.red, .red:hover{
+    background-color: #ad3838ab;
 }
-.orange{
-    background-color: #b88e2385;
+.orange, .orange:hover{
+    background-color: #b88e23ab;
 }
-.green{
-    background-color: #48b82385;
+.green, .green:hover{
+    background-color: #48b823ab;
 }

@@ -10,7 +10,7 @@ function SetStakes() {
         <>
             <StakesPlaced />
             <Header panel = {"messageBox"} message={"Choose stake and give properties"} />
-            <LeftPanel mode="createTent" levelPage={2} linkNext={{link: "/chooseTent", bool: true, lock: false}} linkPrev = {{link: "/selectLocation", bool: true}}/>
+            <LeftPanel mode="createTent" levelPage={2} linkNext={{link: "/setTent", bool: true, lock: false}} linkPrev = {{link: "/selectLocation", bool: true}}/>
         </>
     );
 }

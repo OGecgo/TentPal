@@ -184,7 +184,7 @@ function LightPanel() {
 
 
 
-            <LeftPanel page="makeTent" levelMakeTent={4} linkNext={{ link: "/energyPanel", bool: true, lock: false }} linkPrev={{ link: "/chooseTent", bool: true }} />
+            <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
             <Header panel={"messageBox"} message={'Light Section'} helpPage={"light"} />
         </>
     );

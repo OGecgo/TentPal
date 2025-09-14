@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 import classes from "./LeftPanel.module.css";
 
 
-
 // modes <= createTent - userMode
 
 // links <= {lock: , link: , bool:} 
@@ -34,13 +33,6 @@ function LeftPanel({mode, levelPage, linkNext, linkPrev}) {
             </div>
         );
     }
-
-    const userMode  = (lvl) => {
-        return (
-            <></>
-        );
-    }
-
 
     const Panel = () => { 
         switch (mode) {

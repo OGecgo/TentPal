@@ -14,7 +14,7 @@ import Home           from "./pages/Home/Home"
 import Order          from "./pages/Order/Order";
 import EnergyPanel    from "./pages/EnergyPanel/EnergyPanel";
 import LightPanel     from "./pages/LightPanel/LightPanel";
-import ChooseTent     from "./pages/ChooseTent/ChooseTent";
+import SetTent     from "./pages/SetTent/SetTent";
 
 
 
@@ -40,7 +40,7 @@ function App() {
         <Route path="/order"       element={<Order />      } />
         <Route path="/energyPanel" element={<EnergyPanel />} />
         <Route path="/lightPanel"  element={<LightPanel /> } />
-        <Route path="/chooseTent"  element={<ChooseTent /> } />
+        <Route path="/setTent"     element={<SetTent /> } />
       </Routes>
     </BrowserRouter>
   );

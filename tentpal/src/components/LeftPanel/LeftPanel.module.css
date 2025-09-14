@@ -77,6 +77,9 @@
     width: 152px;
     margin-top: calc(44vh);
 }
+.nextButton:hover{
+    background-color: #696b9e;
+}
 .buttonOff{
     background-color: #a9a9c1;
     cursor: default;
@@ -87,13 +90,17 @@
     width: 152px;
     margin-top: calc(56vh);
 }
-
+.prevButton:hover{
+    background-color: #696b9e;
+}
 
 /*  exit  */
 .exitButton{
-    background-color: rgb(181, 115, 115);
+    background-color: #B57373;
     position: fixed;
     width: 152px;
     margin-top: calc(70vh);
 }
-
+.exitButton:hover{
+    background-color: #a36868;
+}

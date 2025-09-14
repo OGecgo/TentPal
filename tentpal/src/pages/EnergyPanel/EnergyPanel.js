@@ -116,7 +116,7 @@ function EnergyPanel() {
 
 
 
-            <LeftPanel page="makeTent" levelMakeTent={5} linkNext={{ link: "#", bool: true, lock: true }} linkPrev={{ link: "/lightPanel", bool: true }} />
+            <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
             <Header panel={"messageBox"} message={'Διαχείριση Ενέργειας Ενεργειακού Ελέγχου'} helpPage={"energy"} />
         </>
     );

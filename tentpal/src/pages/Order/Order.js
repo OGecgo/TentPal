@@ -7,9 +7,9 @@ import LeftPanel from 'components/LeftPanel/LeftPanel';
 import Header from 'components/Header/Header';
 import MessageBox from 'components/MessageBox/MessageBox';
 
-import potatoImg from 'assets/potato.jpg'
-import chickenImg from 'assets/fried_chicken.jpg'
-import cocacolaImg from 'assets/cocacola.jpeg'
+import potatoImg   from 'assets/food/potato.jpg'
+import chickenImg  from 'assets/food/fried_chicken.jpg'
+import cocacolaImg from 'assets/food/cocacola.jpeg'
 
 function Order() {
 
@@ -116,7 +116,7 @@ function Order() {
                 </div>
             </div>
 
-            <LeftPanel page="makeTent" levelMakeTent={5} linkNext={{ link: "#", bool: true, lock: true }} linkPrev={{ link: "#", bool: true }} />
+            <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
             <Header panel={"messageBox"} message={'Καντίνα'} />
         </>
     );

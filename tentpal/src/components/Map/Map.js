@@ -1,10 +1,8 @@
 
 import React from 'react';
 
-import userData from 'dataSet/userData';
-
 // 2000 x 1500
-import imageMap from 'assets/nature.png'
+import imageMap from 'assets/map/nature.png'
 
 import classes from './Map.module.css'
 

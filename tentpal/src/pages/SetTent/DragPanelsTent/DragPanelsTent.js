@@ -5,18 +5,25 @@ import MessageBox from "components/MessageBox/MessageBox";
 
 import classes from "./DragPanelsTent.module.css";
 
-import NomalWebp from "assets/Normal.webp";
-import RainWebp from "assets/Rain.webp";
+import NomalWebp from "assets/tent/Normal.webp";
+import RainWebp  from "assets/tent/Rain.webp";
+
+import userData from "dataSet/userData";
 
 function DragPanelsTent({returnTent}) {
 
     const [imageSrc, setImageSrc] = useState('');
     const [imageSrcWait, setImageSrcWait] = useState('');
-    const [keyTent, setKeyTent] = useState("Drop Here");
+    const [keyTent, setKeyTent] = useState("none");
+
+    useEffect(()=>{
+        setKeyTent(userData.getTentType());
+    }, []);
 
     useEffect(() => {
-        returnTent(imageSrc);
-    },[imageSrc]);
+        if (keyTent === "none") return;
+        returnTent(keyTent);
+    },[keyTent]);
 
     const setTent = () => {
         console.log(imageSrcWait);
