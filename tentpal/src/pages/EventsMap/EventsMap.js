@@ -57,6 +57,7 @@ function EventsMap() {
                 block.push(
                     <div onClick={() => { e === 0 || e === 1 ? setInfoOn(true) : setInfoOn(false)}}
                         key={`${row} ${col}`} className={`${classesMap.block} ${classes.styleBlock}`}>
+
                         {userData.getPosMap()[0] !== row || userData.getPosMap()[1] !== col ?
                             returnMapEvent(e)
                             :
@@ -64,6 +65,7 @@ function EventsMap() {
                                 <div className={`${classes.square} ${classes.shapeMapWidth}`}></div>
                             </div>
                         }
+                        
                     </div>
                 );
             }
