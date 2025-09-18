@@ -6,7 +6,9 @@
 
 
 /* block info left */
-
+.blockStyle {
+    border:1px solid transparent;
+}
 .blockInfoLeft {
     position: fixed;
     width: 15vw;

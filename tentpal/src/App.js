@@ -14,8 +14,8 @@ import Order          from "./pages/Order/Order";
 import EnergyPanel    from "./pages/EnergyPanel/EnergyPanel";
 import LightPanel     from "./pages/LightPanel/LightPanel";
 import SetTent        from "./pages/SetTent/SetTent";
-import EventsMap       from "pages/EventsMap/EventsMap";
-
+import EventsMap      from "pages/EventsMap/EventsMap";
+import SOSMap         from "pages/SOSMap/sosMap";
 
  
 
@@ -40,6 +40,7 @@ function App() {
         <Route path="/lightPanel"  element={<LightPanel  />} />
         <Route path="/eventsMap"   element={<EventsMap   />} />
         <Route path="/setTent"     element={<SetTent     />} />
+        <Route path="/sosMap"      element={<SOSMap      />} />
       </Routes>
     </BrowserRouter>
   );

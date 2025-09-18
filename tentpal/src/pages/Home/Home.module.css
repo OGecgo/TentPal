@@ -41,7 +41,16 @@
     justify-content: center;
     align-items: center;
     color: #2A2A2A;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
 }
+
+.sosP{
+    font-size: calc(2vh + 2vw);
+    font-weight: 1000;
+}
+
 
 .sizeImg {
     height: 50%;
@@ -74,4 +83,14 @@
 .sos:hover {
     background-color: #c8b5b5;
     border: 1vh solid #b29c9c;
+}
+
+.sosCall {
+    background-color: #ce7676;
+    border: 1vh solid #ad6a6a;
+}
+
+.sosCall:hover {
+    background-color: #9e6262;
+    border: 1vh solid #6a3f3f;
 }

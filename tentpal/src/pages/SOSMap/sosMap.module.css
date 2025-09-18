@@ -1,0 +1,76 @@
+
+.blockStyle {
+    border:1px solid transparent;
+}
+
+
+.infoBlock {
+    position: fixed;
+    width: 17vw;
+    min-height: 12vw;
+    max-height: 50vh;
+    max-width: 50vw;
+    aspect-ratio: 2 / 1;
+    background-color: #bbbacade;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    overflow: scroll;
+    resize: both;
+}
+
+.infoData{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+
+}
+
+.infoData p {
+    font-size: calc(1vh + 1vw);
+    width: 70%;
+    margin: 0;
+}
+
+.userPos {
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    background-color: #2A2A2A;
+    flex-shrink: 0;
+}
+
+.safePoint {
+    width: 10%;
+    aspect-ratio: 1 / 1;
+    border-radius: 100%;
+    border: none;
+    background-color: #ca1414;
+}
+
+.blockSize {
+    width: 40%;
+    aspect-ratio: 1/1;
+}
+
+.backRed {
+    width: 100%;
+    height: 100%;
+    background-color: #ca141438;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.backBlack {
+    width: 100%;
+    height: 100%;
+    background-color: #2a2a2a74;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
