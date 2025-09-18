@@ -11,7 +11,6 @@ import LeftPanel from "components/LeftPanel/LeftPanel"
 import lightingImg from "assets/simbolsImg/lighting.webp"
 import lampImg     from "assets/simbolsImg/lamp.png"
 import mapPinImg   from "assets/simbolsImg/mapPin.png"
-import eventImg    from "assets/simbolsImg/event.png"
 import foodImg     from "assets/simbolsImg/food.png"
 import tentImg     from "assets/simbolsImg/tent.svg"
 import sosImg      from "assets/simbolsImg/sosPin.svg"
@@ -77,19 +76,11 @@ function Home (){
                     </div>
                     <div className={classes.rowBlock}>
                         <div className={` ${classes.blockButton} ${classes.events}`}>
-                            <Link className={classes.linkButton} to="#">
+                            <Link className={classes.linkButton} to="/eventsMap">
                                 <img src={mapPinImg} className={classes.sizeImg}></img>
-                                Places For Research
+                                Events Map
                             </Link>
                         </div>
-                        <div className={` ${classes.blockButton} ${classes.events}`}>
-                            <Link className={classes.linkButton} to="#">
-                                <img src={eventImg} className={classes.sizeImg}></img>
-                                Events
-                            </Link>
-                        </div>
-                    </div>
-                    <div className={classes.justBlock}>
                         <div className={` ${classes.blockButton} ${classes.events}`}>
                             <Link className={classes.linkButton} to="/order">
                                 <img src={foodImg} className={classes.sizeImg}></img>

@@ -9,18 +9,12 @@
 
 .rowBlock{
     width: 100%;
-    height: 25%;
+    height: 33%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-.justBlock{
-    width: 100%;
-    height: 25%;
-    display: flex;
-    justify-content:center;
-}
 
 
 

@@ -59,10 +59,8 @@
 
 .nightMode{
     position: absolute;
-    left: 5%;
-    top: 5%;
-    width: 90%;
-    height: 90%;
+    height: 100%;
+    width: 100%;
     background-color: rgba(0, 0, 0, 0.305);
     border-radius: 20px;
     border: none;

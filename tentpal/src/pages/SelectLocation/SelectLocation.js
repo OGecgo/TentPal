@@ -14,23 +14,23 @@ import classesMap from "components/Map/Map.module.css"
 function SelectLocation() {
 
     // 2000 x 1500 width of map
-    const countBlocks = 20;
+    userData.countBlocks = 20;
 
     const createSeedRandomBlocks = () => {
         let newSeedArray = [];
 
-        for (let row = 0; row < countBlocks; row++) {
-            for (let col = 0; col < countBlocks; col++) {
+        for (let row = 0; row < userData.countBlocks; row++) {
+            for (let col = 0; col < userData.countBlocks; col++) {
                 let r = Math.floor(Math.random() * 3);
-                if (r === 1) {
-                    r = Math.floor(Math.random() * 3);
-                }
-                if (r === 0) {
-                    r = Math.floor(Math.random() * 3);
-                    if (r === 0) {
-                        r = Math.floor(Math.random() * 3);
+                if (Math.random() >= 0.85){ 
+                    if (Math.random() >= 0.3) {
+                        r = 0;
                     }
+                    else r = 1;
                 }
+                else r = 2;
+                    
+
                 newSeedArray.push(r);
             }
         }
@@ -55,18 +55,18 @@ function SelectLocation() {
 
 
 
-    const takeMapPos = (x, y) => {
-        if (x === -3) {
+    const takeMapPos = (x, y, type) => {
+        if (type === 2) {
             setMessage("Red place can't be selected. Is dangerous place");
             setLockNext(true);
             setTypeMessage("default");
         }
-        else if (x === -2) {
+        else if (type === 1) {
             setMessage("Yellow place can't be selected. Tha place is reserved");
             setLockNext(true);
             setTypeMessage("default");
         }
-        else if (x === -1) {
+        else if (type === 0) {
             setMessage("You can select place for your tent on the map");
             setLockNext(true);
             setTypeMessage("default");
@@ -75,9 +75,9 @@ function SelectLocation() {
             setMessage("--->>You selected place. Now you can continue<<---");
             setLockNext(false);
             setTypeMessage("success");
-            userData.setPosMap(x * 100, y * 75); // save top left pixel of block
+            userData.setPosMap(x,  y); // save top left pixel of block
         }
-        setPos(x + y * countBlocks);
+        setPos(x + y * userData.countBlocks);
     }
 
 
@@ -86,16 +86,16 @@ function SelectLocation() {
 
     const generateColorBlocks = () => {
         let block = [];
-        for (let row = 0; row < countBlocks; row++) {
-            for (let col = 0; col < countBlocks; col++) {
+        for (let row = 0; row < userData.countBlocks; row++) {
+            for (let col = 0; col < userData.countBlocks; col++) {
                 let i = row + col * 20;
                 let r = seedRandomBlock[i];
                 if (r === 0) {
-                    block.push(<div key={`${row} ${col}`} className={`${classes.colorBlock} ${classes.red}`} onClick={() => { takeMapPos(-3, -3) }}></div>);
+                    block.push(<div key={`${row} ${col}`} className={`${classes.colorBlock} ${classes.red}`} onClick={() => { takeMapPos(-1, -1, 2) }}></div>);
                 } else if (r === 1) {
-                    block.push(<div key={`${row} ${col}`} className={`${classes.colorBlock} ${classes.orange}`} onClick={() => { takeMapPos(-2, -2) }}></div>);
+                    block.push(<div key={`${row} ${col}`} className={`${classes.colorBlock} ${classes.orange}`} onClick={() => { takeMapPos(-1, -1, 1) }}></div>);
                 } else {
-                    block.push(<div key={`${row} ${col}`} className={(pos === row + col * countBlocks) ? `${classes.colorBlock} ${classes.green}` : `${classes.colorBlock}`} onClick={() => { takeMapPos(row, col) }}></div>);
+                    block.push(<div key={`${row} ${col}`} className={(pos === row + col * userData.countBlocks) ? `${classes.colorBlock} ${classes.green}` : `${classes.colorBlock}`} onClick={() => { takeMapPos(row, col, null) }}></div>);
                 }
             }
         }

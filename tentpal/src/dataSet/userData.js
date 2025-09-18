@@ -1,6 +1,8 @@
 
 
 let posMap = [-1, -1];
+let countBlocks = 20;
+
 
 // normal, warm, cold, rain
 let tentType = "none";
@@ -45,6 +47,8 @@ function resetData() {
 
 
 export default {
+    countBlocks,
+
     getPosMap,
     setPosMap,
 

@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link } from "react-router-dom";
 
@@ -12,7 +11,7 @@ import classes from "./LeftPanel.module.css";
 // link <= move to page
 // bool <= turn off link
 
-function LeftPanel({mode, levelPage, linkNext, linkPrev}) {
+function LeftPanel({mode, levelPage, linkNext = {}, linkPrev = {}}) {
     const links = () => {
         return (
             <>

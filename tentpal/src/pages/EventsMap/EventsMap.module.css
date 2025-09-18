@@ -1,0 +1,114 @@
+
+
+:root {
+    --shape-width: 10%
+}
+
+
+/* block info left */
+
+.blockInfoLeft {
+    position: fixed;
+    width: 15vw;
+    min-height: 12vw;
+    max-height: 50vh;
+    max-width: 50vw;
+    aspect-ratio: 2 / 1;
+    background-color: #bbbacade;
+
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    overflow: scroll;
+    resize: both;
+}
+
+.left{
+    position: relative;
+    height: 33%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.triangle{
+    width: var(--shape-width);
+    aspect-ratio: 1/1;
+    margin-top: 5%;
+    background-color: #2f2f2f;
+    clip-path: polygon(0% 0%, 100% 0%, 50% 50%);
+
+}
+
+.square{
+    width: var(--shape-width);
+    aspect-ratio: 1/1;
+    background-color: #2f2f2f;
+}
+
+.circle{
+    margin: 0;
+    width: var(--shape-width);
+    border-radius: 50%;
+    border: none;
+    aspect-ratio: 1/1;
+    background-color: #2f2f2f;
+}
+
+.shapeMapWidth{
+    width: 50%;
+    aspect-ratio: 1/1;
+    margin: 0;
+}
+
+
+.blockInfoLeft p{
+    margin: 0;
+    width: 70%;
+    font-size: calc(1vh + 1vw);
+}
+
+.blockInfoLeft .triangle, .blockInfoLeft .square, .blockInfoLeft .circle{
+    width: calc(1.5vh + 1.5vw);
+}
+
+/* block info right */
+
+.blockInfoRight {
+    position: fixed;
+    top: calc(var(--top-Panel-Height) + 10px);
+    right: 10px;
+    width: 15vw;
+    min-height: 12vw;
+    max-height: 50vh;
+    max-width: 50vw;
+
+}
+
+
+/* Map */
+
+
+.styleBlock{
+    border-color: transparent;
+}
+
+.mapColorSquare{
+    background-color: #a7a52dc2;
+}
+.mapColorTriangle{
+    background-color: #58a72d61;
+}
+.mapColorCircle{
+    background-color: #779368af;
+}
+
+.event{
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

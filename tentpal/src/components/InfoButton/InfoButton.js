@@ -1,43 +1,34 @@
-import { useState } from "react";
-import classes from "./InfoButton.module.css"; // για στυλ
+import React from "react";
 
+import classes from "./InfoButton.module.css";
 
-import energy_guide from "assets/info/energy_info.png";
-import light_guide from "assets/info/light_info.png";
-// // κλπ...
+// paga can be imported or src
 
-const guides = {
-  energy: energy_guide,
-  light: light_guide,
-  // πρόσθεσε κι άλλες σελίδες εδώ
-};
+// default is first
+// typeBlock <= transparent
 
-export default function InfoButton({ page, sizeX, sizeY, top, left }) {
-  const [isOpen, setIsOpen] = useState(false);
+function InfoButton({page, isOpen, setIsOpen,  typeColor, backgroundOff}){
 
-  return (
-    <div className={classes.infoWrapper}>
-      <button
-        className={classes.infoButton}
-        style={{ width: sizeX, height: sizeY, top: top, left: left }}
-        onClick={() => setIsOpen(true)}
-      >
-        <p>HELP</p>
-      </button>
-
-      {isOpen && (
-        <>
-          <div className={classes.infoContainer} >
-            <button className={classes.closeButton} onClick={() => setIsOpen(false)}>
-              ✖
-            </button>
-            <div className={classes.infoImageWrapper}>
-                <img src={guides[page]} alt="Δεν βρέθηκε οδηγός" />
-            </div>
-          </div>
-          <button className={classes.closeBackground}  onClick={() => setIsOpen(false)}></button>
+	return(<>
+            {isOpen ? 
+                <>
+                    <div className={typeColor === "transparent" ? `${classes.infoContainer} ${classes.infoContainerTypeTransparent}` : classes.infoContainer} >
+                        <button className={classes.closeButton} onClick={() => {setIsOpen(false)}}>
+                        ✖
+                        </button>
+                        <div className={classes.infoImageWrapper}>
+                            <img src={page} alt="Error: No img" />
+                        </div>
+                    </div>
+                    <button className={backgroundOff ? null : classes.closeBackground}  onClick={() => {setIsOpen(false)}}></button>
+                </>
+                :
+                <></>
+            }
         </>
-      )}
-    </div>
-  );
+	);
+
 }
+
+export default InfoButton;
+

@@ -143,7 +143,7 @@ function LightPanel() {
                                 <div className={SimpleLight ? `${classes.orangeBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(1386); }}></div>
                             </div>
                         </div>
-                        <Link to={"#"} className={`linkApply ${classes.linkApplyLight}`}>Apply</Link>
+                        <Link to={"/Home"} className={`linkApply ${classes.linkApplyLight}`}>Apply</Link>
                     </div>
 
 
@@ -155,6 +155,7 @@ function LightPanel() {
                             <div className={classes.tentStyling}>
                                 <FrontTent colorType={userData.getTentType()} lightColor={finalColor} lightOn={1}/>
                             </div>
+                            <div className={classes.nightMode}></div>
                             <div className={classes.stickStyling}>
                                 <StickLamp lampColor={finalColor} />
                             </div>
@@ -162,7 +163,6 @@ function LightPanel() {
                                 <StickLamp lampColor={finalColor} />
                             </div>
                         </div>
-                        <div className={classes.nightMode}></div>
                     </div>
                 </div>
             </div>

@@ -1,7 +1,8 @@
 import React from "react";
-import { Link } from "react-router-dom";
 
-import InfoButton from "../InfoButton/InfoButton";
+import { useState } from "react";
+
+import InfoButton from "components/InfoButton/InfoButton";
 
 // css
 import classes from "./Header.module.css";
@@ -9,6 +10,8 @@ import classes from "./Header.module.css";
 // colorType <= warning, success, default
 // panel <= true, false
 function Header({ panel, colorType, message, helpPage, userOn }) {
+
+    const [buttonOn, setButtonOn] = useState(false);
 
     const returnMessageBox = () => {
         if (colorType === "warning")
@@ -25,7 +28,16 @@ function Header({ panel, colorType, message, helpPage, userOn }) {
                 return (
                     <>
                         {returnMessageBox()}
-                        <InfoButton page={helpPage} sizeX={"calc(40px + 5vh + 2vw - 20px)"} sizeY={"calc(40px + 5vh + 2vw - 20px)"} fontSize={25} top={"10px"} left={"calc(100% - (40px + 5vh + 2vw - 20px) - 20px - (40px + 5vh + 2vw - 20px)"} />
+                        <button className={classes.helpButton} onClick={() => {setButtonOn(true)} }> HELP </button>
+                        
+                        {buttonOn ?                                                         
+                            <div className={classes.infoPage}>                        
+                                <InfoButton page={helpPage} isOpen={buttonOn} setIsOpen={setButtonOn}/> 
+                            </div>
+                        : 
+                            <></>
+                        }
+
                         <div className={classes.user}>
                             {userOn ?
                                 <img src="https://www.w3schools.com/howto/img_avatar.png" alt="avatar" />

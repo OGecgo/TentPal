@@ -1,5 +1,4 @@
-
-.header{
+.header {
     position: fixed;
     width: calc(100% - 152px);
     height: calc(40px + 5vh + 2vw);
@@ -8,7 +7,7 @@
     left: 152px;
 }
 
-.header .Help{
+.header .Help {
     position: fixed;
     width: calc(40px + 5vh + 2vw - 20px);
     height: calc(40px + 5vh + 2vw - 20px);
@@ -22,12 +21,12 @@
     cursor: pointer;
 }
 
-.header .Help p{
+.header .Help p {
     font-size: 25px;
 }
 
 
-.header .user img{
+.header .user img {
     position: fixed;
     width: calc(40px + 5vh + 2vw - 20px);
     height: calc(40px + 5vh + 2vw - 20px);
@@ -37,7 +36,7 @@
     top: 10px;
 }
 
-.Link{
+.Link {
     text-align: center;
     padding: 1vh 0;
     color: rgb(42, 42, 42);
@@ -88,6 +87,46 @@
 .messageBoxSuccess {
     background-color: #8a9d8a;
 }
-.messageBoxWarning{
+
+.messageBoxWarning {
     background-color: #9d8a8a;
+}
+
+/* help button */
+.helpButton {
+    position: fixed;
+    top: 10px;
+    width: calc(40px + 5vh + 2vw - 20px);
+    height: calc(40px + 5vh + 2vw - 20px);
+    font-size: 20px;
+    left: calc(100% - (40px + 5vh + 2vw - 20px) - 20px - (40px + 5vh + 2vw - 20px));
+
+
+    cursor: pointer;
+    background-color: #2A2A2A;
+    border: none;
+    border-radius: 20px;
+
+
+    color: #bbbaca;
+    font-size: calc(1vw + 1vh);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+
+.helpButton:hover {
+    background-color: #3c3c3c;
+}
+
+.infoPage {
+    position: fixed;
+    top: calc(var(--top-Panel-Height) + 10px);
+    width: calc(100vw - 152px - 40px);
+    height: 100%;
+    right: 10px;
+    max-width: 750px;
+    max-height: 700px;
 }
