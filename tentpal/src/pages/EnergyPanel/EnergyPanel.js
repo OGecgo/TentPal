@@ -1,6 +1,6 @@
 
 import React, { useState } from "react";
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt, faBatteryFull, faSolarPanel } from "@fortawesome/free-solid-svg-icons";
 
@@ -49,7 +49,7 @@ function EnergyPanel() {
                 <div className={` ${classes.itemBox} ${classes.topLeft}`}>
                     <p className={`${classes.title} ${classes.titleGreen}`}>Ο Καιρός Τώρα</p>
                     <div className={classes.textBox}>
-                        <p className={classes.textP}><FontAwesomeIcon icon={faBolt} /> Καιρός: Ηλιοφάνεια</p>
+                        <p className={classes.textP}><FontAwesomeIcon icon={faBolt} /> Καιρός: {userData.getTypeWeather()}</p>
                         <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία: {temperature}°C</p>
                         <p className={classes.textP}><FontAwesomeIcon icon={faSolarPanel} /> Υγρασία: {moisture}%  </p>
                     </div>

@@ -17,8 +17,9 @@ function Order() {
     const [cocaCola, setCocaCola] = useState(0);
 
     // position message
-    let [posMessage, setPosMessage] = useState(0);
+    const [posMessage, setPosMessage] = useState(0);
     const [chatMessages, setChatMessages] = useState([]);
+    const [chatInput, setChatInput] = useState("");
 
     const generatePrice = () => {
         return (2.5 * frenchFries) + (3.5 * nuggets) + (1.5 * cocaCola);
@@ -30,9 +31,15 @@ function Order() {
         setCocaCola(0);
     }
 
-    const sentOrder = () => {
+    const sentOrder = (type, msg) => {
         setPosMessage(posMessage + 1);
-        setChatMessages(prev => [...prev, `Order with code #${posMessage} and cost ${(2.5 * frenchFries) + (3.5 * nuggets) + (1.5 * cocaCola)}€ shipped`]);
+        let temp = chatMessages;
+        if (type === "order") 
+            temp.push(<p className={classes.orderStyle} >Order with code #{posMessage + 1} and cost {generatePrice()}€ shipped</p>);
+        else  
+            temp.push(<p className={classes.orderMsgStyle}>{msg}</p>);
+        setChatMessages(temp);
+        setChatInput("");
         resetValues();
     }
 
@@ -92,7 +99,7 @@ function Order() {
 
                             <div className={classes.menuPrice}>
                                 <p className={classes.titlePrice}>Σύνολο: {generatePrice()}€</p>
-                                <button className={generatePrice() !== 0 ? classes.applyButton : classes.applybuttonOff} disabled={generatePrice() === 0} onClick={() => { sentOrder(); }}>
+                                <button className={generatePrice() !== 0 ? classes.applyButton : classes.applybuttonOff} disabled={generatePrice() === 0} onClick={() => { sentOrder("order"); }}>
                                     <p className={classes.buttonP}>Αποστολή</p><br />
                                 </button>
                             </div>
@@ -102,14 +109,12 @@ function Order() {
 
                     <div className={classes.displayOrders}>
                         <div className={classes.chat}>
-                            {chatMessages.map((msg, index) => (
-                                <p key={index} className={classes.orderStyle}>{msg}</p>
-                            ))}
+                            {chatMessages}
                         </div>
-                        <div className={classes.chatMessage}>
-                            <input className={classes.textBox} placeholder="Error" type="text"></input>
-                            <button className={classes.textButton} type="button"> {'>'} </button>
-                        </div>
+                        <form className={classes.chatMessage} onSubmit={(e) => { e.preventDefault(); sentOrder("message", chatInput);}}>
+                            <input className={classes.textBox} placeholder="Chat" type="text" value={chatInput} onChange={(e) => setChatInput(e.target.value)}></input>
+                            <button className={classes.textButton} type="submit"> {'>'} </button>
+                        </form>
                     </div>
 
                 </div>

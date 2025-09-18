@@ -203,6 +203,27 @@
     font-weight: 800;
     
 }
+.orderMsgStyle {
+    position: relative;
+    background-color: #8A8B9D;
+    width: 50%;
+    left: 40%;
+    min-height: 5%;
+    top: 2%;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: calc(0.5vw + 0.8vh);
+    color:#2A2A2A;
+
+    inline-size: 50%;
+    overflow-wrap: break-word;
+
+}
 
 
 

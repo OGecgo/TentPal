@@ -68,7 +68,8 @@ function Home() {
             setColorType("warning");
         }
         else if (typeM === 2) {
-            setMessage(`Weather ${userData.getTypeWeather()}`);
+            if (userData.getTypeWeather() !== userData.getTentType()) setMessage(`Weather ${userData.getTypeWeather()}. You can change tha tent to anti${userData.getTypeWeather()}`);
+            else setMessage(`Weather ${userData.getTypeWeather()}`);
             setColorType("default");
         }
     }
@@ -83,7 +84,7 @@ function Home() {
                     {userData.getIntensityWeather() === "warning" ?
                         <>
                             <div className={classes.rowBlock}>
-                                <div className={` ${classes.blockButton} ${classes.sosCall}`}>
+                                <div className={` ${classes.blockButton} ${classes.sos}`}>
                                     <button className={classes.linkButton}  onClick={() =>{setMyMessage(0)}}>
                                         <p className={classes.sosP}>Call SOS</p>
                                     </button>
@@ -96,7 +97,7 @@ function Home() {
                                         Set New Tent
                                     </Link>
                                 </div>
-                                <div className={` ${classes.blockButton} ${classes.sosCall}`}>
+                                <div className={` ${classes.blockButton} ${classes.sos}`}>
                                     <Link className={classes.linkButton} to="/sosMap">
                                         <img src={sosImg} className={classes.sizeImg}></img>
                                         <p className={classes.sosP}>SOS Map</p>
