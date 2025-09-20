@@ -33,6 +33,7 @@ function LeftPanel({mode, levelPage, linkNext = {}, linkPrev = {}}) {
         );
     }
 
+
     const Panel = () => { 
         switch (mode) {
             case "createTent":
@@ -42,7 +43,7 @@ function LeftPanel({mode, levelPage, linkNext = {}, linkPrev = {}}) {
                         <div className = {classes.blocks}>
                             {createTent(levelPage)}
                             {links()}
-                            <Link to="/Menu" className = {`${classes.exitButton} ${classes.text}`}>Exit</Link>
+                            <Link to="/Menu" onClick={(e)=>{if(!window.confirm("If exit you lost data")) { e.preventDefault(); } }} className = {`${classes.exitButton} ${classes.text}`}>Exit</Link>
                         </div>
                     </>
                 );
@@ -53,7 +54,7 @@ function LeftPanel({mode, levelPage, linkNext = {}, linkPrev = {}}) {
                         <Link to = "/Home"><img src = {require("assets/Logo.webp")} alt = "logo" /></Link>
                         <div className = {classes.blocks}>
                             {links()}
-                            <Link to = "/Menu"  className = {`${classes.exitButton} ${classes.text}`}>Exit</Link>
+                            <Link to="/Menu" onClick={(e)=>{if(!window.confirm("If exit you lost data")) { e.preventDefault(); } }} className = {`${classes.exitButton} ${classes.text}`}>Exit</Link>
                         </div>
                     </>
                 );

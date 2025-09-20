@@ -1,71 +1,52 @@
 
-
-let posMap = [-1, -1];
-let countBlocks = 20;
-
-
-// normal, warm, cold, rain
-let tentType = "none";
-
-// depth, degree
-let stakesData = [[50, 50], [50, 50], [50, 50], [50, 50]]; 
-
-// normal, warm, cold, rain
-let typeWeather = "none"; 
-// no_warning, warning
-let intensityWeather = "good";
+import stakes from "./tentConfig/stakesData"
+import tent   from "./tentConfig/tentData"
+import map    from "./mapData"
+import messengerData from "./messengerData";
+import lightData from "./setings/lightData";
+import energyData from "./setings/energyData";
 
 
+let userMode = false;
+let typeWeather = "none";       // normal, warm, cold, rain
+let intensityWeather = "good";  // no_warning, warning
 
 
 // --getters setters--
 
-function getCountBlocks() {return countBlocks;}
-function setCountBlocks(e) {countBlocks = e;}
-
-function getPosMap()     {return posMap;}
-function setPosMap(x, y) {posMap[0] = x; posMap[1] = y;}
-   
-function getTentType()     {return tentType;}
-function setTentType(type) {tentType = type;}
-  
-function getStakesData()  {return stakesData;}
-function setStakesData(e) {stakesData = e;}
-
-// Weather
+// Weather modes
 function getTypeWeather()     {return typeWeather;}
 function setTypeWeather(e)    {typeWeather = e;}
 
 function getIntensityWeather()  {return intensityWeather;}
 function setIntensityWeather(e) {intensityWeather = e;}
 
+function getUserMode()  {return userMode;}
+function setUserMode(e) {userMode = e;}
+
 
 function resetData() {
-    posMap = [-1, -1];
-    tentType = "none";
-    stakesData = [[50, 50], [50, 50], [50, 50], [50, 50]]; 
-    typeWeather = "none"; 
+
+    typeWeather = "none";
     intensityWeather = "good";
+    userMode = false;
+
+    map.resetData();
+    tent.resetData();
+    stakes.resetData();
+    lightData.resetData();
+    energyData.resetData();
+    messengerData.resetData();
 }
 
 
 export default {
-    getCountBlocks,
-    setCountBlocks,
-
-    getPosMap,
-    setPosMap,
-
-    getTentType,
-    setTentType,
-
-    getStakesData,
-    setStakesData,
-
+    getUserMode,
+    setUserMode,
     getTypeWeather,    
     setTypeWeather,
     getIntensityWeather,
     setIntensityWeather,
-    
+
     resetData
 };

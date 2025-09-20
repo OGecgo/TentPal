@@ -9,6 +9,7 @@ import LeftPanel from "components/LeftPanel/LeftPanel";
 import Environmental from "components/Environmental/Environmental";
 import FrontTent from "components/FrontTent/FrontTent";
 
+import tentData from "dataSet/tentConfig/tentData";
 import userData from "dataSet/userData";
 
 // import normalTentImg from "assets/tent/Normal.webp"
@@ -19,20 +20,14 @@ import rainTentImg   from "assets/tent/Rain.webp"
 function SetTent(){
     
     const [message, setMessage] = useState("Drag and Drop tent you want to right block");
-    // remeber with what start (is from create or from user)
-    const [start, setStart] = useState("none");
     // change useData
-    const [keyTent, setKeyTent] = useState(userData.getTentType());
-    const [buttonNext, setButtonNext] = useState(true);
+    const [keyTent, setKeyTent] = useState(tentData.getTentType());
+    const [buttonNext, setButtonNext] = useState(tentData.getTentType() === "none");
 
-
-    useEffect(()=>{
-        setStart(userData.getTentType());
-    }, []);
 
     useEffect(() => {
         if (keyTent === "none") return;
-        userData.setTentType(keyTent);
+        tentData.setTentType(keyTent);
     },[keyTent]);
 
 
@@ -114,15 +109,15 @@ function SetTent(){
 
 
 
-            {start === "none"? 
-                <>
-                    <Header panel={true} message={message} colorType={keyTent === "none" ? "default" : "success"} userOn={false}/>
-                    <LeftPanel mode="createTent" levelPage={3} linkNext={{ link: "/Home", bool: true , lock: buttonNext }} linkPrev={{ link: "/setStakes", bool: true }} />
-                </>
-                :
+            {userData.getUserMode() ? 
                 <>
                     <Header panel={true} message={"Now you can change Tent"} colorType={"default"} userOn={true}/>
                     <LeftPanel mode="userMode"   levelPage={0} linkNext={{ link: "/Home", bool: false, lock: false      }} linkPrev={{ link: "/Home"     , bool: true }} />
+                </>
+                :
+                <>
+                    <Header panel={true} message={message} colorType={keyTent === "none" ? "default" : "success"} userOn={false}/>
+                    <LeftPanel mode="createTent" levelPage={3} linkNext={{ link: "/Home", bool: true , lock: buttonNext }} linkPrev={{ link: "/setStakes", bool: true }} />
                 </>
             }
         </>

@@ -15,6 +15,7 @@ import foodImg from "assets/simbolsImg/food.png"
 import tentImg from "assets/simbolsImg/tent.svg"
 import sosImg from "assets/simbolsImg/sosPin.svg"
 
+import tentData from "dataSet/tentConfig/tentData"
 import userData from "dataSet/userData"
 
 function Home() {
@@ -25,6 +26,7 @@ function Home() {
     useEffect(() => {
         randomWeather();
         randomIntensityWeather();
+        userData.setUserMode(true);
     }, []);
 
     useEffect(() => {
@@ -36,7 +38,7 @@ function Home() {
     const randomWeather = () => {
         let w = Math.floor(Math.random() * 4);
         if (w === 0) {
-            userData.setTypeWeather("norma");
+            userData.setTypeWeather("normal");
         }
         else if (w === 1) {
             userData.setTypeWeather("warm");
@@ -68,7 +70,12 @@ function Home() {
             setColorType("warning");
         }
         else if (typeM === 2) {
-            if (userData.getTypeWeather() !== userData.getTentType()) setMessage(`Weather ${userData.getTypeWeather()}. You can change tha tent to anti${userData.getTypeWeather()}`);
+            if (userData.getTypeWeather() !== tentData.getTentType()){
+                if (userData.getTypeWeather() !== "normal") 
+                    setMessage(`Weather ${userData.getTypeWeather()}. You can change tha tent to anti-${userData.getTypeWeather()}`);
+                else 
+                    setMessage(`Weather ${userData.getTypeWeather()}. You can change tha tent to normal`);
+            }
             else setMessage(`Weather ${userData.getTypeWeather()}`);
             setColorType("default");
         }
@@ -178,4 +185,4 @@ function Home() {
 
 }
 
-export default Home 
+export default Home;

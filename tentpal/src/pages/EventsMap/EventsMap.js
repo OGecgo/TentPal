@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-import userData from "dataSet/userData";
+import mapData from "dataSet/mapData";
 
 import Map       from "components/Map/Map";
 import InfoButton from "components/InfoButton/InfoButton";
@@ -21,7 +21,9 @@ function EventsMap() {
 
 
     useEffect(()=> {
-        setInfoBlocks(returnUpperBlocks());
+        if (mapData.getEventsMap() == null)
+            mapData.setEventsMap(returnUpperBlocks());
+        setInfoBlocks(mapData.getEventsMap());
     }, []);
 
 
@@ -51,14 +53,14 @@ function EventsMap() {
 
     const returnUpperBlocks = () => {
         let block = [];
-        for (let row = 0; row < userData.getCountBlocks(); row++) {
-            for (let col = 0; col < userData.getCountBlocks(); col++) {
+        for (let row = 0; row < mapData.getCountBlocks(); row++) {
+            for (let col = 0; col < mapData.getCountBlocks(); col++) {
                 let e = returnRandomEvent();
                 block.push(
                     <div onClick={() => { e === 0 || e === 1 ? setInfoOn(true) : setInfoOn(false)}}
                         key={`${row} ${col}`} className={`${classesMap.block} ${classes.styleBlock}`}>
 
-                        {userData.getPosMap()[0] !== row || userData.getPosMap()[1] !== col ?
+                        {mapData.getPosMap()[0] !== row || mapData.getPosMap()[1] !== col ?
                             returnMapEvent(e)
                             :
                             <div className={`${classes.mapColorSquare} ${classes.event}`}>

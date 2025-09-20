@@ -7,17 +7,18 @@ import Header from 'components/Header/Header';
 import Environmental from 'components/Environmental/Environmental';
 import FrontTent from 'components/FrontTent/FrontTent';
 
-import userData from 'dataSet/userData';
+import tentData from 'dataSet/tentConfig/tentData';
+import lightData from 'dataSet/setings/lightData';
 
 import StickLamp from './StickLamp/StickLamp';
 
 function LightPanel() {
-    const [SimpleLight, setSimpleLight] = useState(true);
-    const [NightLight, setNightLight] = useState(false);
+    const [SimpleLight, setSimpleLight] = useState(lightData.getSimpleLight());
+    const [NightLight, setNightLight] = useState(lightData.getNightLight());
 
-    const [color, setColor] = useState("#09D4DA");
-    const [valueColor, setValueColor] = useState(768);
-    const [intensity, setIntensity] = useState(0.75);
+    const [color, setColor] = useState(lightData.getColor());
+    const [valueColor, setValueColor] = useState(lightData.getValueColor());
+    const [intensity, setIntensity] = useState(lightData.getIntensity());
 
 
     const getAdjustedColor = (hex) => {
@@ -91,7 +92,13 @@ function LightPanel() {
 
 
 
-
+    const setValues = () => {
+        lightData.setSimpleLight(SimpleLight);
+        lightData.setNightLight(NightLight);
+        lightData.setColor(color);
+        lightData.setValueColor(valueColor);
+        lightData.setIntensity(intensity);
+    }
 
 
 
@@ -143,7 +150,7 @@ function LightPanel() {
                                 <div className={SimpleLight ? `${classes.orangeBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(1386); }}></div>
                             </div>
                         </div>
-                        <Link to={"/Home"} className={`linkApply ${classes.linkApplyLight}`}>Apply</Link>
+                        <Link to={"/Home"} onClick={()=>{setValues()}} className={`linkApply ${classes.linkApplyLight}`}>Apply</Link>
                     </div>
 
 
@@ -153,7 +160,7 @@ function LightPanel() {
                         </div>
                         <div className={classes.blockRightHiden}>
                             <div className={classes.tentStyling}>
-                                <FrontTent colorType={userData.getTentType()} lightColor={finalColor} lightOn={1}/>
+                                <FrontTent colorType={tentData.getTentType()} lightColor={finalColor} lightOn={1}/>
                             </div>
                             <div className={classes.nightMode}></div>
                             <div className={classes.stickStyling}>

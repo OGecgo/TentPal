@@ -10,6 +10,8 @@ import potatoImg   from 'assets/food/potato.jpg'
 import chickenImg  from 'assets/food/fried_chicken.jpg'
 import cocacolaImg from 'assets/food/cocacola.jpeg'
 
+import messengerData from "dataSet/messengerData";
+
 function Order() {
 
     const [frenchFries, setFrenchFries] = useState(0);
@@ -17,8 +19,8 @@ function Order() {
     const [cocaCola, setCocaCola] = useState(0);
 
     // position message
-    const [posMessage, setPosMessage] = useState(0);
-    const [chatMessages, setChatMessages] = useState([]);
+    const [codeOrder, setCodeOrder] = useState(0);
+    const [chatMessages, setChatMessages] = useState(messengerData.getChatMessage());
     const [chatInput, setChatInput] = useState("");
 
     const generatePrice = () => {
@@ -32,13 +34,14 @@ function Order() {
     }
 
     const sentOrder = (type, msg) => {
-        setPosMessage(posMessage + 1);
+        setCodeOrder(codeOrder + 1);
         let temp = chatMessages;
         if (type === "order") 
-            temp.push(<p className={classes.orderStyle} >Order with code #{posMessage + 1} and cost {generatePrice()}€ shipped</p>);
+            temp.push(<p className={classes.orderStyle} >Order with code #{codeOrder + 1} and cost {generatePrice()}€ shipped</p>);
         else  
             temp.push(<p className={classes.orderMsgStyle}>{msg}</p>);
         setChatMessages(temp);
+        messengerData.setChatMessage(temp);
         setChatInput("");
         resetValues();
     }

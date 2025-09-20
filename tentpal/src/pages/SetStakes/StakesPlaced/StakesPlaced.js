@@ -7,35 +7,25 @@ import Environmental from "components/Environmental/Environmental";
 import Panel from "./Panel/Panel";
 import Tent from "./Tent/Tent";
 
-let stakeDeepVar = [50, 50, 50, 50];
-let stakeDegreVar = [50, 50, 50, 50];
-let stakeUse = [true, false, false, false];
+import stakesData from "dataSet/tentConfig/stakesData";
+
+
 
 function StakesPlaced() {
 
-    const [deepPres, setDeepPres] = useState(0.5);
-    const [degrePres, setDegrePres] = useState(0.5);
     const [stake, SetStake] = useState(1);
-    const deepRealPres = 30 + 100*deepPres / 10;
+
+    const [deepPres , setDeepPres ] = useState(stakesData.getStakesData(0, 0));
+    const [degrePres, setDegrePres] = useState(stakesData.getStakesData(0, 1));
+
+    const deepRealPres  = 30 + 100*deepPres / 10;
     const degreRealPres = 10 - 100*degrePres / 5;
 
-    useEffect(() => {
-        for (let i = 0; i < 4; i++) {
-            stakeDeepVar[i] = deepPres;
-            stakeDegreVar[i] = degrePres;
-        }
-    
-    }, [])
 
     // Update the current stake's values when sliders change
     useEffect(() => {
-        for (let i = 0; i < 4; i++) {
-            if (stakeUse[i]) {
-                stakeDeepVar[i] = deepPres;
-                stakeDegreVar[i] = degrePres;
-                break;
-            }
-        }
+        stakesData.setStakesData(deepPres , 0, stake - 1);
+        stakesData.setStakesData(degrePres, 1, stake - 1);
     }, [deepPres, degrePres]);
 
     // Load stake values when switching stakes
@@ -46,24 +36,20 @@ function StakesPlaced() {
     const playStake = (num) => {
         switch(num){
             case 1:
-                setDeepPres(stakeDeepVar[0]);
-                setDegrePres(stakeDegreVar[0]);
-                stakeUse = [true, false, false, false];
+                setDeepPres (stakesData.getStakesData(0, 0));
+                setDegrePres(stakesData.getStakesData(1, 0));
                 break;
             case 2:
-                setDeepPres(stakeDeepVar[1]);
-                setDegrePres(stakeDegreVar[1]);
-                stakeUse = [false, true, false, false];
+                setDeepPres (stakesData.getStakesData(0, 1));
+                setDegrePres(stakesData.getStakesData(1, 1));
                 break;    
             case 3:
-                setDeepPres(stakeDeepVar[2]);
-                setDegrePres(stakeDegreVar[2]);
-                stakeUse = [false, false, true, false];
+                setDeepPres (stakesData.getStakesData(0, 2));
+                setDegrePres(stakesData.getStakesData(1, 2));
                 break;
             case 4:
-                setDeepPres(stakeDeepVar[3]);
-                setDegrePres(stakeDegreVar[3]);
-                stakeUse = [false, false, false, true];
+                setDeepPres (stakesData.getStakesData(0, 3));
+                setDegrePres(stakesData.getStakesData(1, 3));
                 break;
             default:
                 break;

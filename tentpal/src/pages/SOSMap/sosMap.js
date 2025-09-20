@@ -1,7 +1,7 @@
 import React from "react";
 import { useEffect, useState } from "react";
 
-import userData from "dataSet/userData";
+import mapData from "dataSet/mapData";
 
 import Header from "components/Header/Header";
 import LeftPanel from "components/LeftPanel/LeftPanel";
@@ -14,15 +14,17 @@ function SOSMap() {
 
     const [mapPoints, setMapPoints] = useState([]);
     useEffect(() => {
-        setMapPoints(returnMapPoints());
+        if (mapData.getSOSMap() == null)
+            mapData.setSOSMap(returnMapPoints());
+        setMapPoints(mapData.getSOSMap());
     }, []);
 
     const returnMapPoints = () => {
         let block = [];
-        for (let i = 0; i < userData.getCountBlocks(); i++) {
-            for (let j = 0; j < userData.getCountBlocks(); j++) {
+        for (let i = 0; i < mapData.getCountBlocks(); i++) {
+            for (let j = 0; j < mapData.getCountBlocks(); j++) {
                 //user point
-                if (userData.getPosMap()[0] === i && userData.getPosMap()[1] === j) { 
+                if (mapData.getPosMap()[0] === i && mapData.getPosMap()[1] === j) { 
                     block.push(
                         <div className={`${classesMap.block} ${classes.blockStyle}`}>
                             <div className={classes.backBlack}>   

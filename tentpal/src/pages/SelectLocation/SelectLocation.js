@@ -6,7 +6,7 @@ import Header from "components/Header/Header";
 import LeftPanel from "components/LeftPanel/LeftPanel";
 import Map from "components/Map/Map";
 
-import userData from "dataSet/userData";
+import mapData from "dataSet/mapData";
 
 import classes from "./SelectLocation.module.css"
 import classesMap from "components/Map/Map.module.css"
@@ -24,11 +24,14 @@ function SelectLocation() {
 
 
     useEffect(() => {
-        setSeedRandomBlock(createSeedRandomBlocks() );
+        if (mapData.getSelectLocation() == null)
+            mapData.setSelectLocation(createSeedRandomBlocks());
+        setSeedRandomBlock(mapData.getSelectLocation());
+
         setBlockColors(generateColorBlocks());
-        setPos(userData.getPosMap()[0] + userData.getPosMap()[1] * userData.getCountBlocks());
-        if (userData.getPosMap()[0] >= 0) 
-            takeMapPos(userData.getPosMap()[0], userData.getPosMap()[1], null);
+        setPos(mapData.getPosMap()[0] + mapData.getPosMap()[1] * mapData.getCountBlocks());
+        if (mapData.getPosMap()[0] >= 0) 
+            takeMapPos(mapData.getPosMap()[0], mapData.getPosMap()[1], null);
     }, [])
 
     useEffect(() => {
@@ -39,8 +42,8 @@ function SelectLocation() {
     const createSeedRandomBlocks = () => {
         let newSeedArray = [];
 
-        for (let row = 0; row < userData.getCountBlocks(); row++) {
-            for (let col = 0; col < userData.getCountBlocks(); col++) {
+        for (let row = 0; row < mapData.getCountBlocks(); row++) {
+            for (let col = 0; col < mapData.getCountBlocks(); col++) {
                 let r = Math.floor(Math.random() * 3);
                 if (Math.random() >= 0.85){ 
                     if (Math.random() >= 0.3) {
@@ -79,9 +82,9 @@ function SelectLocation() {
             setMessage("--->>You selected place. Now you can continue<<---");
             setLockNext(false);
             setTypeMessage("success");
-            userData.setPosMap(x,  y); // save top left pixel of block
+            mapData.setPosMap(x,  y); // save top left pixel of block
         }
-        setPos(x + y * userData.getCountBlocks());
+        setPos(x + y * mapData.getCountBlocks());
     }
 
 
@@ -90,8 +93,8 @@ function SelectLocation() {
 
     const generateColorBlocks = () => {
         let block = [];
-        for (let row = 0; row < userData.getCountBlocks(); row++) {
-            for (let col = 0; col < userData.getCountBlocks(); col++) {
+        for (let row = 0; row < mapData.getCountBlocks(); row++) {
+            for (let col = 0; col < mapData.getCountBlocks(); col++) {
                 let i = row + col * 20;
                 let r = seedRandomBlock[i];
                 if (r === 0) {
@@ -99,7 +102,7 @@ function SelectLocation() {
                 } else if (r === 1) {
                     block.push(<div key={`${row} ${col}`} className={`${classes.colorBlock} ${classes.orange}`} onClick={() => { takeMapPos(-1, -1, 1) }}></div>);
                 } else {
-                    block.push(<div key={`${row} ${col}`} className={(pos === row + col * userData.getCountBlocks()) ? `${classes.colorBlock} ${classes.green}` : `${classes.colorBlock}`} onClick={() => { takeMapPos(row, col, null) }}></div>);
+                    block.push(<div key={`${row} ${col}`} className={(pos === row + col * mapData.getCountBlocks()) ? `${classes.colorBlock} ${classes.green}` : `${classes.colorBlock}`} onClick={() => { takeMapPos(row, col, null) }}></div>);
                 }
             }
         }

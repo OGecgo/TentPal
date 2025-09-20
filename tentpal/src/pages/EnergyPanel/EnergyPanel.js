@@ -1,6 +1,9 @@
 
-import React, { useState } from "react";
+import React from "react";
+import { useState, useEffect } from "react";
+
 import { Link } from "react-router-dom"
+
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faBolt, faBatteryFull, faSolarPanel } from "@fortawesome/free-solid-svg-icons";
 
@@ -11,46 +14,74 @@ import LeftPanel from 'components/LeftPanel/LeftPanel';
 import Header from 'components/Header/Header';
 
 import userData from 'dataSet/userData'
+import energyData from "dataSet/setings/energyData";
 
 function EnergyPanel() {
 
 
-    const [isAirCondition, setIsAirCondition] = useState(null);
-    const [airConditionTemperature, setAirConditionTemperature] = useState(25);
-    const [isElecticBlanket, setIsElectricBlanket] = useState(null)
+    const [isAirCondition, setIsAirCondition] = useState(energyData.getIsAirCondition());
+    const [airConditionTemperature, setAirConditionTemperature] = useState(energyData.getAirConditionTemperature());
+    const [isElecticBlanket, setIsElectricBlanket] = useState(energyData.getIsElecticBlanket())
 
 
-    let moisture = Math.floor((Math.random() * 100));
-    let temperature = Math.floor((Math.random(0, 1) * 40));
+    let temperature = 23;
+    let moisture = 43;
+
+    if (userData.getTypeWeather() === "normal"){
+        temperature = 25;
+        moisture = 50;
+    }
+    else if (userData.getTypeWeather() === "rain"){
+        temperature = 20;
+        moisture = 70;
+    }
+    else if (userData.getTypeWeather() === "warm"){
+        temperature = 35;
+        moisture = 30;
+    }
+    else if (userData.getTypeWeather() === "cold"){
+        temperature = 0;
+        moisture = 35;
+    }
 
 
 
-    function generateEnergyConsumption() {
-        if (!isAirCondition && !isElecticBlanket) {
+    const generateEnergyConsumption = () => {
+        if (!isAirCondition && !isElecticBlanket)
             return (Math.random()).toFixed(2);
-        }
-        else if (!isAirCondition && isElecticBlanket) {
+
+        else if (!isAirCondition && isElecticBlanket)
             return (2 + Math.random() * 5).toFixed(2);
-        }
-        else if (isAirCondition && !isElecticBlanket) {
+
+        else if (isAirCondition && !isElecticBlanket)
             return (15 + Math.random() * 10).toFixed(2);
-        }
-        else {
+        
+        else
             return (25 + Math.random() * 15).toFixed(2);
-        }
 
     }
 
+    const [energyConsumption, setEnergyConsumption] = useState(generateEnergyConsumption());
+
+    useEffect(() =>{
+        setEnergyConsumption(generateEnergyConsumption());
+    }, [isAirCondition, isElecticBlanket])
+
+    const setValue = () => {
+        energyData.setIsAirCondition(isAirCondition);
+        energyData.setAirConditionTemperature(airConditionTemperature);
+        energyData.setIsElecticBlanket(isElecticBlanket);
+    }
 
     return (
         <>
 
             <div className="centerContent" >
                 <div className={` ${classes.itemBox} ${classes.topLeft}`}>
-                    <p className={`${classes.title} ${classes.titleGreen}`}>Ο Καιρός Τώρα</p>
+                    <p className={`${classes.title} ${classes.titleGreen}`}>Weather now</p>
                     <div className={classes.textBox}>
-                        <p className={classes.textP}><FontAwesomeIcon icon={faBolt} /> Καιρός: {userData.getTypeWeather()}</p>
-                        <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία: {temperature}°C</p>
+                        <p className={classes.textP}><FontAwesomeIcon icon={faBolt} /> Weather: {userData.getTypeWeather()}</p>
+                        <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Temperature: {temperature}°C</p>
                         <p className={classes.textP}><FontAwesomeIcon icon={faSolarPanel} /> Υγρασία: {moisture}%  </p>
                     </div>
                 </div>
@@ -67,9 +98,7 @@ function EnergyPanel() {
 
                 <div className={`${classes.itemBox} ${classes.bottomLeft}`}>
                     <p className={`${classes.title} ${classes.titleYellow}`}>Κατανάλωση ενέργειας</p>
-
-                    <p className={`${classes.textBox} ${classes.textP}`}><FontAwesomeIcon icon={faBolt} /> Κατανάλωση ενέργειας τώρα: {generateEnergyConsumption()}Wh</p>
-
+                    <p className={`${classes.textBox} ${classes.textP}`}><FontAwesomeIcon icon={faBolt} /> Κατανάλωση ενέργειας τώρα: {energyConsumption}Wh</p>
                 </div>
 
                 <div className={`${classes.itemBox} ${classes.bottomRight}`}>
@@ -79,11 +108,11 @@ function EnergyPanel() {
                         <div className={classes.leftOption}>
                             <div className={classes.sliterTopBlock}>
                                 <p className={classes.textP}>Ηλεκτρική Κουβέρτα:</p>
-                                <input className={classes.slider} type="checkbox" checked={isElecticBlanket} onClick={() => isElecticBlanket ? setIsElectricBlanket(false) : setIsElectricBlanket(true)} />
+                                <input className={classes.slider} type="checkbox" checked={isElecticBlanket} onChange={() => {isElecticBlanket ? setIsElectricBlanket(false) : setIsElectricBlanket(true);}} />
                             </div>
                             <div className={classes.sliterTopBlock}>
                                 <p className={classes.textP}>Κλιματισμός:</p>
-                                <input className={classes.slider} type="checkbox" checked={isAirCondition} onClick={() => isAirCondition ? setIsAirCondition(false) : setIsAirCondition(true)} />
+                                <input className={classes.slider} type="checkbox" checked={isAirCondition} onChange={() => {isAirCondition ? setIsAirCondition(false) : setIsAirCondition(true);}} />
                             </div>
 
                         </div>
@@ -91,16 +120,8 @@ function EnergyPanel() {
                             <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία Κλιματισμού: {isAirCondition ? airConditionTemperature + '°C' : '-'}</p>
                             {isAirCondition ? 
                                 <>
-                                    <button className={classes.buttonTemp} onClick={() => {
-                                        if (airConditionTemperature < 30) {
-                                            setAirConditionTemperature((airConditionTemperature) => airConditionTemperature + 1);
-                                        }
-                                    }} variant="outline"> + </button>
-                                    <button className={classes.buttonTemp} onClick={() => {
-                                        if (airConditionTemperature > 18) {
-                                            setAirConditionTemperature((airConditionTemperature) => airConditionTemperature - 1);
-                                        }
-                                    }} variant="outline"> - </button>
+                                    <button className={classes.buttonTemp} onClick={() => { if (airConditionTemperature < 30) { setAirConditionTemperature((e) => e + 1); } }} variant="outline"> + </button>
+                                    <button className={classes.buttonTemp} onClick={() => { if (airConditionTemperature > 18) { setAirConditionTemperature((e) => e - 1); } }} variant="outline"> - </button>
                                 </>
                                 : 
                                 <></>
@@ -108,53 +129,16 @@ function EnergyPanel() {
                         </div>
 
                     </div>
-                    {/* <label className={classes.textBoxSlider}>
-                        <div className={classes.textP}>
-                            <p>Ηλεκτρική Κουβέρτα:</p>
-                            <input className={classes.checkBox} type="checkbox" id="aircondition-toggle" checked={isElecticBlanket} onClick={() => isElecticBlanket ? setIsElectricBlanket(false) : setIsElectricBlanket(true)} />
-                            <span className={classes.slider}></span>
-                        </div>
-                    </label>
-                    <label className={`${classes.textBoxSlider} ${classes.textBoxSliderTwo}`}>
-                        <div className={classes.textP}>
-                            <p>Κλιματισμός:</p>
-                        </div>
-                        <div className={classes.sizeSlider}>
-                                <input className={classes.checkBox} type="checkbox" id="aircondition-toggle" checked={isAirCondition} onClick={() => isAirCondition ? setIsAirCondition(false) : setIsAirCondition(true)} />
-                                <span className={classes.slider}></span>
-                        </div>
-                    </label>                             */}
-
-                    {/* <div className={`${classes.textBoxSlider} ${classes.textBoxSliderThree}`}>
-                        <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία Κλιματισμού: {isAirCondition ? airConditionTemperature + '°C' : '-'}</p>
-                        {isAirCondition ? 
-                            <>
-                                <button className={classes.buttonTemp} onClick={() => {
-                                    if (airConditionTemperature < 30) {
-                                        setAirConditionTemperature((airConditionTemperature) => airConditionTemperature + 1);
-                                    }
-                                }} variant="outline"> + </button>
-                                <button className={classes.buttonTemp} onClick={() => {
-                                    if (airConditionTemperature > 18) {
-                                        setAirConditionTemperature((airConditionTemperature) => airConditionTemperature - 1);
-                                    }
-                                }} variant="outline"> - </button>
-                            </>
-                            : 
-                            <></>
-                        }
-
-                    </div> */}
                 </div>
                                         
-                <Link to = {"/Home"} className={`linkApply ${classes.linkApplyEnergy}`}>Apply</Link>
+                <Link to = {"/Home"} onClick={()=>{setValue()}} className={`linkApply ${classes.linkApplyEnergy}`}>Apply</Link>
 
             </div>
 
 
 
             <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
-            <Header panel={true} message={'Διαχείριση Ενέργειας Ενεργειακού Ελέγχου'} helpPage={"energy"} />
+            <Header userOn={true} panel={true} message={'Διαχείριση Ενέργειας Ενεργειακού Ελέγχου'} helpPage={"energy"} />
         </>
     );
 }
