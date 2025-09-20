@@ -51,8 +51,8 @@ function EventsMap() {
 
     const returnUpperBlocks = () => {
         let block = [];
-        for (let row = 0; row < userData.countBlocks; row++) {
-            for (let col = 0; col < userData.countBlocks; col++) {
+        for (let row = 0; row < userData.getCountBlocks(); row++) {
+            for (let col = 0; col < userData.getCountBlocks(); col++) {
                 let e = returnRandomEvent();
                 block.push(
                     <div onClick={() => { e === 0 || e === 1 ? setInfoOn(true) : setInfoOn(false)}}

@@ -9,13 +9,13 @@ import userData from 'dataSet/userData';
 import classes from './Map.module.css'
 
 function Map(){
-    userData.countBlocks = 20;
+    userData.getCountBlocks(20);
 
 
     const blockGrids = () => {
         let block = []
-        for (let row = 0; row < userData.countBlocks; row ++){
-            for (let col = 0; col < userData.countBlocks; col ++){
+        for (let row = 0; row < userData.getCountBlocks(); row ++){
+            for (let col = 0; col < userData.getCountBlocks(); col ++){
                 block.push(<div key = {`${row} ${col}`} className={classes.block}></div>)
             }
         }

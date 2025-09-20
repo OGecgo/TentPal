@@ -19,8 +19,8 @@ function SOSMap() {
 
     const returnMapPoints = () => {
         let block = [];
-        for (let i = 0; i < userData.countBlocks; i++) {
-            for (let j = 0; j < userData.countBlocks; j++) {
+        for (let i = 0; i < userData.getCountBlocks(); i++) {
+            for (let j = 0; j < userData.getCountBlocks(); j++) {
                 //user point
                 if (userData.getPosMap()[0] === i && userData.getPosMap()[1] === j) { 
                     block.push(

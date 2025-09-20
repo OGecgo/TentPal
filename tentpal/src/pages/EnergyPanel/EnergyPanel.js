@@ -75,7 +75,40 @@ function EnergyPanel() {
                 <div className={`${classes.itemBox} ${classes.bottomRight}`}>
                     <p className={classes.title}>Options</p>
 
-                    <label className={classes.textBoxSlider}>
+                    <div className={classes.options}>
+                        <div className={classes.leftOption}>
+                            <div className={classes.sliterTopBlock}>
+                                <p className={classes.textP}>Ηλεκτρική Κουβέρτα:</p>
+                                <input className={classes.slider} type="checkbox" checked={isElecticBlanket} onClick={() => isElecticBlanket ? setIsElectricBlanket(false) : setIsElectricBlanket(true)} />
+                            </div>
+                            <div className={classes.sliterTopBlock}>
+                                <p className={classes.textP}>Κλιματισμός:</p>
+                                <input className={classes.slider} type="checkbox" checked={isAirCondition} onClick={() => isAirCondition ? setIsAirCondition(false) : setIsAirCondition(true)} />
+                            </div>
+
+                        </div>
+                        <div className={classes.rightOption} >
+                            <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία Κλιματισμού: {isAirCondition ? airConditionTemperature + '°C' : '-'}</p>
+                            {isAirCondition ? 
+                                <>
+                                    <button className={classes.buttonTemp} onClick={() => {
+                                        if (airConditionTemperature < 30) {
+                                            setAirConditionTemperature((airConditionTemperature) => airConditionTemperature + 1);
+                                        }
+                                    }} variant="outline"> + </button>
+                                    <button className={classes.buttonTemp} onClick={() => {
+                                        if (airConditionTemperature > 18) {
+                                            setAirConditionTemperature((airConditionTemperature) => airConditionTemperature - 1);
+                                        }
+                                    }} variant="outline"> - </button>
+                                </>
+                                : 
+                                <></>
+                            }
+                        </div>
+
+                    </div>
+                    {/* <label className={classes.textBoxSlider}>
                         <div className={classes.textP}>
                             <p>Ηλεκτρική Κουβέρτα:</p>
                             <input className={classes.checkBox} type="checkbox" id="aircondition-toggle" checked={isElecticBlanket} onClick={() => isElecticBlanket ? setIsElectricBlanket(false) : setIsElectricBlanket(true)} />
@@ -85,12 +118,14 @@ function EnergyPanel() {
                     <label className={`${classes.textBoxSlider} ${classes.textBoxSliderTwo}`}>
                         <div className={classes.textP}>
                             <p>Κλιματισμός:</p>
-                            <input className={classes.checkBox} type="checkbox" id="aircondition-toggle" checked={isAirCondition} onClick={() => isAirCondition ? setIsAirCondition(false) : setIsAirCondition(true)} />
-                            <span className={classes.slider}></span>
                         </div>
-                    </label>                            
+                        <div className={classes.sizeSlider}>
+                                <input className={classes.checkBox} type="checkbox" id="aircondition-toggle" checked={isAirCondition} onClick={() => isAirCondition ? setIsAirCondition(false) : setIsAirCondition(true)} />
+                                <span className={classes.slider}></span>
+                        </div>
+                    </label>                             */}
 
-                    <div className={`${classes.textBoxSlider} ${classes.textBoxSliderThree}`}>
+                    {/* <div className={`${classes.textBoxSlider} ${classes.textBoxSliderThree}`}>
                         <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία Κλιματισμού: {isAirCondition ? airConditionTemperature + '°C' : '-'}</p>
                         {isAirCondition ? 
                             <>
@@ -109,7 +144,7 @@ function EnergyPanel() {
                             <></>
                         }
 
-                    </div>
+                    </div> */}
                 </div>
                                         
                 <Link to = {"/Home"} className={`linkApply ${classes.linkApplyEnergy}`}>Apply</Link>

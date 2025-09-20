@@ -20,6 +20,9 @@ let intensityWeather = "good";
 
 // --getters setters--
 
+function getCountBlocks() {return countBlocks;}
+function setCountBlocks(e) {countBlocks = e;}
+
 function getPosMap()     {return posMap;}
 function setPosMap(x, y) {posMap[0] = x; posMap[1] = y;}
    
@@ -47,7 +50,8 @@ function resetData() {
 
 
 export default {
-    countBlocks,
+    getCountBlocks,
+    setCountBlocks,
 
     getPosMap,
     setPosMap,
