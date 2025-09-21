@@ -15,7 +15,7 @@ import userData from "dataSet/userData";
 // import normalTentImg from "assets/tent/Normal.webp"
 import warmTentImg   from "assets/tent/Warm.webp"
 import rainTentImg   from "assets/tent/Rain.webp"
-// import coldTentImg   from "assets/tent/Cold.webp"
+import coldTentImg   from "assets/tent/Cold.webp"
 
 function SetTent(){
     
@@ -44,7 +44,7 @@ function SetTent(){
                 setMessage("Now you can continue to Home page");
                 setButtonNext(false);
                 break;
-            case "":
+            case "http://localhost:3000/static/media/Cold.9920d10373921d497ce5.webp":
                 setKeyTent("cold");
                 setMessage("Now you can continue to Home page");
                 setButtonNext(false);
@@ -77,11 +77,12 @@ function SetTent(){
                                 <p className={classes.nameTent}>Normal</p>
                                 <div className={classes.backImg}>
                                     <img src={null} alt="NormalImg"></img>
-                                </div>                            </div>
+                                </div>                            
+                            </div>
                             <div className={classes.blockItem}>
                                 <p className={classes.nameTent}>AntiCold</p>
                                 <div className={classes.backImg}>
-                                    <img src={null} alt="ColdImg"></img>
+                                    <img src={coldTentImg} alt="ColdImg"></img>
                                 </div>                            </div>
                             <div className={classes.blockItem}>
                                 <p className={classes.nameTent}>AntiRain</p>

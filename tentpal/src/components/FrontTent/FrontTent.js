@@ -3,7 +3,7 @@ import classes from "./FrontTent.module.css"
 
 // colorType <= normal, warm, cold, rain
 
-function FrontTent({ colorType}) {
+function FrontTent({colorType}) {
 
 
     const returnTypeColorDiv = () => {

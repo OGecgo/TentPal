@@ -40,7 +40,7 @@ function EnergyPanel() {
         moisture = 30;
     }
     else if (userData.getTypeWeather() === "cold"){
-        temperature = 0;
+        temperature = 1;
         moisture = 35;
     }
 
