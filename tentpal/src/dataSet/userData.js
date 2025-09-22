@@ -8,7 +8,7 @@ import energyData from "./setings/energyData";
 
 
 let userMode = false;
-let typeWeather = "none";       // cloud, sunny, snow, rain
+let typeWeather = "none";       // cloudy, sunny, snow, rain
 let intensityWeather = "good";  // no_warning, warning
 
 

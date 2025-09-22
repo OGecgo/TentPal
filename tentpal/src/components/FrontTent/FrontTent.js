@@ -1,13 +1,13 @@
 
 import classes from "./FrontTent.module.css"
 
-// colorType <= cloud, sunny, snow, rain
+// colorType <= cloudy, sunny, snow, rain
 
 function FrontTent({colorType}) {
 
 
     const returnTypeColorDiv = () => {
-        if      (colorType === "cloud") return <div className={`${classes.triangle} ${classes.triangleNormal}`} ></div>;
+        if      (colorType === "cloudy") return <div className={`${classes.triangle} ${classes.triangleNormal}`} ></div>;
         else if (colorType === "sunny") return <div className={`${classes.triangle} ${classes.triangleWarm  }`} ></div>;
         else if (colorType === "snow" ) return <div className={`${classes.triangle} ${classes.triangleCold  }`} ></div>;
         else if (colorType === "rain" ) return <div className={`${classes.triangle} ${classes.triangleRain  }`} ></div>;
@@ -15,7 +15,7 @@ function FrontTent({colorType}) {
     };
 
     const returnBlock = () => {
-        if (colorType !== "cloud" && colorType !== "sunny" && colorType !== "snow" && colorType !== "rain") return <></>;
+        if (colorType !== "cloudy" && colorType !== "sunny" && colorType !== "snow" && colorType !== "rain") return <></>;
         return(
             <>
                 <div className={classes.tentLight   }></div>

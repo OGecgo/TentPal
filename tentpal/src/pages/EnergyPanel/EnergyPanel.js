@@ -27,7 +27,7 @@ function EnergyPanel() {
     let temperature = 23;
     let moisture = 43;
 
-    if (userData.getTypeWeather() === "cloud"){
+    if (userData.getTypeWeather() === "cloudy"){
         temperature = 25;
         moisture = 50;
     }

@@ -34,8 +34,8 @@ function SetTent(){
     const setTent = (e) => {
         console.log(e);
         switch(e) {
-            case "http://localhost:3000/static/media/standart.1d5827649ef32e79c7ab.webp":
-                setKeyTent("cloud");
+            case "http://localhost:3000/static/media/standart.81e9fe1e3032a8d1369e.webp":
+                setKeyTent("cloudy");
                 break;
             case "http://localhost:3000/static/media/rain.8b04245781f66cfcf9da.webp":
                 setKeyTent("rain");

@@ -6,7 +6,9 @@
     height: 100%;
     clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 }
-.triangleNormal{}
+.triangleNormal{
+    background-color: #aa6c29;
+}
 .triangleWarm{
     background-color: #d5d5d5;
 }

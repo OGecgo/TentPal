@@ -38,7 +38,7 @@ function Home() {
     const randomWeather = () => {
         let w = Math.floor(Math.random() * 4);
         if (w === 0) {
-            userData.setTypeWeather("cloud");
+            userData.setTypeWeather("cloudy");
         }
         else if (w === 1) {
             userData.setTypeWeather("sunny");
@@ -73,10 +73,10 @@ function Home() {
             const weather = userData.getTypeWeather();
             const tentType = tentData.getTentType();
             if (weather !== tentType) {
-                if (weather !== "cloud") {
+                if (weather !== "cloudy") {
                     setMessage(`Weather: ${weather} -- Consider switching to a anti_${weather} tent`);
                 } else {
-                    setMessage("Weather: cloud -- Switch to a standard tent for best comfort");
+                    setMessage("Weather: cloudy -- Switch to a standard tent for best comfort");
                 }
             } else {
                 setMessage(`Weather: ${weather}`);

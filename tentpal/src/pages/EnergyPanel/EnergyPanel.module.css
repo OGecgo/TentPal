@@ -96,7 +96,6 @@
     position: absolute;
     background-color: hsl(120, 75%, 33%);
     top: 250px;
-    left: 10px;
 }
 
 .applyButton:hover {
@@ -108,7 +107,7 @@
 .buttonTemp {
     width: 30%;
     height: 40%;
-    margin-left: 5%;
+    margin-left: 15%;
     border: 5px solid #767787;
     background-color: #8A8B9D;
 

@@ -1,5 +1,5 @@
 
-// cloud, sunny, snow, rain
+// cloudy, sunny, snow, rain
 let tentType = "none";
 
 function getTentType()     {return tentType;}
