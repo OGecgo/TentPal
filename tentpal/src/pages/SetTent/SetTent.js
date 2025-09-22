@@ -12,7 +12,7 @@ import FrontTent from "components/FrontTent/FrontTent";
 import tentData from "dataSet/tentConfig/tentData";
 import userData from "dataSet/userData";
 
-import standardImg  from "assets/tent/standart.webp"
+import standardImg  from "assets/tent/standard.webp"
 import sunnyTentImg from "assets/tent/sunny.webp"
 import rainTentImg  from "assets/tent/rain.webp"
 import snowTentImg  from "assets/tent/snow.webp"
@@ -34,7 +34,7 @@ function SetTent(){
     const setTent = (e) => {
         console.log(e);
         switch(e) {
-            case "http://localhost:3000/static/media/standart.81e9fe1e3032a8d1369e.webp":
+            case "http://localhost:3000/static/media/standard.1a7258b2f010bc2e4143.webp":
                 setKeyTent("cloudy");
                 break;
             case "http://localhost:3000/static/media/rain.8b04245781f66cfcf9da.webp":
@@ -68,9 +68,9 @@ function SetTent(){
                                 </div>
                             </div>
                             <div className={classes.blockItem}>
-                                <p className={classes.nameTent}>standart Tent</p>
+                                <p className={classes.nameTent}>standard Tent</p>
                                 <div className={classes.backImg}>
-                                    <img src={standardImg} alt="standart Tent"></img>
+                                    <img src={standardImg} alt="standard Tent"></img>
                                 </div>                            
                             </div>
                             <div className={classes.blockItem}>
