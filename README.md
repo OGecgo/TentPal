@@ -6,7 +6,7 @@ This repository contains the user interface for the TentPal application. This ap
 
 *   **Location Selection**: Choose a spot for your tent on an interactive map in [`tentpal/src/pages/CreateTent/SelectLocation.js`](tentpal/src/pages/CreateTent/SelectLocation.js).
 *   **Tent Setup**: Configure tent stakes, including depth and angle, in [`tentpal/src/pages/CreateTent/SetStakes.js`](tentpal/src/pages/CreateTent/SetStakes.js).
-*   **Tent Selection**: Choose from different types of tents, like normal or rain-proof tents, using a drag-and-drop interface in [`tentpal/src/pages/CreateTent/ChooseTent.js`](tentpal/src/pages/CreateTent/ChooseTent.js).
+*   **Tent Selection**: Choose from different types of tents, like cloud or rain-proof tents, using a drag-and-drop interface in [`tentpal/src/pages/CreateTent/ChooseTent.js`](tentpal/src/pages/CreateTent/ChooseTent.js).
 *   **Lighting Control**: Manage the tent's internal lighting, including color and intensity, from the [`tentpal/src/pages/CreateTent/LightPanel/LightPanel.js`](tentpal/src/pages/CreateTent/LightPanel/LightPanel.js).
 *   **Energy Management**: Monitor energy production and consumption from features like air conditioning and electric blankets in the [`tentpal/src/pages/CreateTent/EnergyPanel/EnergyPanel.js`](tentpal/src/pages/CreateTent/EnergyPanel/EnergyPanel.js).
 *   **Canteen Orders**: Place orders for food and drinks from a virtual canteen in [`tentpal/src/pages/CreateTent/Order/Order.js`](tentpal/src/pages/CreateTent/Order/Order.js).

@@ -5,7 +5,7 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom"
 
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faBolt, faBatteryFull, faSolarPanel } from "@fortawesome/free-solid-svg-icons";
+import { faBolt, faBatteryFull, faCloud, faTemperatureHalf, faDroplet } from "@fortawesome/free-solid-svg-icons";
 
 
 import classes from './EnergyPanel.module.css';
@@ -27,7 +27,7 @@ function EnergyPanel() {
     let temperature = 23;
     let moisture = 43;
 
-    if (userData.getTypeWeather() === "normal"){
+    if (userData.getTypeWeather() === "cloud"){
         temperature = 25;
         moisture = 50;
     }
@@ -35,11 +35,11 @@ function EnergyPanel() {
         temperature = 20;
         moisture = 70;
     }
-    else if (userData.getTypeWeather() === "warm"){
+    else if (userData.getTypeWeather() === "sunny"){
         temperature = 35;
         moisture = 30;
     }
-    else if (userData.getTypeWeather() === "cold"){
+    else if (userData.getTypeWeather() === "snow"){
         temperature = 1;
         moisture = 35;
     }
@@ -78,27 +78,27 @@ function EnergyPanel() {
 
             <div className="centerContent" >
                 <div className={` ${classes.itemBox} ${classes.topLeft}`}>
-                    <p className={`${classes.title} ${classes.titleGreen}`}>Weather now</p>
+                    <p className={`${classes.title} ${classes.titleGreen}`}>Weather Status</p>
                     <div className={classes.textBox}>
-                        <p className={classes.textP}><FontAwesomeIcon icon={faBolt} /> Weather: {userData.getTypeWeather()}</p>
-                        <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Temperature: {temperature}°C</p>
-                        <p className={classes.textP}><FontAwesomeIcon icon={faSolarPanel} /> Υγρασία: {moisture}%  </p>
+                        <p className={classes.textP}><FontAwesomeIcon icon={faCloud} /> Weather: {userData.getTypeWeather()}</p>
+                        <p className={classes.textP}><FontAwesomeIcon icon={faTemperatureHalf} /> Temperature: {temperature}°C</p>
+                        <p className={classes.textP}><FontAwesomeIcon icon={faDroplet} /> Moisture: {moisture}%  </p>
                     </div>
                 </div>
 
 
                 <div className={`${classes.itemBox} ${classes.topRight}`}>
-                    <p className={`${classes.title} ${classes.titleYellow}`}>Παραγωγή ενέργειας</p>
+                    <p className={`${classes.title} ${classes.titleYellow}`}>Energy Production</p>
                     <div className={classes.textBox}>
-                        <p className={classes.textP}><FontAwesomeIcon icon={faBolt} /> Παραγωγή ενέργειας τώρα: 15,2 Wh</p>
-                        <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Επίπεδο αποθέματος ενέργειας: 15%</p>
-                        <p className={`${classes.textWarning} ${classes.textP}`} style={{ color: "red", fontWeight: "bold" }}>⚠️ Προειδοποιητικό μήνυμα: Η στάθμη της ενέργειας είναι κάτω από 20%! <br />   Χρησιμοποιήστε με σύνεση την ενέργεια  που απομένει! </p>
+                        <p className={classes.textP}><FontAwesomeIcon icon={faBolt} /> Current energy generation: 15.2 Wh</p>
+                        <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Stored energy level: 15%</p>
+                        <p className={`${classes.textWarning} ${classes.textP}`} style={{ color: "red", fontWeight: "bold" }}>⚠️ Warning: Energy is below 20%. <br/> Please conserve the remaining power</p>
                     </div>
                 </div>
 
                 <div className={`${classes.itemBox} ${classes.bottomLeft}`}>
-                    <p className={`${classes.title} ${classes.titleYellow}`}>Κατανάλωση ενέργειας</p>
-                    <p className={`${classes.textBox} ${classes.textP}`}><FontAwesomeIcon icon={faBolt} /> Κατανάλωση ενέργειας τώρα: {energyConsumption}Wh</p>
+                    <p className={`${classes.title} ${classes.titleYellow}`}>Energy Usage</p>
+                    <p className={`${classes.textBox} ${classes.textP}`}><FontAwesomeIcon icon={faBolt} /> Current Energy Use: {energyConsumption}Wh</p>
                 </div>
 
                 <div className={`${classes.itemBox} ${classes.bottomRight}`}>
@@ -107,17 +107,17 @@ function EnergyPanel() {
                     <div className={classes.options}>
                         <div className={classes.leftOption}>
                             <div className={classes.sliterTopBlock}>
-                                <p className={classes.textP}>Ηλεκτρική Κουβέρτα:</p>
+                                <p className={classes.textP}>Electric Blanket:</p>
                                 <input className={classes.slider} type="checkbox" checked={isElecticBlanket} onChange={() => {isElecticBlanket ? setIsElectricBlanket(false) : setIsElectricBlanket(true);}} />
                             </div>
                             <div className={classes.sliterTopBlock}>
-                                <p className={classes.textP}>Κλιματισμός:</p>
+                                <p className={classes.textP}>Air Conditioning:</p>
                                 <input className={classes.slider} type="checkbox" checked={isAirCondition} onChange={() => {isAirCondition ? setIsAirCondition(false) : setIsAirCondition(true);}} />
                             </div>
 
                         </div>
                         <div className={classes.rightOption} >
-                            <p className={classes.textP}><FontAwesomeIcon icon={faBatteryFull} /> Θερμοκρασία Κλιματισμού: {isAirCondition ? airConditionTemperature + '°C' : '-'}</p>
+                            <p className={classes.textP}>AC Temperature: {isAirCondition ? airConditionTemperature + '°C' : '-'}</p>
                             {isAirCondition ? 
                                 <>
                                     <button className={classes.buttonTemp} onClick={() => { if (airConditionTemperature < 30) { setAirConditionTemperature((e) => e + 1); } }} variant="outline"> + </button>
@@ -138,7 +138,7 @@ function EnergyPanel() {
 
 
             <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
-            <Header userOn={true} panel={true} message={'Διαχείριση Ενέργειας Ενεργειακού Ελέγχου'} helpPage={"energy"} />
+            <Header userOn={true} panel={true} message={"Weather & Energy Panel"} helpPage={"energy"} />
         </>
     );
 }

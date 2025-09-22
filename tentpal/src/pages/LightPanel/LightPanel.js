@@ -109,10 +109,10 @@ function LightPanel() {
                 <div className={classes.flexBlocks}>
                     <div className={classes.leftContent}>
 
-                        <p>Παρακαλώ επιλέξτε είδος φωτισμού</p>
+                        <p>Choose a lighting mode</p>
                         <div className={classes.blockData}>
-                            <p>Σύνθετος Φωτισμός</p>
-                            <p> Νυχτερινό Φως</p>
+                            <p>Advanced Lighting</p>
+                            <p>Night Light      </p>
                             <div className={classes.blockDataSizeUp}>
                                 <label className={classes.labelLeft}> on </label>
                                 <input className={classes.blockCheckBox} type="checkbox" id="special-light2-toggle" checked={SimpleLight} onChange={() => changeLightMode('simple')} />
@@ -129,8 +129,8 @@ function LightPanel() {
 
                         <p>Color Options</p>
                         <div className={classes.blockData}>
-                            <p>Επιλογή χρώματος</p>
-                            <p>Ένταση</p>
+                            <p>Color Picker</p>
+                            <p>Intensity</p>
                             <div className={classes.blockDataSizeUp}>
                                 <input className={SimpleLight ? `blockSlider ${classes.rainbowLine}` : `blockSlider ${classes.whiteLine}`} type="range" id="opacityRange" min="0" max="1535" step="1" value={valueColor} onChange={SimpleLight ? (e) => setNewColor(Number(e.target.value)) : (e) => { setColor("#FFFFFF"); setValueColor(Number(e.target.value)) }} />
                             </div>
@@ -141,11 +141,11 @@ function LightPanel() {
 
 
                         <div className={`${classes.blockData} ${classes.blockBottom}`}>
-                            <p>Εκδηλώσεις</p>
+                            <p>Preset Light</p>
                             <div className={classes.blockDataSizeDown}>
-                                <div className={SimpleLight ? `${classes.purpleBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(272); }}></div>
-                                <div className={SimpleLight ? `${classes.blueBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(649); }}></div>
-                                <div className={SimpleLight ? `${classes.greenBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(925); }}></div>
+                                <div className={SimpleLight ? `${classes.purpleBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(272 ); }}></div>
+                                <div className={SimpleLight ? `${classes.blueBox  } ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(649 ); }}></div>
+                                <div className={SimpleLight ? `${classes.greenBox } ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(925 ); }}></div>
                                 <div className={SimpleLight ? `${classes.yellowBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(1262); }}></div>
                                 <div className={SimpleLight ? `${classes.orangeBox} ${classes.colorBox}` : `${classes.colorBox}`} onClick={() => { if (SimpleLight) setNewColor(1386); }}></div>
                             </div>

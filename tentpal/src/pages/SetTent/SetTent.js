@@ -12,10 +12,10 @@ import FrontTent from "components/FrontTent/FrontTent";
 import tentData from "dataSet/tentConfig/tentData";
 import userData from "dataSet/userData";
 
-// import normalTentImg from "assets/tent/Normal.webp"
-import warmTentImg   from "assets/tent/Warm.webp"
-import rainTentImg   from "assets/tent/Rain.webp"
-import coldTentImg   from "assets/tent/Cold.webp"
+import standardImg  from "assets/tent/standart.webp"
+import sunnyTentImg from "assets/tent/sunny.webp"
+import rainTentImg  from "assets/tent/rain.webp"
+import snowTentImg  from "assets/tent/snow.webp"
 
 function SetTent(){
     
@@ -34,17 +34,17 @@ function SetTent(){
     const setTent = (e) => {
         console.log(e);
         switch(e) {
-            case "":
-                setKeyTent("normal");
+            case "http://localhost:3000/static/media/standart.1d5827649ef32e79c7ab.webp":
+                setKeyTent("cloud");
                 break;
-            case "http://localhost:3000/static/media/Rain.8b04245781f66cfcf9da.webp":
+            case "http://localhost:3000/static/media/rain.8b04245781f66cfcf9da.webp":
                 setKeyTent("rain");
                 break;
-            case "http://localhost:3000/static/media/Cold.9920d10373921d497ce5.webp":
-                setKeyTent("cold");
+            case "http://localhost:3000/static/media/snow.9920d10373921d497ce5.webp":
+                setKeyTent("snow");
                 break;
-            case "http://localhost:3000/static/media/Warm.618a79bb3d5aaddfcfa0.webp":
-                setKeyTent("warm");
+            case "http://localhost:3000/static/media/sunny.618a79bb3d5aaddfcfa0.webp":
+                setKeyTent("sunny");
                 break;
             default:
                 return;
@@ -62,26 +62,26 @@ function SetTent(){
 
                         <div className={classes.tentBlock}>
                             <div className={classes.blockItem}>
-                                <p className={classes.nameTent}>AntiWarm</p>
+                                <p className={classes.nameTent}>anti Sun Tent</p>
                                 <div className={classes.backImg}>
-                                    <img src={warmTentImg} alt="WarmImg"></img>
+                                    <img src={sunnyTentImg} alt="anti Sun Tent"></img>
                                 </div>
                             </div>
                             <div className={classes.blockItem}>
-                                <p className={classes.nameTent}>Normal</p>
+                                <p className={classes.nameTent}>standart Tent</p>
                                 <div className={classes.backImg}>
-                                    <img src={null} alt="NormalImg"></img>
+                                    <img src={standardImg} alt="standart Tent"></img>
                                 </div>                            
                             </div>
                             <div className={classes.blockItem}>
-                                <p className={classes.nameTent}>AntiCold</p>
+                                <p className={classes.nameTent}>anti Snow Tent</p>
                                 <div className={classes.backImg}>
-                                    <img src={coldTentImg} alt="ColdImg"></img>
+                                    <img src={snowTentImg} alt="anti Snow Tent"></img>
                                 </div>                            </div>
                             <div className={classes.blockItem}>
-                                <p className={classes.nameTent}>AntiRain</p>
+                                <p className={classes.nameTent}>anit Rain Tent</p>
                                 <div className={classes.backImg}>
-                                    <img src={rainTentImg} alt="RainImg"></img>
+                                    <img src={rainTentImg} alt="anit Rain Tent"></img>
                                 </div>                            </div>
 
                         </div>

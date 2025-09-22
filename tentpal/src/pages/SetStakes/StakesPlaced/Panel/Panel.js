@@ -16,8 +16,8 @@ function Panel({ precentDeep, precentDeepSlider, precentDegre, precentDegreSlide
 			<div className={`${classes.blockSize} ${classes.blockSizeBottom}`}>
 				<input className={"blockSlider"} type="range" id="opacityRange" min="0" max="1" step="0.01" value={precentDegreSlider} onChange={(e) => precentDegre(Number(e.target.value))} />
 			</div>
-			<p className={classes.textBox} width={"95%"} height={"20%"} left={"1vw"} top={"1vw"}>Set Deep For Stake</p>
-			<p className={`${classes.textBox} ${classes.textBox2}`} width={"95%"} height={"20%"} left={"1vw"} top={"50%"}>Set Degre For Stake</p>
+			<p className={classes.textBox} width={"95%"} height={"20%"} left={"1vw"} top={"1vw"}>Set Stake Depth</p>
+			<p className={`${classes.textBox} ${classes.textBox2}`} width={"95%"} height={"20%"} left={"1vw"} top={"50%"}>Set Stake Angle</p>
 		</div>
 	);
 }

@@ -1,21 +1,21 @@
 
 import classes from "./FrontTent.module.css"
 
-// colorType <= normal, warm, cold, rain
+// colorType <= cloud, sunny, snow, rain
 
 function FrontTent({colorType}) {
 
 
     const returnTypeColorDiv = () => {
-        if      (colorType === "normal") return <div className={`${classes.triangle} ${classes.triangleNormal}`} ></div>;
-        else if (colorType === "warm"  ) return <div className={`${classes.triangle} ${classes.triangleWarm  }`} ></div>;
-        else if (colorType === "cold"  ) return <div className={`${classes.triangle} ${classes.triangleCold  }`} ></div>;
-        else if (colorType === "rain"  ) return <div className={`${classes.triangle} ${classes.triangleRain  }`} ></div>;
+        if      (colorType === "cloud") return <div className={`${classes.triangle} ${classes.triangleNormal}`} ></div>;
+        else if (colorType === "sunny") return <div className={`${classes.triangle} ${classes.triangleWarm  }`} ></div>;
+        else if (colorType === "snow" ) return <div className={`${classes.triangle} ${classes.triangleCold  }`} ></div>;
+        else if (colorType === "rain" ) return <div className={`${classes.triangle} ${classes.triangleRain  }`} ></div>;
         return <></>;
     };
 
     const returnBlock = () => {
-        if (colorType !== "normal" && colorType !== "warm" && colorType !== "cold" && colorType !== "rain") return <></>;
+        if (colorType !== "cloud" && colorType !== "sunny" && colorType !== "snow" && colorType !== "rain") return <></>;
         return(
             <>
                 <div className={classes.tentLight   }></div>

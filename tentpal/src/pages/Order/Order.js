@@ -1,10 +1,11 @@
 
-import React, { useState } from "react";
+import React from "react";
+import { useState } from "react";
 
 import classes from './Order.module.css';
 
 import LeftPanel from 'components/LeftPanel/LeftPanel';
-import Header from 'components/Header/Header';
+import Header    from 'components/Header/Header';
 
 import potatoImg   from 'assets/food/potato.jpg'
 import chickenImg  from 'assets/food/fried_chicken.jpg'
@@ -19,7 +20,6 @@ function Order() {
     const [cocaCola, setCocaCola] = useState(0);
 
     // position message
-    const [codeOrder, setCodeOrder] = useState(0);
     const [chatMessages, setChatMessages] = useState(messengerData.getChatMessage());
     const [chatInput, setChatInput] = useState("");
 
@@ -34,12 +34,14 @@ function Order() {
     }
 
     const sentOrder = (type, msg) => {
-        setCodeOrder(codeOrder + 1);
         let temp = chatMessages;
-        if (type === "order") 
-            temp.push(<p className={classes.orderStyle} >Order with code #{codeOrder + 1} and cost {generatePrice()}€ shipped</p>);
-        else  
-            temp.push(<p className={classes.orderMsgStyle}>{msg}</p>);
+        if (type === "order") {
+            temp.push(<p key={chatMessages.length} className={classes.orderStyle} >Order #{Math.floor(Math.random()*1000)} shipped. Total {generatePrice()}€</p>);
+        }
+        else  {
+            if (msg !== "")
+                temp.push(<p key={chatMessages.length} className={classes.orderMsgStyle}>{msg}</p>);
+        }
         setChatMessages(temp);
         messengerData.setChatMessage(temp);
         setChatInput("");
@@ -53,13 +55,13 @@ function Order() {
                 <div className={classes.blocks}>
 
                     <div className={classes.displayMenu}>
-                        <p className={classes.mainTitle} width={"80%"} height={"10%"} top={"3%"} backgroundColor={"#B5AF94"}>Τιμοκατάλογος</p>
+                        <p className={classes.mainTitle}>Price list</p>
                         <div className={classes.menuBlock}>
                             <div className={classes.menuItem}>
                                 <div className={classes.pBlock}>
-                                    <p className={classes.title}>Πατάτες Τηγανητές</p>
-                                    <p className={classes.data}>Τιμή: 2.50€</p>
-                                    <p className={classes.data}>Τεμάχια: {frenchFries}</p>
+                                    <p className={classes.title}>French Fries</p>
+                                    <p className={classes.data}>Price: 2.50€</p>
+                                    <p className={classes.data}>Quantity: {frenchFries}</p>
                                 </div>
                                 <div className={classes.foodBlock}>
                                     <div className={classes.imgBlock}>
@@ -72,9 +74,9 @@ function Order() {
 
                             <div className={classes.menuItem}>
                                 <div className={classes.pBlock}>
-                                    <p className={classes.title}>Κοτομπουκιές</p>
-                                    <p className={classes.data}>Τιμή: 3.50€</p>
-                                    <p className={classes.data}>Τεμάχια: {nuggets}</p>
+                                    <p className={classes.title}>Chicken Nuggets</p>
+                                    <p className={classes.data}>Price: 3.50€</p>
+                                    <p className={classes.data}>Quantity: {nuggets}</p>
                                 </div>
                                 <div className={classes.foodBlock}>
                                     <div className={classes.imgBlock}>
@@ -88,8 +90,8 @@ function Order() {
                             <div className={classes.menuItem}>
                                 <div className={classes.pBlock}>
                                     <p className={classes.title}>Coca Cola</p>
-                                    <p className={classes.data}>Τιμή: 1.50€</p>
-                                    <p className={classes.data}>Τεμάχια: {cocaCola}</p>
+                                    <p className={classes.data}>Price: 1.50€</p>
+                                    <p className={classes.data}>Quantity: {cocaCola}</p>
                                 </div>
                                 <div className={classes.foodBlock}>
                                     <div className={classes.imgBlock}>
@@ -101,9 +103,9 @@ function Order() {
                             </div>
 
                             <div className={classes.menuPrice}>
-                                <p className={classes.titlePrice}>Σύνολο: {generatePrice()}€</p>
+                                <p className={classes.titlePrice}>Total Price: {generatePrice()}€</p>
                                 <button className={generatePrice() !== 0 ? classes.applyButton : classes.applybuttonOff} disabled={generatePrice() === 0} onClick={() => { sentOrder("order"); }}>
-                                    <p className={classes.buttonP}>Αποστολή</p><br />
+                                    <p className={classes.buttonP}>Confirm Order</p><br />
                                 </button>
                             </div>
                         </div>
@@ -124,7 +126,7 @@ function Order() {
             </div>
 
             <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
-            <Header panel={true} message={'Καντίνα'} userOn={true} />
+            <Header panel={true} message={'Canteen'} userOn={true} />
         </>
     );
 }

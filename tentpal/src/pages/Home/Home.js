@@ -38,13 +38,13 @@ function Home() {
     const randomWeather = () => {
         let w = Math.floor(Math.random() * 4);
         if (w === 0) {
-            userData.setTypeWeather("normal");
+            userData.setTypeWeather("cloud");
         }
         else if (w === 1) {
-            userData.setTypeWeather("warm");
+            userData.setTypeWeather("sunny");
         }
         else if (w === 2) {
-            userData.setTypeWeather("cold");
+            userData.setTypeWeather("snow");
         }
         else {
             userData.setTypeWeather("rain");
@@ -73,10 +73,10 @@ function Home() {
             const weather = userData.getTypeWeather();
             const tentType = tentData.getTentType();
             if (weather !== tentType) {
-                if (weather !== "normal") {
-                    setMessage(`Weather: ${weather}. Consider switching to a ${weather} tent`);
+                if (weather !== "cloud") {
+                    setMessage(`Weather: ${weather} -- Consider switching to a anti_${weather} tent`);
                 } else {
-                    setMessage("Weather: normal. Switch to a standard tent for best comfort");
+                    setMessage("Weather: cloud -- Switch to a standard tent for best comfort");
                 }
             } else {
                 setMessage(`Weather: ${weather}`);
@@ -144,7 +144,7 @@ function Home() {
                         <div className={` ${classes.blockButton} ${classes.events}`}>
                             <Link className={classes.linkButton} to="/order">
                                 <img src={foodImg} className={classes.sizeImg}></img>
-                                Order Food
+                                Canteen
                             </Link>
                         </div>
                     </div>
