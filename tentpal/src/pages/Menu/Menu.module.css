@@ -1,33 +1,48 @@
 
 
-.centerContentHome h1 {
-    position: relative;
-    font-size: calc(200% + 4vw + 4vh);
-    text-align: center;
-    margin-top: calc(40px + 5vh + 2vw);
-    
+
+
+
+.logoName {
+    height: 50%;
+    width: 100%;
 }
 
+.logoSize {
+    position: relative;
+    left: 500px;
+    height: 140px;
+    aspect-ratio: 1/1;
+}
+
+
+
+.links {
+    display: flex;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+}
 .Link {
     text-align: center;
     text-decoration: none;
     padding: 1vh 0;
-}
 
-.centerContentHome .Link {
-    position: relative;
-    font-size: calc( 4vw + 4vh - 80%);
-    padding: 2px calc(20px + 4vw + 4vh);
+    font-size: calc( 2vw + 2vh );
     color: rgb(42, 42, 42);
     background-color: rgb(138, 139, 157);
     border-radius: 10px;
-    left: calc(50% - (20px + 8vw + 8vh));
+    width: 50%;
+    margin-top: 2%;
+    margin-left: 25%;
 }
 
-.centerContentHome p {
-    position: relative;
-    font-size : calc(50% + 1vw + 1vh);
-    position: relative;
-    text-align: center;
-    margin-top: 10vh;
+.Link:hover {
+    background-color: rgb(114, 115, 130);
+}
+
+.LinkDisable , .LinkDisable:hover {
+    cursor: default;
+    background-color: #2A2A2A;
+    color: #565656;
 }

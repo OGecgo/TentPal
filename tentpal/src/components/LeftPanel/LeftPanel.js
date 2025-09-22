@@ -26,9 +26,9 @@ function LeftPanel({mode, levelPage, linkNext = {}, linkPrev = {}}) {
     const createTent = (lvl) => {
         return (
             <div>
-                <div className = {lvl === 1 ? `${classes.content1} ${classes.text} ${classes.blockColorOn}` : `${classes.content1} ${classes.text} ${classes.blockColorOff}`}>1. Take a position</div>
-                <div className = {lvl === 2 ? `${classes.content2} ${classes.text} ${classes.blockColorOn}` : `${classes.content2} ${classes.text} ${classes.blockColorOff}`}>2. Set the stakes</div>
-                <div className = {lvl === 3 ? `${classes.content3} ${classes.text} ${classes.blockColorOn}` : `${classes.content3} ${classes.text} ${classes.blockColorOff}`}>3. Take a tent</div>
+                <div className = {lvl === 1 ? `${classes.content1} ${classes.text} ${classes.blockColorOn}` : `${classes.content1} ${classes.text} ${classes.blockColorOff}`}>1. Select a Location</div>
+                <div className = {lvl === 2 ? `${classes.content2} ${classes.text} ${classes.blockColorOn}` : `${classes.content2} ${classes.text} ${classes.blockColorOff}`}>2. Stakes Settings</div>
+                <div className = {lvl === 3 ? `${classes.content3} ${classes.text} ${classes.blockColorOn}` : `${classes.content3} ${classes.text} ${classes.blockColorOff}`}>3. Pitch the tent</div>
             </div>
         );
     }
@@ -39,11 +39,13 @@ function LeftPanel({mode, levelPage, linkNext = {}, linkPrev = {}}) {
             case "createTent":
                 return (
                     <>
-                        <Link to = "/Menu"><img src = {require("assets/Logo.webp")} alt = "logo" /></Link>
+                        <Link to = "/Menu">
+                            <div className={`${classes.logoPanel} logo`} ></div>
+                        </Link>
                         <div className = {classes.blocks}>
                             {createTent(levelPage)}
                             {links()}
-                            <Link to="/Menu" onClick={(e)=>{if(!window.confirm("If exit you lost data")) { e.preventDefault(); } }} className = {`${classes.exitButton} ${classes.text}`}>Exit</Link>
+                            <Link to="/Menu" className = {`${classes.exitButton} ${classes.text}`}>Exit</Link>
                         </div>
                     </>
                 );
@@ -51,17 +53,21 @@ function LeftPanel({mode, levelPage, linkNext = {}, linkPrev = {}}) {
             case "userMode":
                 return (
                     <>
-                        <Link to = "/Home"><img src = {require("assets/Logo.webp")} alt = "logo" /></Link>
+                        <Link to = "/Home">
+                            <div className={`${classes.logoPanel} logo`} ></div>
+                        </Link>
                         <div className = {classes.blocks}>
                             {links()}
-                            <Link to="/Menu" onClick={(e)=>{if(!window.confirm("If exit you lost data")) { e.preventDefault(); } }} className = {`${classes.exitButton} ${classes.text}`}>Exit</Link>
+                            <Link to="/Menu" className = {`${classes.exitButton} ${classes.text}`}>Exit</Link>
                         </div>
                     </>
                 );
             default:
                 return (
                     <>
-                        <Link to = "/Menu"><img src = {require("assets/Logo.webp")} alt = "logo" /></Link>
+                        <Link to = "/Menu">
+                            <div className={`${classes.logoPanel} logo`} ></div>
+                        </Link>
                     </>
                 );
         }

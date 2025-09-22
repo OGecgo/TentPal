@@ -1,31 +1,39 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { useEffect } from "react";
 
-// components
+
 import Header from "components/Header/Header";
 import LeftPanel from "components/LeftPanel/LeftPanel";
 
-// css
-import classes from "./Menu.module.css"; // that styling used only on this page
+import classes from "./Menu.module.css";
 
 import userData from "dataSet/userData";
 
+
 function Menu() {
-    useEffect(()=>{
+    const resetData = (e) => {
+        if (userData.getUserMode() === true){
+            if(!window.confirm("Do You Want To Discard Your Old Tent ?")) {
+                e.preventDefault();
+                return;
+            }
+        }
         userData.resetData();
-    },[]);
+    };
 
     return (
-        <div className="centerContent">
-            <div className={`${classes.centerContentHome}`}>
+        <>
+            <div className="centerContent">
                 <h1>TentPal</h1>
-                <Link to="/selectLocation" className={classes.Link}>Start</Link>
-                <p>ashoudkjflhaksdhfuahslkdfjhklasjhdlkfjhasldkj</p>
+                <div className={classes.links}>
+                    <Link to="/selectLocation" className={classes.Link} onClick={(e) => {resetData   (e);}}>New Texnt</Link>
+                    <Link to={userData.getUserMode() ? "/Home" : "#"}  className={userData.getUserMode() ? classes.Link : `${classes.Link} ${classes.LinkDisable}`}>Existing Tent</Link>
+                </div>
+
             </div>
             <LeftPanel />
             <Header panel={false} />
-        </div>
+        </>
     );
 }
 

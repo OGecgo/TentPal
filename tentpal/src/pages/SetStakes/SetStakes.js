@@ -9,7 +9,7 @@ function SetStakes() {
     return (
         <>
             <StakesPlaced />
-            <Header colorType={"success"} panel={true} message={"Change stake property"} />
+            <Header colorType={"success"} panel={true} message={"Adjust the stake settings if needed"} />
             <LeftPanel mode="createTent" levelPage={2} linkNext={{link: "/setTent", bool: true, lock: false}} linkPrev = {{link: "/selectLocation", bool: true}}/>
         </>
     );

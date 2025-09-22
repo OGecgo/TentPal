@@ -82,3 +82,13 @@ label{
     border: 0.2em solid #396c46;
 }
 
+.logo {
+
+    aspect-ratio: 1/1;
+    clip-path: 
+    polygon(40% 25%, 50% 40%, 25% 85%,
+            80% 85%, 50% 40%, 60% 25%,
+            100% 85%, 80% 85%, 90% 100%,
+            0% 100% );
+    background-color: #2B2B2D;
+}

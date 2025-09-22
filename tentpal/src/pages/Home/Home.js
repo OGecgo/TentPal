@@ -59,24 +59,28 @@ function Home() {
 
     const setMyMessage = (typeM) => {
         if (typeM === 0) {
-            if (!window.confirm("If you call sos you will be can not move until they save you")) {
+            if (!window.confirm("Calling SOS will alert rescue. You must stay where you are until help arrives. Continue?")) {
                 return;
             }
-            setMessage("SOS Call Sent. Dont Move");
+            setMessage("SOS call sent. Stay where you are");
             setColorType("warning");
         }
         else if (typeM === 1) {
-            setMessage("--->>Warning !!! Press SOS Map and follow the path<<---");
+            setMessage("Warning: Open the SOS Map and follow the marked route");
             setColorType("warning");
         }
         else if (typeM === 2) {
-            if (userData.getTypeWeather() !== tentData.getTentType()){
-                if (userData.getTypeWeather() !== "normal") 
-                    setMessage(`Weather ${userData.getTypeWeather()}. You can change tha tent to anti-${userData.getTypeWeather()}`);
-                else 
-                    setMessage(`Weather ${userData.getTypeWeather()}. You can change tha tent to normal`);
+            const weather = userData.getTypeWeather();
+            const tentType = tentData.getTentType();
+            if (weather !== tentType) {
+                if (weather !== "normal") {
+                    setMessage(`Weather: ${weather}. Consider switching to a ${weather} tent`);
+                } else {
+                    setMessage("Weather: normal. Switch to a standard tent for best comfort");
+                }
+            } else {
+                setMessage(`Weather: ${weather}`);
             }
-            else setMessage(`Weather ${userData.getTypeWeather()}`);
             setColorType("default");
         }
     }
@@ -120,13 +124,13 @@ function Home() {
                         <div className={` ${classes.blockButton} ${classes.energy}`}>
                             <Link className={classes.linkButton} to="/energyPanel">
                                 <img src={lightingImg} className={classes.sizeImg}></img>
-                                Energy Panel | Weather Status
+                                Energy & Weather
                             </Link>
                         </div>
                         <div className={` ${classes.blockButton} ${classes.energy}`}>
                             <Link className={classes.linkButton} to="/lightPanel">
                                 <img src={lampImg} className={classes.sizeImg}></img>
-                                Linght Panel
+                                Light Panel
                             </Link>
                         </div>
                     </div>
@@ -140,7 +144,7 @@ function Home() {
                         <div className={` ${classes.blockButton} ${classes.events}`}>
                             <Link className={classes.linkButton} to="/order">
                                 <img src={foodImg} className={classes.sizeImg}></img>
-                                Food
+                                Order Food
                             </Link>
                         </div>
                     </div>
@@ -151,7 +155,7 @@ function Home() {
                                 <div className={` ${classes.blockButton} ${classes.sos}`}>
                                     <Link className={classes.linkButton} to="/setTent">
                                         <img src={tentImg} className={classes.sizeImg}></img>
-                                        Set New Tent
+                                        Set Up Tent
                                     </Link>
                                 </div>
                                 <div className={` ${classes.blockButton} ${classes.sos}`}>

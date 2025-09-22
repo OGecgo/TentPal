@@ -14,7 +14,7 @@ import classesMap from "components/Map/Map.module.css"
 function SelectLocation() {
 
     const [lockNext, setLockNext] = useState(true);
-    const [message, setMessage] = useState("You can select place for your tent on the map");
+    const [message, setMessage] = useState("Select a location for your tent on the map");
 
 
     const [pos, setPos] = useState(-1);
@@ -64,22 +64,22 @@ function SelectLocation() {
 
     const takeMapPos = (x, y, type) => {
         if (type === 2) {
-            setMessage("Red place can't be selected. Is dangerous place");
+            setMessage("Red areas are unsafe and cannot be selected");
             setLockNext(true);
             setTypeMessage("default");
         }
         else if (type === 1) {
-            setMessage("Yellow place can't be selected. Tha place is reserved");
+            setMessage("Yellow areas are reserved and unavailable");
             setLockNext(true);
             setTypeMessage("default");
         }
         else if (type === 0) {
-            setMessage("You can select place for your tent on the map");
+            setMessage("Select a location for your tent on the map");
             setLockNext(true);
             setTypeMessage("default");
         }
         else {
-            setMessage("--->>You selected place. Now you can continue<<---");
+            setMessage("Location selected! You can continue");
             setLockNext(false);
             setTypeMessage("success");
             mapData.setPosMap(x,  y); // save top left pixel of block

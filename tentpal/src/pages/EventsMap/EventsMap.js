@@ -89,7 +89,7 @@ function EventsMap() {
                 <div className={classes.blockInfoLeft}>
                     <div className={classes.left}>
                         <div className={classes.triangle}></div>
-                        <p>New Event</p>
+                        <p>Events</p>
                     </div>
                     <div className={classes.left}>
                         <div className={classes.square}></div>
@@ -97,7 +97,7 @@ function EventsMap() {
                     </div>
                     <div className={classes.left}>
                         <div className={classes.circle}></div>
-                        <p>Place for research</p>
+                        <p>Research Location</p>
                     </div>
                 </div>
 
@@ -110,7 +110,7 @@ function EventsMap() {
                 }
 
             </div>
-            <Header helpPage={helpImg} message={"Event Map"} panel={true} colorType={"default"} userOn={true} />
+            <Header helpPage={helpImg} message={"Events Map"} panel={true} colorType={"default"} userOn={true} />
             <LeftPanel mode={"userMode"} linkPrev={{ link: "/Home", bool: true }} />
         </>
     );

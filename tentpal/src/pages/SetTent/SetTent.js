@@ -19,7 +19,7 @@ import coldTentImg   from "assets/tent/Cold.webp"
 
 function SetTent(){
     
-    const [message, setMessage] = useState("Drag and Drop tent you want to right block");
+    const [message, setMessage] = useState("Drag the tent you want into the right block.");
     // change useData
     const [keyTent, setKeyTent] = useState(tentData.getTentType());
     const [buttonNext, setButtonNext] = useState(tentData.getTentType() === "none");
@@ -36,27 +36,21 @@ function SetTent(){
         switch(e) {
             case "":
                 setKeyTent("normal");
-                setMessage("Now you can continue to Home page");
-                setButtonNext(false);
                 break;
             case "http://localhost:3000/static/media/Rain.8b04245781f66cfcf9da.webp":
                 setKeyTent("rain");
-                setMessage("Now you can continue to Home page");
-                setButtonNext(false);
                 break;
             case "http://localhost:3000/static/media/Cold.9920d10373921d497ce5.webp":
                 setKeyTent("cold");
-                setMessage("Now you can continue to Home page");
-                setButtonNext(false);
                 break;
             case "http://localhost:3000/static/media/Warm.618a79bb3d5aaddfcfa0.webp":
                 setKeyTent("warm");
-                setMessage("Now you can continue to Home page");
-                setButtonNext(false);
                 break;
             default:
-                break;
+                return;
         }
+        setMessage("You can now go to the Home page");
+        setButtonNext(false);
     }
 
 
