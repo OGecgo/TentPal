@@ -11,12 +11,22 @@ import LeftPanel from "components/LeftPanel/LeftPanel";
 import classes    from "./EventsMap.module.css";
 import classesMap from "components/Map/Map.module.css";
 
-import help from "assets/info/Page5.png"
+import help from "assets/info/Page5.png";
+
+import event1 from "assets/events/event/consert_1.png";
+import event2 from "assets/events/event/consert_2.png";
+import event3 from "assets/events/event/gledi.png";
+import event4 from "assets/events/event/party.png";
+import place1 from "assets/events/places/cave.png";
+import place2 from "assets/events/places/monastir.png";
+import place3 from "assets/events/places/mount.png";
+
 
 function EventsMap() {
 
     const [infoOn, setInfoOn] = useState(false);
     const [infoBlocks, setInfoBlocks] = useState([]);
+    const [infoEvent, setInfoEvent] = useState(null);
 
 
     useEffect(()=> {
@@ -25,6 +35,29 @@ function EventsMap() {
         setInfoBlocks(mapData.getEventsMap());
     }, []);
 
+    // type <=  0=events, 1=places
+    const setInfoEventOnMap = (type) => {
+        setInfoOn(true);
+        if (type === 0){
+            let e = Math.floor(Math.random() * 4);
+            switch (e){
+                case 0: setInfoEvent(event1); break;
+                case 1: setInfoEvent(event2); break;
+                case 2: setInfoEvent(event3); break;
+                case 3: setInfoEvent(event4); break;
+                default: setInfoEvent(null); break;
+            }
+        }
+        else if (type === 1){
+            let e = Math.floor(Math.random() * 3);
+            switch (e){
+                case 0: setInfoEvent(place1); break;
+                case 1: setInfoEvent(place2); break;
+                case 2: setInfoEvent(place3); break;
+                default: setInfoEvent(null); break;
+            }
+        }
+    }
 
     const returnRandomEvent = () => {
         if (Math.random() >= 0.9)
@@ -56,8 +89,7 @@ function EventsMap() {
             for (let col = 0; col < mapData.getCountBlocks(); col++) {
                 let e = returnRandomEvent();
                 block.push(
-                    <div onClick={() => { e === 0 || e === 1 ? setInfoOn(true) : setInfoOn(false)}}
-                        key={`${row} ${col}`} className={`${classesMap.block} ${classes.styleBlock}`}>
+                    <div onClick={() => { e === 0 || e === 1 ? setInfoEventOnMap(e) : setInfoOn(false)}} key={`${row} ${col}`} className={`${classesMap.block} ${classes.styleBlock}`}>
 
                         {mapData.getPosMap()[0] !== row || mapData.getPosMap()[1] !== col ?
                             returnMapEvent(e)
@@ -102,7 +134,7 @@ function EventsMap() {
 
                 {infoOn ?
                     <div className={classes.blockInfoRight}>
-                        <InfoButton backgroundOff={true} page={null} isOpen={infoOn} setIsOpen={setInfoOn} typeColor={"transparent"}/>
+                        <InfoButton backgroundOff={true} page={infoEvent} isOpen={infoOn} setIsOpen={setInfoOn} typeColor={"transparent"}/>
                     </div>         
                 :
                     <></>
