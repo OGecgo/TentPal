@@ -13,6 +13,8 @@ import cocacolaImg from 'assets/food/cocacola.jpeg'
 
 import messengerData from "dataSet/messengerData";
 
+import help from "assets/info/Page8.png"
+
 function Order() {
 
     const [frenchFries, setFrenchFries] = useState(0);
@@ -126,7 +128,7 @@ function Order() {
             </div>
 
             <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
-            <Header panel={true} message={'Canteen'} userOn={true} />
+            <Header panel={true} message={'Canteen'} userOn={true} helpPage={help} />
         </>
     );
 }

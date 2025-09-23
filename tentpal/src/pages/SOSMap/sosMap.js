@@ -10,6 +10,8 @@ import Map from "components/Map/Map"
 import classes from "./sosMap.module.css"
 import classesMap from "components/Map/Map.module.css"
 
+import help from "assets/info/Page9.png"
+
 function SOSMap() {
 
     const [mapPoints, setMapPoints] = useState([]);
@@ -78,7 +80,7 @@ function SOSMap() {
                 </div>
             </div>
             <LeftPanel mode={"userMode"} linkPrev={{ lock: false, link: "/Home", bool: true }} />
-            <Header panel={true} colorType={"warning"} message={"SOS Map (Go to the safe point)"} helpPage={"none"} userOn={true} />
+            <Header panel={true} colorType={"warning"} message={"SOS Map (Go to the safe point)"} helpPage={help} userOn={true} />
         </>
     );
 }

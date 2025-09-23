@@ -11,10 +11,12 @@ import { faBolt, faBatteryFull, faCloud, faTemperatureHalf, faDroplet } from "@f
 import classes from './EnergyPanel.module.css';
 
 import LeftPanel from 'components/LeftPanel/LeftPanel';
-import Header from 'components/Header/Header';
+import Header    from 'components/Header/Header';
 
-import userData from 'dataSet/userData'
+import userData   from 'dataSet/userData'
 import energyData from "dataSet/setings/energyData";
+
+import help from "assets/info/Page4.png"
 
 function EnergyPanel() {
 
@@ -138,7 +140,7 @@ function EnergyPanel() {
 
 
             <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
-            <Header userOn={true} panel={true} message={"Weather & Energy Panel"} helpPage={"energy"} />
+            <Header userOn={true} panel={true} message={"Weather & Energy Panel"} helpPage={help} />
         </>
     );
 }

@@ -18,6 +18,8 @@ import sosImg from "assets/simbolsImg/sosPin.svg"
 import tentData from "dataSet/tentConfig/tentData"
 import userData from "dataSet/userData"
 
+import help from "assets/info/PageB.png"
+
 function Home() {
 
     const [message, setMessage] = useState("");
@@ -183,7 +185,7 @@ function Home() {
 
 
             <LeftPanel mode="userMode" levelPage={2} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "#", bool: false, lock: false }} />
-            <Header panel={true} message={message} colorType={colorType} helpPage={"light"} userOn={true} />
+            <Header panel={true} message={message} colorType={colorType} helpPage={help} userOn={true} />
         </>
     )
 

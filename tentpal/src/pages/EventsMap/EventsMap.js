@@ -11,8 +11,7 @@ import LeftPanel from "components/LeftPanel/LeftPanel";
 import classes    from "./EventsMap.module.css";
 import classesMap from "components/Map/Map.module.css";
 
-import helpImg from "assets/info/energy_info.png"
-
+import help from "assets/info/Page5.png"
 
 function EventsMap() {
 
@@ -110,7 +109,7 @@ function EventsMap() {
                 }
 
             </div>
-            <Header helpPage={helpImg} message={"Events Map"} panel={true} colorType={"default"} userOn={true} />
+            <Header helpPage={help} message={"Events Map"} panel={true} colorType={"default"} userOn={true} />
             <LeftPanel mode={"userMode"} linkPrev={{ link: "/Home", bool: true }} />
         </>
     );

@@ -17,6 +17,9 @@ import sunnyTentImg from "assets/tent/sunny.webp"
 import rainTentImg  from "assets/tent/rain.webp"
 import snowTentImg  from "assets/tent/snow.webp"
 
+import help3 from "assets/info/Page3.png"
+import help6 from "assets/info/Page6.png"
+
 function SetTent(){
     
     const [message, setMessage] = useState("Drag the tent you want into the right block.");
@@ -106,12 +109,12 @@ function SetTent(){
 
             {userData.getUserMode() ? 
                 <>
-                    <Header panel={true} message={"Now you can change Tent"} colorType={"default"} userOn={true}/>
+                    <Header helpPage={help6} panel={true} message={"Now you can change Tent"} colorType={"default"} userOn={true}/>
                     <LeftPanel mode="userMode"   levelPage={0} linkNext={{ link: "/Home", bool: false, lock: false      }} linkPrev={{ link: "/Home"     , bool: true }} />
                 </>
                 :
                 <>
-                    <Header panel={true} message={message} colorType={keyTent === "none" ? "default" : "success"} userOn={false}/>
+                    <Header helpPage={help3} panel={true} message={message} colorType={keyTent === "none" ? "default" : "success"} userOn={false}/>
                     <LeftPanel mode="createTent" levelPage={3} linkNext={{ link: "/Home", bool: true , lock: buttonNext }} linkPrev={{ link: "/setStakes", bool: true }} />
                 </>
             }

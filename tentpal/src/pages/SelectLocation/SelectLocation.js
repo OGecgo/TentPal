@@ -11,6 +11,8 @@ import mapData from "dataSet/mapData";
 import classes from "./SelectLocation.module.css"
 import classesMap from "components/Map/Map.module.css"
 
+import help from "assets/info/Page1.png"
+
 function SelectLocation() {
 
     const [lockNext, setLockNext] = useState(true);
@@ -121,7 +123,7 @@ function SelectLocation() {
             </div>
 
             <LeftPanel mode="createTent" levelPage={1} linkNext={{ link: "/setStakes", bool: true, lock: lockNext }} linkPrev={{ link: "#", bool: false }} />
-            <Header panel={true} colorType={typeMessage} message={message} />
+            <Header panel={true} colorType={typeMessage} message={message} helpPage={help} />
         </>
     );
 }

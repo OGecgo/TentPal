@@ -12,6 +12,8 @@ import lightData from 'dataSet/setings/lightData';
 
 import StickLamp from './StickLamp/StickLamp';
 
+import help from "assets/info/Page7.png"
+
 function LightPanel() {
     const [SimpleLight, setSimpleLight] = useState(lightData.getSimpleLight());
     const [NightLight, setNightLight] = useState(lightData.getNightLight());
@@ -183,7 +185,7 @@ function LightPanel() {
 
 
             <LeftPanel mode="userMode" levelPage={0} linkNext={{ link: "#", bool: false, lock: false }} linkPrev={{ link: "/Home", bool: true }} />
-            <Header panel={true} message={'Light Section'} helpPage={"light"} />
+            <Header panel={true} message={'Light Section'} helpPage={help} />
         </>
     );
 }

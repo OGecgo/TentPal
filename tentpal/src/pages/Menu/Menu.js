@@ -26,7 +26,7 @@ function Menu() {
             <div className="centerContent">
                 <h1>TentPal</h1>
                 <div className={classes.links}>
-                    <Link to="/selectLocation" className={classes.Link} onClick={(e) => {resetData   (e);}}>New Texnt</Link>
+                    <Link to="/selectLocation" className={classes.Link} onClick={(e) => {resetData   (e);}}>New Tent</Link>
                     <Link to={userData.getUserMode() ? "/Home" : "#"}  className={userData.getUserMode() ? classes.Link : `${classes.Link} ${classes.LinkDisable}`}>Existing Tent</Link>
                 </div>
 

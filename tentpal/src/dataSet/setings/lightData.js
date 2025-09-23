@@ -3,7 +3,7 @@
 let simpleLight = false; 
 let nightLight  = false;
 
-let color      = "#09D4DA";
+let color      = "#FFFFFF";
 let valueColor = 768;
 let intensity  = 0.75;
 
@@ -23,7 +23,7 @@ function resetData() {
     simpleLight = false;
     nightLight  = false;
 
-    color      = "#09D4DA"
+    color      = "#FFFFFF"
     valueColor = 768
     intensity  = 0.75;
 }
